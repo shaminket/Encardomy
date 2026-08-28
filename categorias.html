@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Servicios Académicos — Encardomy | 5 Categorías, 12 Soluciones</title>
+  <meta name="description" content="Explora los 12 servicios académicos de Encardomy organizados en 5 categorías: Estudiar, Mejorar, Crear, Diseñar y Proyectos. Producción rápida con IA y revisión humana.">
+  
+  <!-- Google Fonts: Sora (Headings) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Hoja de estilos oficial de Encardomy -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       SITE HEADER / NAVEGACIÓN GLOBAL
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="Ir al inicio de Encardomy">
+        <span class="logo-symbol">E</span>
+        <span>Encardomy</span>
+        <span class="logo-tagline">&bull; Catálogo</span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Navegación principal">
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="categorias.html" class="nav-link active">Catálogo & Categorías</a>
+        <a href="index.html#proceso" class="nav-link">Cómo Funciona</a>
+        <a href="index.html#diferenciador" class="nav-link">IA + Humano</a>
+        <a href="index.html#faq" class="nav-link">Preguntas</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn-primary btn-sm" data-open-order data-service-id="resumen">
+          <i data-lucide="sparkles" style="width: 16px; height: 16px;"></i>
+          <span>Cotizar Rápido</span>
+        </button>
+        <button class="menu-toggle-btn" id="menuToggleBtn" aria-label="Abrir menú de navegación" aria-expanded="false">
+          <i data-lucide="menu" style="width: 24px; height: 24px;"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Menú Drawer para Móviles -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-label="Menú móvil">
+    <div class="drawer-header">
+      <div class="brand-logo">
+        <span class="logo-symbol">E</span>
+        <span>Encardomy</span>
+      </div>
+      <button class="modal-close-btn" id="drawerCloseBtn" aria-label="Cerrar menú">
+        <i data-lucide="x" style="width: 20px; height: 20px;"></i>
+      </button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="index.html" class="drawer-link"><span>🏠 Inicio</span> <i data-lucide="chevron-right"></i></a></li>
+      <li><a href="categorias.html" class="drawer-link active"><span>📚 Catálogo Completo (12 Servicios)</span> <i data-lucide="chevron-right"></i></a></li>
+      <li><a href="categorias.html?cat=estudiar" class="drawer-link"><span>🎯 Estudiar</span> <i data-lucide="chevron-right"></i></a></li>
+      <li><a href="categorias.html?cat=mejorar" class="drawer-link"><span>✨ Mejorar</span> <i data-lucide="chevron-right"></i></a></li>
+      <li><a href="categorias.html?cat=crear" class="drawer-link"><span>✍️ Crear</span> <i data-lucide="chevron-right"></i></a></li>
+      <li><a href="categorias.html?cat=disenar" class="drawer-link"><span>🎨 Diseñar</span> <i data-lucide="chevron-right"></i></a></li>
+      <li><a href="categorias.html?cat=proyectos" class="drawer-link"><span>🚀 Proyectos</span> <i data-lucide="chevron-right"></i></a></li>
+    </ul>
+    <div class="mt-32">
+      <button class="btn btn-primary btn-block btn-lg" data-open-order data-service-id="resumen">
+        <i data-lucide="message-circle"></i>
+        <span>Solicitar Cotización</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       MAIN CONTENT / CATÁLOGO MULTIPÁGINA
+       ========================================================================== -->
+  <main class="section-padding bg-subtle" style="flex: 1;">
+    <div class="container">
+      
+      <!-- Encabezado de Catálogo -->
+      <div class="text-center mb-40">
+        <span class="badge badge-primary mb-12">Catálogo Oficial Encardomy</span>
+        <h1 class="mb-16">Servicios Académicos Especializados</h1>
+        <p class="text-muted" style="max-width: 660px; margin: 0 auto; font-size: 1.08rem;">
+          Explora nuestras soluciones académicas. Cada servicio cuenta con una metodología individual de 15 secciones, asegurando calidad, velocidad y revisión humana experta.
+        </p>
+      </div>
+
+      <!-- Barra de Búsqueda y Filtros de Categorías -->
+      <div style="background: var(--color-white); padding: var(--space-24); border-radius: var(--radius-xl); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm); margin-bottom: var(--space-40);">
+        <div class="grid-2" style="align-items: center; margin-bottom: var(--space-20, 20px);">
+          <div>
+            <div style="position: relative;">
+              <input type="text" id="catalogSearchInput" class="form-input" placeholder="🔍 Buscar por nombre, materia o necesidad (ej. APA, resumen, diapositivas)..." style="padding-left: 16px;">
+            </div>
+          </div>
+          <div style="font-size: 0.88rem; color: var(--color-text-muted); text-align: right;">
+            <span>Mostrando servicios con <strong>IA + Revisión Humana</strong></span>
+          </div>
+        </div>
+
+        <!-- Filtros de Categoría -->
+        <div class="catalog-filters" style="margin-bottom: 0;">
+          <button class="filter-btn catalog-filter-btn active" data-filter="all">
+            <span>Todas las Categorías (12)</span>
+          </button>
+          <button class="filter-btn catalog-filter-btn" data-filter="estudiar">
+            <span class="badge badge-cat-estudiar" style="padding: 2px 8px;">Estudiar</span>
+            <span>(4)</span>
+          </button>
+          <button class="filter-btn catalog-filter-btn" data-filter="mejorar">
+            <span class="badge badge-cat-mejorar" style="padding: 2px 8px;">Mejorar</span>
+            <span>(3)</span>
+          </button>
+          <button class="filter-btn catalog-filter-btn" data-filter="crear">
+            <span class="badge badge-cat-crear" style="padding: 2px 8px;">Crear</span>
+            <span>(2)</span>
+          </button>
+          <button class="filter-btn catalog-filter-btn" data-filter="disenar">
+            <span class="badge badge-cat-disenar" style="padding: 2px 8px;">Diseñar</span>
+            <span>(2)</span>
+          </button>
+          <button class="filter-btn catalog-filter-btn" data-filter="proyectos">
+            <span class="badge badge-cat-proyectos" style="padding: 2px 8px;">Proyectos</span>
+            <span>(1)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Grid de los 12 Servicios -->
+      <div class="services-grid" id="servicesGrid">
+        
+        <!-- 1. Resumen -->
+        <article class="service-card catalog-service-item" data-category="estudiar">
+          <div>
+            <div class="service-card-header">
+              <span class="badge badge-cat-estudiar">Estudiar</span>
+              <span class="text-muted" style="font-size: 0.8rem; font-weight: 600;">12 a 24h</span>
+            </div>
+            <h3 class="service-title mb-8" style="font-size: 1.25rem;">
+              <a href="servicios/resumen.html" style="color: var(--color-navy);">Resumen Académico</a>
+            </h3>
+            <p class="service-desc text-muted mb-16" style="font-size: 0.92rem;">
+              Síntesis conceptual profunda con ideas clave, mapas conceptuales y glosario para asimilar lecturas extensas en minutos.
+            </p>
+            <ul style="list-style: none; font-size: 0.85rem; color: var(--color-text-dark); margin-bottom: var(--space-20, 20px); display: flex; flex-direction: column; gap: 6px;">
+              <li>✓ Extracción jerárquica de tesis central</li>
+              <li>✓ Glosario de términos complejos</li>
+              <li>✓ Revisión humana contra texto original</li>
+            </ul>
+          </div>
+          <div style="display: flex; gap: var(--space-8); flex-direction: column;">
+            <a href="servicios/resumen.html" class="btn btn-secondary btn-sm btn-block">
+              Ver Metodología Completa
+            </a>
+            <button class="btn btn-primary btn-sm btn-block" data-open-order data-service-id="resumen">
+              <i data-lucide="message-circle"></i> Cotizar
+            </button>
+          </div>
+        </article>
+
+        <!-- 2. Guía de estudio -->
+        <article class="service-card catalog-service-item" data-category="estudiar">
+          <div>
+            <div class="service-card-header">
+              <span class="badge badge-cat-estudiar">Estudiar</span>
+              <span class="text-muted" style="font-size: 0.8rem; font-weight: 600;">24 a 48h</span>
+            </div>
+            <h3 class="service-title mb-8" style="font-size: 1.25rem;">
+              <a href="servicios/guia-de-estudio.html" style="color: var(--color-navy);">Guía de Estudio</a>
+            </h3>
+            <p class="service-desc text-muted mb-16" style="font-size: 0.92rem;">
+              Cuaderno temático estructurado con objetivos de aprendizaje, preguntas tipo examen resueltas y explicaciones didácticas.
+            </p>
+            <ul style="list-style: none; font-size: 0.85rem; color: var(--color-text-dark); margin-bottom: var(--space-20, 20px); display: flex; flex-direction: column; gap: 6px;">
+              <li>✓ Alineado a tu temario oficial</li>
+              <li>✓ Preguntas modelo con justificación</li>
+              <li>✓ Supervisión pedagógica humana</li>
+            </ul>
+          </div>
+          <div style="display: flex; gap: var(--space-8); flex-direction: column;">
+            <a href="servicios/guia-de-estudio.html" class="btn btn-secondary btn-sm btn-block">
+              Ver Metodología Completa
+            </a>
+            <button class="btn btn-primary btn-sm btn-block" data-open-order data-service-id="guia-de-estudio">
+              <i data-lucide="message-circle"></i> Cotizar
+            </button>
+          </div>
+        </article>
+
+        <!-- 3. Flashcards -->
+        <article class="service-card catalog-service-item" data-category="estudiar">
+          <div>
+            <div class="service-card-header">
+              <span class="badge badge-cat-estudiar">Estudiar</span>
+              <span class="text-muted" style="font-size: 0.8rem; font-weight: 600;">12 a 24h</span>
+            </div>
+            <h3 class="service-title mb-8" style="font-size: 1.25rem;">
+              <a href="servicios/flashcards.html" style="color: var(--color-navy);">Flashcards (Anki/Quizlet)</a>
+            </h3>
+            <p class="service-desc text-muted mb-16" style="font-size: 0.92rem;">
+              Mazo de tarjetas con preguntas directas basadas en repetición espaciada listas para importar o imprimir.
+            </p>
+            <ul style="list-style: none; font-size: 0.85rem; color: var(--color-text-dark); margin-bottom: var(--space-20, 20px); display: flex; flex-direction: column; gap: 6px;">
+              <li>✓ Formato .apkg para Anki + Quizlet</li>
+              <li>✓ Principio de preguntas atómicas</li>
+              <li>✓ Versión PDF imprimible</li>
+            </ul>
+          </div>
+          <div style="display: flex; gap: var(--space-8); flex-direction: column;">
+            <a href="servicios/flashcards.html" class="btn btn-secondary btn-sm btn-block">
+              Ver Metodología Completa
+            </a>
+            <button class="btn btn-primary btn-sm btn-block" data-open-order data-service-id="flashcards">
+              <i data-lucide="message-circle"></i> Cotizar
+            </button>
+          </div>
+        </article>
+
+        <!-- 4. Examen de práctica -->
+        <article class="service-card catalog-service-item" data-category="estudiar">
+          <div>
+            <div class="service-card-header">
+              <span class="badge badge-cat-estudiar">Estudiar</span>
+              <span class="text-muted" style="font-size: 0.8rem; font-weight: 600;">24 a 36h</span>
+            </div>
+            <h3 class="service-title mb-8" style="font-size: 1.25rem;">
+              <a href="servicios/examen-de-practica.html" style="color: var(--color-navy);">Examen de Práctica</a>
+            </h3>
+            <p class="service-desc text-muted mb-16" style="font-size: 0.92rem;">
+              Simulacro de evaluación con reactivos de opción múltiple, problemas abiertos y solucionario razonado.
+            </p>
+            <ul style="list-style: none; font-size: 0.85rem; color: var(--color-text-dark); margin-bottom: var(--space-20, 20px); display: flex; flex-direction: column; gap: 6px;">
+              <li>✓ Reactivos con distractores realistas</li>
+              <li>✓ Solucionario con justificación</li>
+              <li>✓ Calibración de dificultad por grado</li>
+            </ul>
+          </div>
+          <div style="display: flex; gap: var(--space-8); flex-direction: column;">
+            <a href="servicios/examen-de-practica.html" class="btn btn-secondary btn-sm btn-block">
+              Ver Metodología Completa
+            </a>
+            <button class="btn btn-primary btn-sm btn-block" data-open-order data-service-id="examen-de-practica">
+              <i data-lucide="message-circle"></i> Cotizar
+            </button>
+          </div>
+        </article>
+
+        <!-- 5. Corrección académica -->
+        <article class="service-card catalog-service-item" data-category="mejorar">
+          <div>
+            <div class="service-card-header">
+              <span class="badge badge-cat-mejorar">Mejorar</span>
+              <span class="text-muted" style="font-size: 0.8rem; font-weight: 600;">12 a 24h</span>
+            </div>
+            <h3 class="service-title mb-8" style="font-size: 1.25rem;">
+              <a href="servicios/correccion-academica.html" style="color: var(--color-navy);">Corrección Académica (APA)</a>
+            </h3>
+            <p class="service-desc text-muted mb-16" style="font-size: 0.92rem;">
+              Revisión ortotipográfica completa, coherencia formal y formateo estricto de citas APA 7, Vancouver o MLA.
+            </p>
+            <ul style="list-style: none; font-size: 0.85rem; color: var(--color-text-dark); margin-bottom: var(--space-20, 20px); display: flex; flex-direction: column; gap: 6px;">
+              <li>✓ Control de cambios visible en Word</li>
+              <li>✓ Formateo perfecto de bibliografía</li>
+              <li>✓ Corrección línea a línea humana</li>
+            </ul>
+          </div>
+          <div style="display: flex; gap: var(--space-8); flex-direction: column;">
+            <a href="servicios/correccion-academica.html" class="btn btn-secondary btn-sm btn-block">
+              Ver Metodología Completa
+            </a>
+            <button class="btn btn-primary btn-sm btn-block" data-open-order data-service-id="correccion-academica">
+              <i data-lucide="message-circle"></i> Cotizar
+            </button>
+          </div>
+        </article>
+
+        <!-- 6. Edición natural -->
+        <article class="service-card catalog-service-item" data-category="mejorar">
+          <div>
+            <div class="service-card-header">
+              <span class="badge badge-cat-mejorar">Mejorar</span>
+              <span class="text-muted" style="font-size: 0.8rem; font-weight: 600;">12 a 24h</span>
+            </div>
+            <h3 class="service-title mb-8" style="font-size: 1.25rem;">
+              <a href="servicios/edicion-natural.html" style="color: var(--color-navy);">Edición Natural & Humanización</a>
+            </h3>
+            <p class="service-desc text-muted mb-16" style="font-size: 0.92rem;">
+              Reescritura de textos rígidos o generados con IA para devolverles fluidez orgánica, voz propia y coherencia académica.
+            </p>
+            <ul style="list-style: none; font-size: 0.85rem; color: var(--color-text-dark); margin-bottom: var(--space-20, 20px); display: flex; flex-direction: column; gap: 6px;">
+              <li>✓ Eliminación de frases cliché y rigidez</li>
+              <li>✓ Cadencia y ritmo natural de lectura</li>
+              <li>✓ Cero promesas falsas de "indetectable"</li>
+            </ul>
+          </div>
+          <div style="display: flex; gap: var(--space-8); flex-direction: column;">
+            <a href="servicios/edicion-natural.html" class="btn btn-secondary btn-sm btn-block">
+              Ver Metodología Completa
+            </a>
+            <button class="btn btn-primary btn-sm btn-block" data-open-order data-service-id="edicion-natural">
+              <i data-lucide="message-circle"></i> Cotizar
+            </button>
+          </div>
+        </article>
+
+        <!-- 7. Mejora de trabajo -->
+        <article class="service-card catalog-service-item" data-category="mejorar">
+          <div>
+            <div class="service-card-header">
+              <span class="badge badge-cat-mejorar">Mejorar</span>
+              <span class="text-muted" style="font-size: 0.8rem; font-weight: 600;">24 a 48h</span>
+            </div>
+            <h3 class="service-title mb-8" style="font-size: 1.25rem;">
+              <a href="servicios/mejora-de-trabajo.html" style="color: var(--color-navy);">Diagnóstico y Mejora de Trabajo</a>
+            </h3>
+            <p class="service-desc text-muted mb-16" style="font-size: 0.92rem;">
+              Auditoría integral de borradores existentes para reforzar argumentos débiles, sumar fuentes de peso y alinear con rúbrica.
+            </p>
+            <ul style="list-style: none; font-size: 0.85rem; color: var(--color-text-dark); margin-bottom: var(--space-20, 20px); display: flex; flex-direction: column; gap: 6px;">
+              <li>✓ Alineación punto por punto a rúbrica</li>
+              <li>✓ Fortalecimiento de marco teórico</li>
+              <li>✓ Asesoría personalizada para defensa</li>
+            </ul>
+          </div>
+          <div style="display: flex; gap: var(--space-8); flex-direction: column;">
+            <a href="servicios/mejora-de-trabajo.html" class="btn btn-secondary btn-sm btn-block">
+              Ver Metodología Completa
+            </a>
+            <button class="btn btn-primary btn-sm btn-block" data-open-order data-service-id="mejora-de-trabajo">
+              <i data-lucide="message-circle"></i> Cotizar
+            </button>
+          </div>
+        </article>
+
+        <!-- 8. Documento académico -->
+        <article class="service-card catalog-service-item" data-category="crear">
+          <div>
+            <div class="service-card-header">
+              <span class="badge badge-cat-crear">Crear</span>
+              <span class="text-muted" style="font-size: 0.8rem; font-weight: 600;">24 a 72h</span>
+            </div>
+            <h3 class="service-title mb-8" style="font-size: 1.25rem;">
+              <a href="servicios/documento-academico.html" style="color: var(--color-navy);">Documento Académico Base</a>
+            </h3>
+            <p class="service-desc text-muted mb-16" style="font-size: 0.92rem;">
+              Estructuración y redacción base de ensayos, monografías y reportes con metodología formal y citas reales verificadas.
+            </p>
+            <ul style="list-style: none; font-size: 0.85rem; color: var(--color-text-dark); margin-bottom: var(--space-20, 20px); display: flex; flex-direction: column; gap: 6px;">
+              <li>✓ Estructura argumental deductiva</li>
+              <li>✓ Citas de repositorios reales (Scielo/Redalyc)</li>
+              <li>✓ Guía de lectura para defensa oral</li>
+            </ul>
+          </div>
+          <div style="display: flex; gap: var(--space-8); flex-direction: column;">
+            <a href="servicios/documento-academico.html" class="btn btn-secondary btn-sm btn-block">
+              Ver Metodología Completa
+            </a>
+            <button class="btn btn-primary btn-sm btn-block" data-open-order data-service-id="documento-academico">
+              <i data-lucide="message-circle"></i> Cotizar
+            </button>
+          </div>
+        </article>
+
+        <!-- 9. Investigación -->
+        <article class="service-card catalog-service-item" data-category="crear">
+          <div>
+            <div class="service-card-header">
+              <span class="badge badge-cat-crear">Crear</span>
+              <span class="text-muted" style="font-size: 0.8rem; font-weight: 600;">48 a 72h</span>
+            </div>
+            <h3 class="service-title mb-8" style="font-size: 1.25rem;">
+              <a href="servicios/investigacion.html" style="color: var(--color-navy);">Búsqueda Bibliográfica & Marco</a>
+            </h3>
+            <p class="service-desc text-muted mb-16" style="font-size: 0.92rem;">
+              Compilación de literatura científica actualizada, estado del arte, fichas de lectura y base de datos para gestores (Zotero).
+            </p>
+            <ul style="list-style: none; font-size: 0.85rem; color: var(--color-text-dark); margin-bottom: var(--space-20, 20px); display: flex; flex-direction: column; gap: 6px;">
+              <li>✓ Búsqueda en bases indexadas Scopus/PubMed</li>
+              <li>✓ Cuadro sinóptico de metodologías</li>
+              <li>✓ Archivo .bib/.ris listo para importar</li>
+            </ul>
+          </div>
+          <div style="display: flex; gap: var(--space-8); flex-direction: column;">
+            <a href="servicios/investigacion.html" class="btn btn-secondary btn-sm btn-block">
+              Ver Metodología Completa
+            </a>
+            <button class="btn btn-primary btn-sm btn-block" data-open-order data-service-id="investigacion">
+              <i data-lucide="message-circle"></i> Cotizar
+            </button>
+          </div>
+        </article>
+
+        <!-- 10. Presentación -->
+        <article class="service-card catalog-service-item" data-category="disenar">
+          <div>
+            <div class="service-card-header">
+              <span class="badge badge-cat-disenar">Diseñar</span>
+              <span class="text-muted" style="font-size: 0.8rem; font-weight: 600;">12 a 24h</span>
+            </div>
+            <h3 class="service-title mb-8" style="font-size: 1.25rem;">
+              <a href="servicios/presentacion.html" style="color: var(--color-navy);">Presentación Visual (PPTX/Canva)</a>
+            </h3>
+            <p class="service-desc text-muted mb-16" style="font-size: 0.92rem;">
+              Diapositivas modernas y visuales con diseño minimalista, gráficos claros y notas para el orador listas para tu exposición.
+            </p>
+            <ul style="list-style: none; font-size: 0.85rem; color: var(--color-text-dark); margin-bottom: var(--space-20, 20px); display: flex; flex-direction: column; gap: 6px;">
+              <li>✓ Formato PowerPoint editable o enlace Canva</li>
+              <li>✓ Guion y notas del expositor incluidas</li>
+              <li>✓ Diagramación visual limpia sin saturación</li>
+            </ul>
+          </div>
+          <div style="display: flex; gap: var(--space-8); flex-direction: column;">
+            <a href="servicios/presentacion.html" class="btn btn-secondary btn-sm btn-block">
+              Ver Metodología Completa
+            </a>
+            <button class="btn btn-primary btn-sm btn-block" data-open-order data-service-id="presentacion">
+              <i data-lucide="message-circle"></i> Cotizar
+            </button>
+          </div>
+        </article>
+
+        <!-- 11. Infografía -->
+        <article class="service-card catalog-service-item" data-category="disenar">
+          <div>
+            <div class="service-card-header">
+              <span class="badge badge-cat-disenar">Diseñar</span>
+              <span class="text-muted" style="font-size: 0.8rem; font-weight: 600;">12 a 24h</span>
+            </div>
+            <h3 class="service-title mb-8" style="font-size: 1.25rem;">
+              <a href="servicios/infografia.html" style="color: var(--color-navy);">Infografía & Esquemas Visuales</a>
+            </h3>
+            <p class="service-desc text-muted mb-16" style="font-size: 0.92rem;">
+              Láminas gráficas y pósters que traducen datos o procesos complejos en un formato visual atractivo y de fácil lectura.
+            </p>
+            <ul style="list-style: none; font-size: 0.85rem; color: var(--color-text-dark); margin-bottom: var(--space-20, 20px); display: flex; flex-direction: column; gap: 6px;">
+              <li>✓ PDF para impresión alta resolución (A4/Tabloide)</li>
+              <li>✓ PNG 4K para visualización digital</li>
+              <li>✓ Jerarquía narrativa paso a paso</li>
+            </ul>
+          </div>
+          <div style="display: flex; gap: var(--space-8); flex-direction: column;">
+            <a href="servicios/infografia.html" class="btn btn-secondary btn-sm btn-block">
+              Ver Metodología Completa
+            </a>
+            <button class="btn btn-primary btn-sm btn-block" data-open-order data-service-id="infografia">
+              <i data-lucide="message-circle"></i> Cotizar
+            </button>
+          </div>
+        </article>
+
+        <!-- 12. Proyecto Encardomy -->
+        <article class="service-card catalog-service-item" data-category="proyectos">
+          <div>
+            <div class="service-card-header">
+              <span class="badge badge-cat-proyectos">Proyectos</span>
+              <span class="text-muted" style="font-size: 0.8rem; font-weight: 600;">3 a 7 días</span>
+            </div>
+            <h3 class="service-title mb-8" style="font-size: 1.25rem;">
+              <a href="servicios/proyecto-encardomy.html" style="color: var(--color-navy);">Proyecto Encardomy Semestral</a>
+            </h3>
+            <p class="service-desc text-muted mb-16" style="font-size: 0.92rem;">
+              Acompañamiento integral end-to-end para proyectos de titulación, integradores, prototipos y tesinas de grado.
+            </p>
+            <ul style="list-style: none; font-size: 0.85rem; color: var(--color-text-dark); margin-bottom: var(--space-20, 20px); display: flex; flex-direction: column; gap: 6px;">
+              <li>✓ Informe escrito + Presentación PPTX</li>
+              <li>✓ Simulador de preguntas de jurado/sinodal</li>
+              <li>✓ Acompañamiento continuo por WhatsApp</li>
+            </ul>
+          </div>
+          <div style="display: flex; gap: var(--space-8); flex-direction: column;">
+            <a href="servicios/proyecto-encardomy.html" class="btn btn-secondary btn-sm btn-block">
+              Ver Metodología Completa
+            </a>
+            <button class="btn btn-primary btn-sm btn-block" data-open-order data-service-id="proyecto-encardomy">
+              <i data-lucide="message-circle"></i> Cotizar
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER GLOBAL
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand-logo mb-16" style="color: #FFFFFF;">
+            <span class="logo-symbol">E</span>
+            <span>Encardomy</span>
+          </div>
+          <p style="color: #9cb5d3; font-size: 0.92rem; max-width: 320px;">
+            Plataforma de servicios académicos inteligentes para estudiantes. Combinamos la aceleración de la IA con la revisión y verificación de personas expertas.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Categorías</h4>
+          <ul class="footer-links">
+            <li><a href="categorias.html?cat=estudiar">Estudiar</a></li>
+            <li><a href="categorias.html?cat=mejorar">Mejorar</a></li>
+            <li><a href="categorias.html?cat=crear">Crear</a></li>
+            <li><a href="categorias.html?cat=disenar">Diseñar</a></li>
+            <li><a href="categorias.html?cat=proyectos">Proyectos</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Servicios Populares</h4>
+          <ul class="footer-links">
+            <li><a href="servicios/resumen.html">Resumen Académico</a></li>
+            <li><a href="servicios/guia-de-estudio.html">Guía de Estudio</a></li>
+            <li><a href="servicios/correccion-academica.html">Corrección APA</a></li>
+            <li><a href="servicios/presentacion.html">Presentaciones</a></li>
+            <li><a href="servicios/flashcards.html">Flashcards Anki</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Transparencia</h4>
+          <p style="color: #9cb5d3; font-size: 0.86rem;" class="mb-16">
+            Encardomy promueve el estudio ético, el aprendizaje activo y el rigor académico. No realizamos fraudes ni exámenes en tiempo real.
+          </p>
+          <button class="btn btn-primary btn-sm btn-block" data-open-order data-service-id="resumen">
+            <i data-lucide="message-circle"></i> Contacto WhatsApp
+          </button>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Encardomy &bull; Identidad visual oficial (#2D7FF9, #123B6A, Sora & Inter).
+        </div>
+        <div style="display: flex; gap: var(--space-16);">
+          <span>Accesibilidad WCAG AA</span>
+          <span>&bull;</span>
+          <span>Diseño Mobile-First</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       MODAL DE COTIZACIÓN Y PEDIDO RÁPIDO
+       ========================================================================== -->
+  <div class="modal-backdrop" id="orderModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Cerrar ventana">
+        <i data-lucide="x" style="width: 20px; height: 20px;"></i>
+      </button>
+
+      <div class="mb-24">
+        <span class="badge badge-primary mb-8">Cotización Inmediata</span>
+        <h3 id="modalTitle" style="color: var(--color-navy);">Configura tu Solicitud</h3>
+        <p class="text-muted" style="font-size: 0.9rem;">
+          Completa los datos y te generaremos el mensaje listo para enviar a nuestro WhatsApp de atención oficial.
+        </p>
+      </div>
+
+      <form id="orderForm">
+        <div class="form-group">
+          <label class="form-label" for="orderServiceSelect">Servicio que necesitas</label>
+          <select id="orderServiceSelect" class="form-select" required>
+            <optgroup label="Estudiar">
+              <option value="resumen">Resumen Académico Estructurado</option>
+              <option value="guia-de-estudio">Guía de Estudio Integral</option>
+              <option value="flashcards">Flashcards (Anki / Quizlet / PDF)</option>
+              <option value="examen-de-practica">Examen de Práctica y Simulador</option>
+            </optgroup>
+            <optgroup label="Mejorar">
+              <option value="correccion-academica">Corrección Académica y Normas APA</option>
+              <option value="edicion-natural">Edición Natural y Humanización</option>
+              <option value="mejora-de-trabajo">Diagnóstico y Mejora de Borrador</option>
+            </optgroup>
+            <optgroup label="Crear">
+              <option value="documento-academico">Documento Académico Base</option>
+              <option value="investigacion">Búsqueda Bibliográfica y Marco Teórico</option>
+            </optgroup>
+            <optgroup label="Diseñar">
+              <option value="presentacion">Presentación Visual (PowerPoint/Canva)</option>
+              <option value="infografia">Infografía y Esquemas Visuales</option>
+            </optgroup>
+            <optgroup label="Proyectos">
+              <option value="proyecto-encardomy">Proyecto Encardomy Semestral</option>
+            </optgroup>
+          </select>
+        </div>
+
+        <div class="grid-2">
+          <div class="form-group">
+            <label class="form-label" for="orderNameInput">Tu Nombre / Apodo</label>
+            <input type="text" id="orderNameInput" class="form-input" placeholder="Ej. Carlos" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="orderLevelSelect">Nivel Académico</label>
+            <select id="orderLevelSelect" class="form-select">
+              <option value="Preparatoria / Bachillerato">Preparatoria / Bachillerato</option>
+              <option value="Universidad / Licenciatura" selected>Universidad / Licenciatura</option>
+              <option value="Posgrado / Maestría">Posgrado / Maestría</option>
+              <option value="Examen de Admisión">Examen de Admisión</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="orderUrgencySelect">Tiempo de entrega deseado</label>
+          <select id="orderUrgencySelect" class="form-select">
+            <option value="Estándar (24 a 48 horas)" selected>Estándar (24 a 48 horas)</option>
+            <option value="Express urgente (12 a 24 horas)">Express urgente (12 a 24 horas)</option>
+            <option value="Con calma (3 a 5 días)">Con calma (3 a 5 días)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="orderDetailsInput">Materia, tema o detalles adicionales</label>
+          <textarea id="orderDetailsInput" class="form-textarea" placeholder="Ej. Resumen de 30 páginas de Derecho Constitucional para el examen del viernes..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block btn-lg">
+          <i data-lucide="send"></i>
+          <span>Enviar Cotización a WhatsApp</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    lucide.createIcons();
+
+    // Sincronizar filtro desde parámetro URL ?cat=xxx
+    const urlParams = new URLSearchParams(window.location.search);
+    const catParam = urlParams.get('cat');
+    if (catParam) {
+      const targetBtn = document.querySelector(`.catalog-filter-btn[data-filter="${catParam}"]`);
+      if (targetBtn) {
+        document.querySelectorAll('.catalog-filter-btn').forEach(b => b.classList.remove('active'));
+        targetBtn.classList.add('active');
+        document.querySelectorAll('.catalog-service-item').forEach(card => {
+          if (card.getAttribute('data-category') === catParam) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
+    }
+  </script>
+</body>
+</html>

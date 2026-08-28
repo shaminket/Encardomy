@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto Encardomy Integral — Encardomy | Metodología 3P de 15 Secciones</title>
+  <meta name="description" content="Acompañamiento integral end-to-end para proyectos de titulación, integradores, prototipos y tesinas de grado. Producción rápida con IA y revisión humana experta en Encardomy.">
+  
+  <!-- Google Fonts: Sora (Headings) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Hoja de estilos oficial de Encardomy -->
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       SITE HEADER / NAVEGACIÓN GLOBAL
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand-logo" aria-label="Ir al inicio de Encardomy">
+        <span class="logo-symbol">E</span>
+        <span>Encardomy</span>
+        <span class="logo-tagline">&bull; Proyectos</span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Navegación principal">
+        <a href="../index.html" class="nav-link">Inicio</a>
+        <a href="../categorias.html" class="nav-link">Catálogo</a>
+        <a href="#oferta" class="nav-link">Qué Incluye</a>
+        <a href="#diferenciador" class="nav-link">IA + Humano</a>
+        <a href="#faq" class="nav-link">Preguntas</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn-primary btn-sm" data-open-order data-service-id="proyecto-encardomy">
+          <i data-lucide="sparkles" style="width: 16px; height: 16px;"></i>
+          <span>Cotizar Servicio</span>
+        </button>
+        <button class="menu-toggle-btn" id="menuToggleBtn" aria-label="Abrir menú de navegación" aria-expanded="false">
+          <i data-lucide="menu" style="width: 24px; height: 24px;"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Menú Drawer para Móviles -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-label="Menú móvil">
+    <div class="drawer-header">
+      <div class="brand-logo">
+        <span class="logo-symbol">E</span>
+        <span>Encardomy</span>
+      </div>
+      <button class="modal-close-btn" id="drawerCloseBtn" aria-label="Cerrar menú">
+        <i data-lucide="x" style="width: 20px; height: 20px;"></i>
+      </button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="../index.html" class="drawer-link"><span>🏠 Inicio</span> <i data-lucide="chevron-right"></i></a></li>
+      <li><a href="../categorias.html" class="drawer-link"><span>📚 Catálogo Completo</span> <i data-lucide="chevron-right"></i></a></li>
+      <li><a href="../categorias.html?cat=proyectos" class="drawer-link active"><span>🏷️ Categoría: Proyectos</span> <i data-lucide="chevron-right"></i></a></li>
+    </ul>
+    <div class="mt-32">
+      <button class="btn btn-primary btn-block btn-lg" data-open-order data-service-id="proyecto-encardomy">
+        <i data-lucide="message-circle"></i>
+        <span>Cotizar este Servicio</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       BREADCRUMB / RUTA DE NAVEGACIÓN
+       ========================================================================== -->
+  <div style="background: var(--color-bg-light); border-bottom: 1px solid var(--color-border); padding: 10px 0; font-size: 0.86rem;">
+    <div class="container" style="display: flex; align-items: center; gap: 8px; color: var(--color-text-muted);">
+      <a href="../index.html" style="color: var(--color-text-muted);">Inicio</a>
+      <span>&rsaquo;</span>
+      <a href="../categorias.html" style="color: var(--color-text-muted);">Catálogo</a>
+      <span>&rsaquo;</span>
+      <a href="../categorias.html?cat=proyectos" style="color: var(--color-text-muted);">Proyectos</a>
+      <span>&rsaquo;</span>
+      <span style="color: var(--color-navy); font-weight: 600;">Proyecto Encardomy Integral</span>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       1. PORTADA / HERO (METODOLOGÍA SECCIÓN 1)
+       ========================================================================== -->
+  <main>
+    <section class="product-hero" id="portada">
+      <div class="container">
+        <div class="product-hero-grid">
+          <div>
+            <div class="mb-16">
+              <span class="badge badge-cat-proyectos">Proyectos</span>
+              <span class="badge badge-success" style="margin-left: 8px;">
+                <i data-lucide="shield-check" style="width: 13px; height: 13px;"></i> IA + Revisión Humana
+              </span>
+            </div>
+            
+            <h1 class="mb-16" style="color: var(--color-navy);">Tu proyecto semestral completo resuelto con asesoría continua</h1>
+            <p class="text-muted mb-24" style="font-size: 1.12rem;">Coordinamos todas las etapas: desde la definición del tema y marco teórico, hasta el informe final, las diapositivas y la preparación de tu defensa.</p>
+
+            <div style="display: flex; gap: var(--space-16); flex-wrap: wrap; margin-bottom: var(--space-24);">
+              <button class="btn btn-primary btn-lg" data-open-order data-service-id="proyecto-encardomy">
+                <i data-lucide="message-circle"></i>
+                <span>Solicitar Cotización Rápida</span>
+              </button>
+              <a href="#oferta" class="btn btn-secondary btn-lg">
+                <span>Ver qué incluye</span>
+                <i data-lucide="arrow-down"></i>
+              </a>
+            </div>
+
+            <!-- Ficha técnica rápida -->
+            <div style="display: flex; gap: var(--space-16); flex-wrap: wrap; font-size: 0.85rem; color: var(--color-text-muted);">
+              <span style="display: flex; align-items: center; gap: 4px;">
+                <i data-lucide="clock" style="color: var(--color-primary); width: 16px; height: 16px;"></i> Entrega: <strong>3 a 7 días hábiles (según alcance)</strong>
+              </span>
+              <span style="display: flex; align-items: center; gap: 4px;">
+                <i data-lucide="file" style="color: var(--color-primary); width: 16px; height: 16px;"></i> Formato: <strong>Suite Completa (Documento + Diapositivas + Resumen Ejecutivo + Asesoría)</strong>
+              </span>
+              <span style="display: flex; align-items: center; gap: 4px;">
+                <i data-lucide="refresh-cw" style="color: var(--color-success); width: 16px; height: 16px;"></i> Ajustes incluidos
+              </span>
+            </div>
+          </div>
+
+          <!-- Tarjeta Lateral de Configuración Rápida -->
+          <div class="hero-quick-card">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-16);">
+              <span style="font-family: var(--font-heading); font-weight: 700; color: var(--color-navy); font-size: 1.1rem;">
+                Resumen del Servicio
+              </span>
+              <span class="badge badge-primary">Oficial</span>
+            </div>
+            
+            <p class="text-muted mb-16" style="font-size: 0.9rem;">
+              Acompañamiento integral end-to-end para proyectos de titulación, integradores, prototipos y tesinas de grado.
+            </p>
+
+            <div style="background: var(--color-bg-light); padding: var(--space-16); border-radius: var(--radius-md); margin-bottom: var(--space-20, 20px);">
+              <div style="font-size: 0.82rem; font-weight: 700; color: var(--color-navy); margin-bottom: 6px;">
+                ESTRUCTURA DE PRECIOS
+              </div>
+              <div style="font-size: 0.92rem; color: var(--color-text-dark);">
+                Estructura preparada por fases o paquete integral
+              </div>
+            </div>
+
+            <button class="btn btn-primary btn-block btn-lg" data-open-order data-service-id="proyecto-encardomy">
+              <i data-lucide="send"></i>
+              <span>Cotizar por WhatsApp</span>
+            </button>
+            <div style="text-align: center; margin-top: 10px; font-size: 0.78rem; color: var(--color-text-muted);">
+              Respuesta en menos de 15 minutos en horario escolar
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         2. OFERTA (METODOLOGÍA SECCIÓN 2)
+         ========================================================================== -->
+    <section class="section-padding" id="oferta">
+      <div class="container">
+        <div class="product-section-title">
+          <span class="section-num">2</span>
+          <h2>¿Qué incluye exactamente este servicio?</h2>
+        </div>
+        <p class="text-muted mb-32" style="max-width: 680px;">
+          Desglose completo de cada elemento y entregable que recibirás al contratar Proyecto Encardomy Integral.
+        </p>
+
+        <div class="grid-2">
+          <div class="card card-highlight">
+            <h3 class="mb-16" style="font-size: 1.25rem;">Entregables y Componentes Incluidos</h3>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-12, 12px);">
+              <li style="display: flex; gap: 8px; align-items: flex-start;"><span style="color: var(--color-primary); font-weight: 700;">✓</span><span>Diagnóstico inicial de objetivos y cronograma de entregas parciales</span></li><li style="display: flex; gap: 8px; align-items: flex-start;"><span style="color: var(--color-primary); font-weight: 700;">✓</span><span>Redacción estructurada del informe técnico o memoria de proyecto</span></li><li style="display: flex; gap: 8px; align-items: flex-start;"><span style="color: var(--color-primary); font-weight: 700;">✓</span><span>Diseño de presentación visual ejecutiva para la exposición ante jurado</span></li><li style="display: flex; gap: 8px; align-items: flex-start;"><span style="color: var(--color-primary); font-weight: 700;">✓</span><span>Guía de posibles preguntas y respuestas de profesores/sinodales</span></li><li style="display: flex; gap: 8px; align-items: flex-start;"><span style="color: var(--color-primary); font-weight: 700;">✓</span><span>Acompañamiento y seguimiento personalizado por un asesor humano</span></li>
+            </ul>
+          </div>
+
+          <div class="card" style="background: var(--color-bg-subtle);">
+            <h3 class="mb-16" style="font-size: 1.25rem;">Garantía de Entrega Encardomy</h3>
+            <div style="display: flex; flex-direction: column; gap: var(--space-16);">
+              <div style="display: flex; gap: 12px; align-items: flex-start;">
+                <div style="width: 32px; height: 32px; border-radius: 8px; background: var(--color-success-light); color: var(--color-success); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <i data-lucide="check" style="width: 18px; height: 18px;"></i>
+                </div>
+                <div>
+                  <strong style="color: var(--color-navy); font-size: 0.95rem;">Verificación Humana Línea por Línea</strong>
+                  <p class="text-muted" style="font-size: 0.88rem;">Un revisor comprueba la exactitud de fechas, citas, conceptos y redacción antes del envío.</p>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 12px; align-items: flex-start;">
+                <div style="width: 32px; height: 32px; border-radius: 8px; background: var(--color-blue-tint); color: var(--color-primary); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <i data-lucide="edit" style="width: 18px; height: 18px;"></i>
+                </div>
+                <div>
+                  <strong style="color: var(--color-navy); font-size: 0.95rem;">Archivos 100% Editables</strong>
+                  <p class="text-muted" style="font-size: 0.88rem;">Siempre recibes el archivo fuente (DOCX, PPTX, Anki, Canva) para tus propios ajustes.</p>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 12px; align-items: flex-start;">
+                <div style="width: 32px; height: 32px; border-radius: 8px; background: #fef3c7; color: #b45309; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <i data-lucide="shield" style="width: 18px; height: 18px;"></i>
+                </div>
+                <div>
+                  <strong style="color: var(--color-navy); font-size: 0.95rem;">Ronda de Ajustes Incluida</strong>
+                  <p class="text-muted" style="font-size: 0.88rem;">Si tu profesor solicita alguna precisión o cambio de formato, lo realizamos sin costo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         3. IMÁGENES Y VIDEOS / MUESTRAS VISUALES (METODOLOGÍA SECCIÓN 3)
+         ========================================================================== -->
+    <section class="section-padding bg-surface" id="muestras">
+      <div class="container">
+        <div class="product-section-title">
+          <span class="section-num">3</span>
+          <h2>Muestras de Formato y Estructura Visual</h2>
+        </div>
+        <p class="text-muted mb-32">
+          Cómo se organiza visualmente el material para maximizar la legibilidad y facilitar el estudio.
+        </p>
+
+        <div class="grid-3">
+          <div class="card">
+              <div style="height: 120px; background: var(--color-blue-tint); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-16); color: var(--color-primary); font-weight: 700; font-family: var(--font-heading);">
+                <i data-lucide="file-text" style="width: 36px; height: 36px;"></i>
+              </div>
+              <h4>Memoria de Proyecto</h4>
+              <p class="text-muted" style="font-size: 0.88rem; margin-top: 6px;">Documento maestro con todos los capítulos, justificación y anexos.</p>
+            </div><div class="card">
+              <div style="height: 120px; background: var(--color-blue-tint); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-16); color: var(--color-primary); font-weight: 700; font-family: var(--font-heading);">
+                <i data-lucide="file-text" style="width: 36px; height: 36px;"></i>
+              </div>
+              <h4>Presentación Ejecutiva</h4>
+              <p class="text-muted" style="font-size: 0.88rem; margin-top: 6px;">Diapositivas diseñadas listas para tu exposición oral.</p>
+            </div><div class="card">
+              <div style="height: 120px; background: var(--color-blue-tint); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-16); color: var(--color-primary); font-weight: 700; font-family: var(--font-heading);">
+                <i data-lucide="file-text" style="width: 36px; height: 36px;"></i>
+              </div>
+              <h4>Simulador de Jurado</h4>
+              <p class="text-muted" style="font-size: 0.88rem; margin-top: 6px;">Preguntas clave anticipadas con argumentos para tu defensa.</p>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         4. DIFERENCIADOR (METODOLOGÍA SECCIÓN 4)
+         ========================================================================== -->
+    <section class="section-padding" id="diferenciador">
+      <div class="container">
+        <div class="product-section-title">
+          <span class="section-num">4</span>
+          <h2>El Diferenciador Encardomy</h2>
+        </div>
+        <div class="card card-highlight" style="padding: var(--space-32); background: linear-gradient(135deg, #ffffff 0%, #f4f8ff 100%);">
+          <div class="grid-2" style="align-items: center;">
+            <div>
+              <span class="badge badge-success mb-16">Producción Híbrida Inteligente</span>
+              <h3 class="mb-16">¿Por qué no conformarte con una IA genérica sin supervisión?</h3>
+              <p class="text-muted mb-16" style="font-size: 1.02rem;">
+                No te dejamos solo con un archivo suelto. Te entregamos un ecosistema completo para que entiendas, defiendas y apruebes tu proyecto con excelencia.
+              </p>
+              <div style="display: flex; align-items: center; gap: 8px; color: var(--color-navy); font-weight: 600; font-size: 0.9rem;">
+                <i data-lucide="check-circle" style="color: var(--color-success);"></i> Cero falsas promesas &bull; Rigor real y honestidad académica
+              </div>
+            </div>
+
+            <div style="background: var(--color-white); padding: var(--space-24); border-radius: var(--radius-lg); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm);">
+              <div style="font-size: 0.85rem; font-weight: 700; color: var(--color-navy); margin-bottom: 12px;">
+                ESTÁNDAR DE CONTROL DE CALIDAD
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.88rem; color: var(--color-text-dark);">
+                <div style="display: flex; gap: 8px;"><span style="color: var(--color-success);">✓</span> Verificación de fuentes bibliográficas reales</div>
+                <div style="display: flex; gap: 8px;"><span style="color: var(--color-success);">✓</span> Corrección de sintaxis y tono formal escolar</div>
+                <div style="display: flex; gap: 8px;"><span style="color: var(--color-success);">✓</span> Adecuación estricta a rúbricas institucionales</div>
+                <div style="display: flex; gap: 8px;"><span style="color: var(--color-success);">✓</span> Maquetación editorial lista para entrega</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         5. BENEFICIOS (METODOLOGÍA SECCIÓN 5)
+         ========================================================================== -->
+    <section class="section-padding bg-subtle" id="beneficios">
+      <div class="container">
+        <div class="product-section-title">
+          <span class="section-num">5</span>
+          <h2>Beneficios Clave para tu Rutina Escolar</h2>
+        </div>
+        <p class="text-muted mb-32">Ventajas tangibles en tus tiempos de estudio, calificaciones y bienestar.</p>
+
+        <div class="grid-4">
+          <div class="card" style="border-top: 3px solid var(--color-success);">
+              <div style="width: 36px; height: 36px; border-radius: 8px; background: var(--color-success-light); color: var(--color-success); display: flex; align-items: center; justify-content: center; margin-bottom: 12px;">
+                <i data-lucide="check" style="width: 20px; height: 20px;"></i>
+              </div>
+              <h4 style="font-size: 1.05rem; margin-bottom: 6px;">Tranquilidad en fin de semestre</h4>
+              <p class="text-muted" style="font-size: 0.88rem;">Cumple con entregas complejas sin colapsar en semanas de alta presión.</p>
+            </div><div class="card" style="border-top: 3px solid var(--color-success);">
+              <div style="width: 36px; height: 36px; border-radius: 8px; background: var(--color-success-light); color: var(--color-success); display: flex; align-items: center; justify-content: center; margin-bottom: 12px;">
+                <i data-lucide="check" style="width: 20px; height: 20px;"></i>
+              </div>
+              <h4 style="font-size: 1.05rem; margin-bottom: 6px;">Coherencia de inicio a fin</h4>
+              <p class="text-muted" style="font-size: 0.88rem;">El informe escrito, la presentación y las notas comparten el mismo hilo conductor.</p>
+            </div><div class="card" style="border-top: 3px solid var(--color-success);">
+              <div style="width: 36px; height: 36px; border-radius: 8px; background: var(--color-success-light); color: var(--color-success); display: flex; align-items: center; justify-content: center; margin-bottom: 12px;">
+                <i data-lucide="check" style="width: 20px; height: 20px;"></i>
+              </div>
+              <h4 style="font-size: 1.05rem; margin-bottom: 6px;">Preparación para preguntas difíciles</h4>
+              <p class="text-muted" style="font-size: 0.88rem;">Te anticipamos qué cuestionamientos te harán tus evaluadores.</p>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         6. VIDEO REVIEW DE INFLUENCER / CREADOR (METODOLOGÍA SECCIÓN 6)
+         ========================================================================== -->
+    <section class="section-padding" id="video-review">
+      <div class="container">
+        <div class="product-section-title">
+          <span class="section-num">6</span>
+          <h2>Video Review de la Experiencia</h2>
+        </div>
+        <div class="placeholder-box">
+          <span class="badge badge-placeholder mb-12">[Placeholder: Video Review de Creador / Estudiante de Prepa & Universidad]</span>
+          <div class="placeholder-icon mb-12">
+            <i data-lucide="play" style="width: 28px; height: 28px; color: var(--color-primary);"></i>
+          </div>
+          <h4 style="color: var(--color-navy);">Espacio reservado para video reseña demostrativa</h4>
+          <p class="text-muted" style="max-width: 480px; font-size: 0.88rem;">
+            En este espacio se reproducirá el video de un estudiante explicando cómo solicitó Proyecto Encardomy Integral y cómo le ayudó en sus calificaciones.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         7. CARACTERÍSTICAS Y ESPECIFICACIONES (METODOLOGÍA SECCIÓN 7)
+         ========================================================================== -->
+    <section class="section-padding bg-surface" id="caracteristicas">
+      <div class="container container-narrow">
+        <div class="product-section-title">
+          <span class="section-num">7</span>
+          <h2>Ficha Técnica y Especificaciones</h2>
+        </div>
+        <p class="text-muted mb-24">Parámetros operativos y estándares técnicos del servicio.</p>
+
+        <div class="card" style="padding: 0; overflow: hidden;">
+          <table class="diff-table" style="margin: 0; border: none;">
+            <tbody>
+              <tr>
+              <td style="font-weight: 700; color: var(--color-navy); width: 35%;">Tiempo de Entrega</td>
+              <td>3 a 7 días hábiles (entregas por fases)</td>
+            </tr><tr>
+              <td style="font-weight: 700; color: var(--color-navy); width: 35%;">Entregables</td>
+              <td>Informe DOCX/PDF + Presentación PPTX + Guía de Defensa</td>
+            </tr><tr>
+              <td style="font-weight: 700; color: var(--color-navy); width: 35%;">Canal de Atención</td>
+              <td>WhatsApp directo con tu asesor asignado</td>
+            </tr><tr>
+              <td style="font-weight: 700; color: var(--color-navy); width: 35%;">Ajustes</td>
+              <td>Revisiones continuas durante el desarrollo</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         8. SOBRE EMPRESA / CREADOR (METODOLOGÍA SECCIÓN 8)
+         ========================================================================== -->
+    <section class="section-padding" id="empresa">
+      <div class="container">
+        <div class="product-section-title">
+          <span class="section-num">8</span>
+          <h2>Sobre Encardomy</h2>
+        </div>
+        <div class="card" style="padding: var(--space-32); background: var(--color-white); border-left: 4px solid var(--color-navy);">
+          <div style="display: flex; gap: 16px; align-items: center;" class="mb-16">
+            <div class="logo-symbol">E</div>
+            <div>
+              <h3 style="font-size: 1.25rem;">Nuestra Filosofía Académica</h3>
+              <span class="text-muted" style="font-size: 0.86rem;">Diseñado por y para estudiantes de 15 a 25 años</span>
+            </div>
+          </div>
+          <p class="text-muted mb-16" style="font-size: 1rem; line-height: 1.7;">
+            Encardomy acompaña a los estudiantes en los momentos más decisivos de su carrera, asegurando que sus proyectos finales reflejen su máximo potencial.
+          </p>
+          <div style="display: flex; gap: var(--space-24); flex-wrap: wrap; font-size: 0.88rem; color: var(--color-navy); font-weight: 600;">
+            <span>✓ Cero intermediarios lentos</span>
+            <span>✓ Atención directa por WhatsApp</span>
+            <span>✓ Precios accesibles para estudiantes</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         9. AUTORIDAD Y RIGOR (METODOLOGÍA SECCIÓN 9)
+         ========================================================================== -->
+    <section class="section-padding bg-subtle" id="autoridad">
+      <div class="container">
+        <div class="product-section-title">
+          <span class="section-num">9</span>
+          <h2>Estándares de Autoridad y Rigor Académico</h2>
+        </div>
+        <div class="placeholder-box" style="text-align: left; align-items: flex-start;">
+          <span class="badge badge-placeholder mb-12">[Placeholder: Rigor Metodológico y Alianzas Académicas en Desarrollo]</span>
+          <h4 style="color: var(--color-navy); margin-bottom: 8px;">Marco Metodológico de Validación</h4>
+          <p class="text-muted mb-16" style="font-size: 0.92rem;">
+            Gestión de proyectos académicos bajo metodologías ágiles y estándares de titulación universitaria.
+          </p>
+          <div style="font-size: 0.82rem; color: var(--color-text-muted);">
+            <em>* Los sellos institucionales y certificaciones formales se publicarán conforme se completen los convenios correspondientes.</em>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         10. OBJECIONES Y TRANSPARENCIA (METODOLOGÍA SECCIÓN 10)
+         ========================================================================== -->
+    <section class="section-padding" id="objeciones">
+      <div class="container container-narrow">
+        <div class="product-section-title">
+          <span class="section-num">10</span>
+          <h2>Manejo Transparente de Objeciones</h2>
+        </div>
+        <p class="text-muted mb-24">Respuestas directas a las dudas más comunes sobre la ética y calidad de nuestro servicio.</p>
+
+        <div style="display: flex; flex-direction: column; gap: var(--space-16);">
+          <div class="card" style="border-left: 4px solid var(--color-primary);">
+              <h4 style="font-size: 1rem; color: var(--color-navy); margin-bottom: 8px;">¿Cómo sé si el proyecto avanza a tiempo?</h4>
+              <p class="text-muted" style="font-size: 0.92rem;">Establecemos un cronograma de entregas parciales para que revises y apruebes cada etapa antes de pasar a la siguiente.</p>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         11. UNBOXING / QUÉ RECIBES (METODOLOGÍA SECCIÓN 11)
+         ========================================================================== -->
+    <section class="section-padding bg-surface" id="unboxing">
+      <div class="container">
+        <div class="product-section-title">
+          <span class="section-num">11</span>
+          <h2>Unboxing Digital: ¿Qué recibes en tu bandeja?</h2>
+        </div>
+        <p class="text-muted mb-32">El desglose de los archivos y complementos listos para usar tras tu pedido.</p>
+
+        <div class="unboxing-grid">
+          <div class="unboxing-item">
+              <div style="font-family: var(--font-heading); font-weight: 700; color: var(--color-navy); font-size: 0.95rem;">
+                📦 Informe Completo del Proyecto
+              </div>
+              <p class="text-muted" style="font-size: 0.84rem;">Documento maestro en Word y PDF con todos los capítulos.</p>
+            </div><div class="unboxing-item">
+              <div style="font-family: var(--font-heading); font-weight: 700; color: var(--color-navy); font-size: 0.95rem;">
+                📦 Presentación Ejecutiva (PPTX)
+              </div>
+              <p class="text-muted" style="font-size: 0.84rem;">Diapositivas diseñadas listas para tu exposición.</p>
+            </div><div class="unboxing-item">
+              <div style="font-family: var(--font-heading); font-weight: 700; color: var(--color-navy); font-size: 0.95rem;">
+                📦 Resumen Ejecutivo de 2 Páginas
+              </div>
+              <p class="text-muted" style="font-size: 0.84rem;">Para entrega rápida al jurado calificador.</p>
+            </div><div class="unboxing-item">
+              <div style="font-family: var(--font-heading); font-weight: 700; color: var(--color-navy); font-size: 0.95rem;">
+                📦 Simulador de Preguntas de Defensa
+              </div>
+              <p class="text-muted" style="font-size: 0.84rem;">Banco de preguntas con respuestas sugeridas.</p>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         12. ¿PARA QUIÉN ES? (METODOLOGÍA SECCIÓN 12)
+         ========================================================================== -->
+    <section class="section-padding" id="para-quien">
+      <div class="container">
+        <div class="product-section-title">
+          <span class="section-num">12</span>
+          <h2>¿Para quién es este servicio?</h2>
+        </div>
+        <div class="grid-2">
+          <div class="card" style="border-top: 4px solid var(--color-success);">
+              <h3 style="font-size: 1.15rem; color: var(--color-navy); margin-bottom: 12px;">Ideal para ti si...</h3>
+              <p class="text-muted" style="font-size: 0.95rem;">Estás en semestres avanzados o finalistas con proyectos de titulación, integradores o ferias de ciencias.</p>
+            </div><div class="card" style="border-top: 4px solid #991b1b;">
+              <h3 style="font-size: 1.15rem; color: #991b1b; margin-bottom: 12px;">NO es para ti si...</h3>
+              <p class="text-muted" style="font-size: 0.95rem;">Buscas solo una tarea pequeña de 1 día (revisa nuestros otros servicios individuales).</p>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         13. PRUEBA SOCIAL / SOCIAL PROOF (METODOLOGÍA SECCIÓN 13)
+         ========================================================================== -->
+    <section class="section-padding bg-subtle" id="prueba-social">
+      <div class="container">
+        <div class="product-section-title">
+          <span class="section-num">13</span>
+          <h2>Prueba Social y Testimonios</h2>
+        </div>
+        <div class="placeholder-box">
+          <span class="badge badge-placeholder mb-12">[Placeholder: Testimonios de Alumnos Verificados en Recolección Activa]</span>
+          <h4 style="color: var(--color-navy); margin-bottom: 8px;">Compromiso de Honestidad con Nuestra Comunidad</h4>
+          <p class="text-muted" style="max-width: 540px; font-size: 0.9rem;">
+            Encardomy no publica testimonios ficticios. Este módulo mostrará opiniones reales y verificadas de estudiantes de preparatoria y facultades conforme completen sus ciclos de evaluación.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         14. ¿CÓMO COMPRAR? / PASO A PASO (METODOLOGÍA SECCIÓN 14)
+         ========================================================================== -->
+    <section class="section-padding" id="como-comprar">
+      <div class="container">
+        <div class="product-section-title">
+          <span class="section-num">14</span>
+          <h2>Cómo Solicitar este Servicio (Paso a Paso)</h2>
+        </div>
+        <p class="text-muted mb-32">Un proceso sin fricción pensado para resolver tus urgencias escolares en minutos.</p>
+
+        <div class="process-grid">
+          <div class="process-step">
+            <div class="process-icon process-icon-ai">1</div>
+            <h4>1. Cuéntanos tu Necesidad</h4>
+            <p class="text-muted" style="font-size: 0.92rem;">
+              Haz clic en cotizar y dinos qué materia, tema, extensión o archivos tienes listos.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <div class="process-icon process-icon-deliver">2</div>
+            <h4>2. Cotización y Tiempo</h4>
+            <p class="text-muted" style="font-size: 0.92rem;">
+              Te enviamos una propuesta clara con el plazo exacto de entrega (desde 12 horas) y métodos de pago.
+            </p>
+          </div>
+
+          <div class="process-step" style="border-color: var(--color-success);">
+            <div class="process-icon process-icon-human">3</div>
+            <h4 style="color: #167a50;">3. Producción y Entrega</h4>
+            <p class="text-muted" style="font-size: 0.92rem;">
+              La IA acelera la estructura y nuestro equipo humano revisa y pule cada detalle antes de entregarte tus archivos editables.
+            </p>
+          </div>
+        </div>
+
+        <div class="text-center mt-32">
+          <button class="btn btn-primary btn-lg" data-open-order data-service-id="proyecto-encardomy">
+            <i data-lucide="message-circle"></i>
+            <span>Iniciar Solicitud de Proyecto Encardomy Integral</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         15. FAQ ESPECÍFICO (METODOLOGÍA SECCIÓN 15)
+         ========================================================================== -->
+    <section class="section-padding bg-surface" id="faq">
+      <div class="container container-narrow">
+        <div class="product-section-title">
+          <span class="section-num">15</span>
+          <h2>Preguntas Frecuentes sobre Proyecto Encardomy Integral</h2>
+        </div>
+        <p class="text-muted mb-24">Resolvemos tus dudas antes de iniciar.</p>
+
+        <div class="faq-list">
+          <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>¿Puedo pagar en parcialidades por avance de proyecto?</span>
+                <span class="faq-icon"><i data-lucide="chevron-down"></i></span>
+              </button>
+              <div class="faq-answer">
+                <p class="text-muted">Sí, estructuramos el pago en etapas conforme vamos cumpliendo con cada entrega del cronograma.</p>
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER GLOBAL
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand-logo mb-16" style="color: #FFFFFF;">
+            <span class="logo-symbol">E</span>
+            <span>Encardomy</span>
+          </div>
+          <p style="color: #9cb5d3; font-size: 0.92rem; max-width: 320px;">
+            Plataforma de servicios académicos inteligentes para estudiantes. Combinamos la aceleración de la IA con la revisión y verificación de personas expertas.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Categorías</h4>
+          <ul class="footer-links">
+            <li><a href="../categorias.html?cat=estudiar">Estudiar</a></li>
+            <li><a href="../categorias.html?cat=mejorar">Mejorar</a></li>
+            <li><a href="../categorias.html?cat=crear">Crear</a></li>
+            <li><a href="../categorias.html?cat=disenar">Diseñar</a></li>
+            <li><a href="../categorias.html?cat=proyectos">Proyectos</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Servicios Relacionados</h4>
+          <ul class="footer-links">
+            <li><a href="resumen.html">Resumen Académico</a></li>
+            <li><a href="guia-de-estudio.html">Guía de Estudio</a></li>
+            <li><a href="correccion-academica.html">Corrección APA</a></li>
+            <li><a href="presentacion.html">Presentaciones</a></li>
+            <li><a href="flashcards.html">Flashcards Anki</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Transparencia</h4>
+          <p style="color: #9cb5d3; font-size: 0.86rem;" class="mb-16">
+            Encardomy promueve el estudio ético, el aprendizaje activo y el rigor académico. Cero promesas falsas de "indetectabilidad".
+          </p>
+          <button class="btn btn-primary btn-sm btn-block" data-open-order data-service-id="proyecto-encardomy">
+            <i data-lucide="message-circle"></i> Cotizar Proyecto Encardomy Integral
+          </button>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Encardomy &bull; Identidad visual oficial (#2D7FF9, #123B6A, Sora & Inter).
+        </div>
+        <div style="display: flex; gap: var(--space-16);">
+          <span>Accesibilidad WCAG AA</span>
+          <span>&bull;</span>
+          <span>Diseño Mobile-First</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       BARRA FLOTANTE MÓVIL (MOBILE QUICK-BAR)
+       ========================================================================== -->
+  <div class="mobile-bottom-bar">
+    <div>
+      <div style="font-family: var(--font-heading); font-weight: 700; font-size: 0.86rem; color: var(--color-navy); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;">
+        Proyecto Encardomy Integral
+      </div>
+      <div style="font-size: 0.74rem; color: var(--color-text-muted);">
+        Entrega: 3 a 7 días hábiles (según alcance)
+      </div>
+    </div>
+    <button class="btn btn-primary btn-sm" data-open-order data-service-id="proyecto-encardomy">
+      <i data-lucide="message-circle"></i>
+      <span>Cotizar</span>
+    </button>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL DE COTIZACIÓN Y PEDIDO RÁPIDO
+       ========================================================================== -->
+  <div class="modal-backdrop" id="orderModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Cerrar ventana">
+        <i data-lucide="x" style="width: 20px; height: 20px;"></i>
+      </button>
+
+      <div class="mb-24">
+        <span class="badge badge-primary mb-8">Cotización Inmediata</span>
+        <h3 id="modalTitle" style="color: var(--color-navy);">Configura tu Solicitud</h3>
+        <p class="text-muted" style="font-size: 0.9rem;">
+          Completa los datos y te generaremos el mensaje listo para enviar a nuestro WhatsApp oficial.
+        </p>
+      </div>
+
+      <form id="orderForm">
+        <div class="form-group">
+          <label class="form-label" for="orderServiceSelect">Servicio que necesitas</label>
+          <select id="orderServiceSelect" class="form-select" required>
+            <option value="proyecto-encardomy" selected>Proyecto Encardomy Integral</option>
+            <optgroup label="Todos los Servicios">
+              <option value="resumen">Resumen Académico Estructurado</option>
+              <option value="guia-de-estudio">Guía de Estudio Integral</option>
+              <option value="flashcards">Flashcards (Anki / Quizlet / PDF)</option>
+              <option value="examen-de-practica">Examen de Práctica y Simulador</option>
+              <option value="correccion-academica">Corrección Académica y Normas APA</option>
+              <option value="edicion-natural">Edición Natural y Humanización</option>
+              <option value="mejora-de-trabajo">Diagnóstico y Mejora de Borrador</option>
+              <option value="documento-academico">Documento Académico Base</option>
+              <option value="investigacion">Búsqueda Bibliográfica y Marco Teórico</option>
+              <option value="presentacion">Presentación Visual (PowerPoint/Canva)</option>
+              <option value="infografia">Infografía y Esquemas Visuales</option>
+              <option value="proyecto-encardomy">Proyecto Encardomy Semestral</option>
+            </optgroup>
+          </select>
+        </div>
+
+        <div class="grid-2">
+          <div class="form-group">
+            <label class="form-label" for="orderNameInput">Tu Nombre / Apodo</label>
+            <input type="text" id="orderNameInput" class="form-input" placeholder="Ej. Carlos" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="orderLevelSelect">Nivel Académico</label>
+            <select id="orderLevelSelect" class="form-select">
+              <option value="Preparatoria / Bachillerato">Preparatoria / Bachillerato</option>
+              <option value="Universidad / Licenciatura" selected>Universidad / Licenciatura</option>
+              <option value="Posgrado / Maestría">Posgrado / Maestría</option>
+              <option value="Examen de Admisión">Examen de Admisión</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="orderUrgencySelect">Tiempo de entrega deseado</label>
+          <select id="orderUrgencySelect" class="form-select">
+            <option value="Estándar (3 a 7 días hábiles (según alcance))" selected>Estándar (3 a 7 días hábiles (según alcance))</option>
+            <option value="Express urgente (Menos de 12 horas)">Express urgente (Menos de 12 horas)</option>
+            <option value="Con calma (3 a 5 días)">Con calma (3 a 5 días)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="orderDetailsInput">Materia, tema o detalles de tu trabajo</label>
+          <textarea id="orderDetailsInput" class="form-textarea" placeholder="Ej. Necesito apoyo para mi entrega de este viernes con 20 páginas de tema..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block btn-lg">
+          <i data-lucide="send"></i>
+          <span>Enviar Cotización a WhatsApp</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../js/data.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
