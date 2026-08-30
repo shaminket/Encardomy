@@ -58,7 +58,7 @@ const ENCARDOMY_SERVICES = {
     heroTitle: "Domina lecturas de 50 páginas en 10 minutos con rigor y claridad",
     heroSubtitle: "Transformamos PDFs extensos, capítulos de libros y artículos densos en resúmenes organizados, con ideas centrales y verificación humana experta.",
     turnaround: "12 a 24 horas",
-    format: "PDF interactivo + DOCX editable + Formato Móvil",
+    format: "Google Docs editable + PDF maquetado (100% compatible y exportable a Word .docx y Pages)",
     pricePlaceholder: "Cotización inmediata según extensión",
     icon: "book-open",
     offerList: [
@@ -99,7 +99,7 @@ const ENCARDOMY_SERVICES = {
     heroTitle: "Tu temario de examen transformado en una ruta de estudio infalible",
     heroSubtitle: "Concentramos todo el contenido que tu profesor evaluará en una guía didáctica con preguntas modelo, explicaciones claras y ejemplos.",
     turnaround: "24 a 48 horas",
-    format: "PDF Cuaderno de Estudio + DOCX + Enlaces Interactivos",
+    format: "Google Docs Cuaderno de Estudio + PDF de alta resolución (compatible con Word, Pages y Google Drive)",
     pricePlaceholder: "Cotización personalizada por número de temas",
     icon: "compass",
     offerList: [
@@ -139,7 +139,7 @@ const ENCARDOMY_SERVICES = {
     heroTitle: "Memoriza fórmulas, fechas, vocabulario y conceptos para siempre",
     heroSubtitle: "Mazo de tarjetas inteligentes con preguntas directas y respuestas concisas basadas en la ciencia del Active Recall y Repetición Espaciada.",
     turnaround: "12 a 24 horas",
-    format: "Archivo Anki (.apkg) + Formato Quizlet + PDF Imprimible",
+    format: "Google Sheets / CSV para Anki (.apkg) + Enlace interactivo Quizlet + PDF imprimible",
     pricePlaceholder: "Por paquete de 50 / 100 / 200 tarjetas",
     icon: "layers",
     offerList: [
@@ -177,7 +177,7 @@ const ENCARDOMY_SERVICES = {
     heroTitle: "Llega al examen real sabiendo exactamente qué esperar",
     heroSubtitle: "Diseñamos un simulacro con el mismo nivel de exigencia, formato de reactivos y tiempo estimado que tu evaluación real.",
     turnaround: "24 a 36 horas",
-    format: "PDF Interactivo de Examen + Hoja de Respuestas Explicadas",
+    format: "Google Forms interactivo + PDF de Examen y Solucionario + Google Docs editable (compatible con Word y Pages)",
     pricePlaceholder: "Por número de reactivos (20, 40, 60+ preguntas)",
     icon: "check-square",
     offerList: [
@@ -214,7 +214,7 @@ const ENCARDOMY_SERVICES = {
     heroTitle: "Eleva la calidad de tu trabajo al estándar de publicación académica",
     heroSubtitle: "Corregimos ortografía, sintaxis, puntuación, fluidez de párrafos y formateamos tus citas bibliográficas para que entregues con total seguridad.",
     turnaround: "12 a 24 horas",
-    format: "DOCX con Control de Cambios + DOCX Limpio + PDF Final",
+    format: "Google Docs con sugerencias marcadas + Google Docs limpio + PDF (exportable a Word .docx y Pages)",
     pricePlaceholder: "Cotización por cuartilla o número de palabras",
     icon: "edit-3",
     offerList: [
@@ -251,7 +251,7 @@ const ENCARDOMY_SERVICES = {
     heroTitle: "Devuélvele a tu texto un ritmo orgánico, personal y genuino",
     heroSubtitle: "Transformamos borradores robóticos o artificiales en prosa fluida, convincente y bien estructurada, mediante revisión y reescritura humana.",
     turnaround: "12 a 24 horas",
-    format: "DOCX Editable + Reporte de Fluidez y Calidad Lingüística",
+    format: "Google Docs editable humanizado + PDF + Informe de fluidez (compatible con Word y Pages)",
     pricePlaceholder: "Cotización por volumen de texto",
     icon: "feather",
     offerList: [
@@ -287,7 +287,7 @@ const ENCARDOMY_SERVICES = {
     heroTitle: "Convierte un trabajo de 7 en una entrega de 10",
     heroSubtitle: "Analizamos tu borrador frente a tu rúbrica escolar, detectamos vacíos argumentales y lo enriquecemos con mejor bibliografía y estructura.",
     turnaround: "24 a 48 horas",
-    format: "Documento Enriquecido + Reporte de Diagnóstico con Rúbrica",
+    format: "Google Docs enriquecido + Reporte de diagnóstico en Google Docs/PDF (compatible con Word y Pages)",
     pricePlaceholder: "Cotización según nivel de profundidad",
     icon: "trending-up",
     offerList: [
@@ -323,7 +323,7 @@ const ENCARDOMY_SERVICES = {
     heroTitle: "Vence la hoja en blanco con una estructura académica sólida",
     heroSubtitle: "Desarrollamos borradores base rigurosos con introducción, desarrollo argumental sustentado, conclusiones y citas en formato estándar.",
     turnaround: "24 a 72 horas",
-    format: "DOCX Editable + PDF con Citas Verificadas",
+    format: "Google Docs editable + PDF con citas verificadas (100% compatible con Word .docx y Pages)",
     pricePlaceholder: "Cotización por cuartilla o extensión requerida",
     icon: "file-text",
     offerList: [
@@ -360,7 +360,7 @@ const ENCARDOMY_SERVICES = {
     heroTitle: "El respaldo teórico que tu investigación o tesis necesita",
     heroSubtitle: "Localizamos, filtramos y sintetizamos la literatura científica más actualizada sobre tu tema de estudio en un marco conceptual impecable.",
     turnaround: "48 a 72 horas",
-    format: "Marco Teórico DOCX + Fichas de Lectura + Biblioteca de Referencias",
+    format: "Google Docs con marco teórico + Google Sheets con fichas bibliográficas + Referencias verificadas (compatible con Word y Zotero)",
     pricePlaceholder: "Cotización por número de fuentes y extensión",
     icon: "search",
     offerList: [
@@ -397,7 +397,7 @@ const ENCARDOMY_SERVICES = {
     heroTitle: "Diapositivas que atrapan miradas y aseguran tu 10",
     heroSubtitle: "Transformamos textos densos y aburridos en presentaciones dinámicas con diseño minimalista, gráficos claros y notas para el expositor.",
     turnaround: "12 a 24 horas",
-    format: "PowerPoint (.pptx) + Enlace Editable Canva + PDF de Alta Resolución",
+    format: "Google Slides editable + PDF de proyección (100% compatible con PowerPoint .pptx, Canva y Keynote)",
     pricePlaceholder: "Por número de diapositivas (10, 20, 30+ slides)",
     icon: "layout",
     offerList: [
@@ -434,7 +434,7 @@ const ENCARDOMY_SERVICES = {
     heroTitle: "Traduce cualquier concepto complejo en una sola imagen memorable",
     heroSubtitle: "Diseñamos infografías académicas y pósters científicos con diagramas explicativos, estadísticas visuales y tipografía de máxima legibilidad.",
     turnaround: "12 a 24 horas",
-    format: "PDF Vectorial Imprimible (A4/Tabloide) + PNG 4K + Editable",
+    format: "Google Drawings / Canva editable + PNG 4K + PDF vectorial de 300 DPI listo para impresión",
     pricePlaceholder: "Por infografía o serie temática",
     icon: "pie-chart",
     offerList: [
@@ -471,7 +471,7 @@ const ENCARDOMY_SERVICES = {
     heroTitle: "Tu proyecto semestral completo resuelto con asesoría continua",
     heroSubtitle: "Coordinamos todas las etapas: desde la definición del tema y marco teórico, hasta el informe final, las diapositivas y la preparación de tu defensa.",
     turnaround: "3 a 7 días hábiles (según alcance)",
-    format: "Suite Completa (Documento + Diapositivas + Resumen Ejecutivo + Asesoría)",
+    format: "Suite Google Workspace (Google Docs + Google Slides + Google Sheets + Carpeta compartida en Google Drive, compatible con Office y Apple)",
     pricePlaceholder: "Cotización por fases o paquete integral",
     icon: "briefcase",
     offerList: [
