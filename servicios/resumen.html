@@ -677,6 +677,7 @@
             <li><a href="correccion-academica.html">Corrección APA</a></li>
             <li><a href="presentacion.html">Presentaciones</a></li>
             <li><a href="flashcards.html">Flashcards Anki</a></li>
+            <li><a href="../privacidad.html" style="font-weight: 700; color: #FFFFFF;">🔒 Aviso de Privacidad</a></li>
           </ul>
         </div>
 
@@ -696,6 +697,8 @@
           &copy; 2026 Encardomy &bull; Identidad visual oficial (#2D7FF9, #123B6A, Sora & Inter).
         </div>
         <div style="display: flex; gap: var(--space-16);">
+          <a href="../privacidad.html" style="color: #b0c6e0; text-decoration: underline;">Aviso de Privacidad</a>
+          <span>&bull;</span>
           <span>Accesibilidad WCAG AA</span>
           <span>&bull;</span>
           <span>Diseño Mobile-First</span>
@@ -756,6 +759,681 @@
             <input type="text" class="form-input" value="Prepa 4 UNAM (Vidal Castañeda y Nájera)" readonly style="background-color: var(--color-blue-tint); font-weight: 600; color: var(--color-navy); cursor: not-allowed;">
           </div>
         </div>
+
+        <!-- 2. Grado, Grupo y Sección (Lógica Dependiente) -->
+        <div class="grid-3 mb-16" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--space-12, 12px);">
+          <div class="form-group mb-0">
+            <label class="form-label" for="orderGradeSelect">Grado Escolar *</label>
+            <select id="orderGradeSelect" class="form-select" required>
+              <option value="" disabled selected>Elige tu grado</option>
+              <option value="4">4° Cuarto Año</option>
+              <option value="5">5° Quinto Año</option>
+              <option value="6">6° Sexto Año</option>
+            </select>
+          </div>
+          <div class="form-group mb-0">
+            <label class="form-label" for="orderGroupSelect">Grupo *</label>
+            <select id="orderGroupSelect" class="form-select" required disabled>
+              <option value="" disabled selected>Primero elige grado</option>
+            </select>
+          </div>
+          <div class="form-group mb-0">
+            <label class="form-label" for="orderSectionSelect">Sección *</label>
+            <select id="orderSectionSelect" class="form-select" required>
+              <option value="" disabled selected>Sección</option>
+              <option value="Sección A">Sección A</option>
+              <option value="Sección B">Sección B</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 3. Materia Oficial de la ENP 4 -->
+        <div class="form-group mb-16">
+          <label class="form-label" for="orderSubjectSelect">Materia Oficial de la ENP 4 *</label>
+          <select id="orderSubjectSelect" class="form-select" required disabled>
+            <option value="" disabled selected>Primero elige tu grado escolar (4°, 5° o 6°)</option>
+          </select>
+          <div id="customSubjectWrapper" style="display: none; margin-top: 8px;">
+            <label class="form-label" for="orderCustomSubjectInput" style="font-size: 0.82rem; color: var(--color-primary);">Especifica el nombre de tu materia:</label>
+            <input type="text" id="orderCustomSubjectInput" class="form-input" placeholder="Ej. Taller de Expresión Gráfica o Materia Optativa...">
+          </div>
+        </div>
+
+        <!-- 4. Servicio Principal -->
+        <div class="form-group mb-16">
+          <label class="form-label" for="orderServiceSelect">Servicio que necesitas *</label>
+          <select id="orderServiceSelect" class="form-select" required>
+            <optgroup label="Estudiar">
+              <option value="resumen">Resumen Académico Estructurado</option>
+              <option value="guia-de-estudio">Guía de Estudio Integral</option>
+              <option value="flashcards">Flashcards de Repetición Espaciada</option>
+              <option value="examen-de-practica">Examen de Práctica y Simulador</option>
+            </optgroup>
+            <optgroup label="Mejorar">
+              <option value="correccion-academica">Corrección Académica y Normas APA</option>
+              <option value="edicion-natural">Edición Natural y Humanización</option>
+              <option value="mejora-de-trabajo">Diagnóstico y Mejora de Borrador</option>
+            </optgroup>
+            <optgroup label="Crear">
+              <option value="documento-academico">Documento Académico Base</option>
+              <option value="investigacion">Búsqueda Bibliográfica y Marco Teórico</option>
+            </optgroup>
+            <optgroup label="Diseñar">
+              <option value="presentacion">Diseño de Presentación Visual (Google Slides)</option>
+              <option value="infografia">Infografía y Esquemas Visuales</option>
+            </optgroup>
+            <optgroup label="Proyectos">
+              <option value="proyecto-encardomy">Proyecto Encardomy Semestral</option>
+            </optgroup>
+          </select>
+        </div>
+
+        <!-- ==================================================================
+             PANELES DINÁMICOS Y PERSONALIZADOS POR CADA SERVICIO
+             ================================================================== -->
+
+        <!-- Panel 1: Resumen -->
+        <div class="service-dynamic-panel" id="servicePanel-resumen" style="display: block;">
+          <div class="service-panel-header">
+            <div class="service-panel-title">
+              <i data-lucide="book-open" style="width: 18px; height: 18px; color: var(--color-primary);"></i>
+              <span>Personalización de Resumen Académico</span>
+            </div>
+            <span class="ecosystem-pill">Google Docs + PDF</span>
+          </div>
+          <div class="grid-2 mb-12">
+            <div class="form-group mb-0">
+              <label class="form-label" for="resumenPages">Extensión del texto original</label>
+              <select id="resumenPages" class="form-select">
+                <option value="1 a 15 páginas">1 a 15 páginas</option>
+                <option value="16 a 35 páginas" selected>16 a 35 páginas</option>
+                <option value="36 a 70 páginas">36 a 70 páginas</option>
+                <option value="71 a 120 páginas">71 a 120 páginas</option>
+                <option value="Libro completo (120+ págs)">Libro completo (120+ págs)</option>
+              </select>
+            </div>
+            <div class="form-group mb-0">
+              <label class="form-label" for="resumenSource">Formato de tu material fuente</label>
+              <select id="resumenSource" class="form-select">
+                <option value="PDF digital / Enlace" selected>PDF digital / Enlace</option>
+                <option value="Fotos de libro / Fotocopias">Fotos de libro / Fotocopias</option>
+                <option value="Diapositivas de clase">Diapositivas de clase</option>
+                <option value="Apuntes de libreta">Apuntes de libreta</option>
+              </select>
+            </div>
+          </div>
+          <div class="grid-2">
+            <div class="form-group mb-0">
+              <label class="form-label" for="resumenDepth">Nivel de profundidad</label>
+              <select id="resumenDepth" class="form-select">
+                <option value="Síntesis ejecutiva (repaso rápido en 10 min)">Síntesis ejecutiva (repaso en 10 min)</option>
+                <option value="Estándar (conceptos + glosario + mapa mental)" selected>Estándar (conceptos + glosario + mapa)</option>
+                <option value="Exhaustivo (autores, fechas, fórmulas y citas)">Exhaustivo (autores, fechas, fórmulas)</option>
+              </select>
+            </div>
+            <div class="form-group mb-0">
+              <label class="form-label" for="resumenGoal">Propósito del resumen</label>
+              <select id="resumenGoal" class="form-select">
+                <option value="Estudiar para examen" selected>Estudiar para examen</option>
+                <option value="Tarea formal para entregar con carátula">Tarea formal para entregar</option>
+                <option value="Apoyo para exposición">Apoyo para exposición</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 2: Guía de Estudio -->
+        <div class="service-dynamic-panel" id="servicePanel-guia-de-estudio" style="display: none;">
+          <div class="service-panel-header">
+            <div class="service-panel-title">
+              <i data-lucide="compass" style="width: 18px; height: 18px; color: var(--color-primary);"></i>
+              <span>Personalización de Guía de Estudio</span>
+            </div>
+            <span class="ecosystem-pill">Google Docs + PDF</span>
+          </div>
+          <div class="grid-3 mb-12" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--space-12, 12px);">
+            <div class="form-group mb-0">
+              <label class="form-label" for="guiaDate">¿Cuándo es tu examen? *</label>
+              <input type="date" id="guiaDate" class="form-input">
+            </div>
+            <div class="form-group mb-0">
+              <label class="form-label" for="guiaTarget">Calificación objetivo</label>
+              <select id="guiaTarget" class="form-select">
+                <option value="10 Perfecto / Máxima nota" selected>10 Perfecto / Máxima nota</option>
+                <option value="9 para asegurar promedio">9 para asegurar promedio</option>
+                <option value="8+ para exentar">8+ para exentar</option>
+                <option value="6+ para salvar extraordinario">6+ para salvar extraordinario</option>
+              </select>
+            </div>
+            <div class="form-group mb-0">
+              <label class="form-label" for="guiaType">Tipo de evaluación</label>
+              <select id="guiaType" class="form-select">
+                <option value="Examen Parcial" selected>Examen Parcial</option>
+                <option value="Examen Final / Semestral">Examen Final / Semestral</option>
+                <option value="Examen Extraordinario">Examen Extraordinario</option>
+                <option value="Examen Departamental UNAM">Examen Departamental UNAM</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group mb-12">
+            <label class="form-label" for="guiaItems">Tipo de reactivos a incluir</label>
+            <select id="guiaItems" class="form-select">
+              <option value="Teóricos conceptuales y explicaciones paso a paso" selected>Teóricos conceptuales y explicaciones paso a paso</option>
+              <option value="Problemas prácticos resueltos con fórmulas y despejes">Problemas prácticos con fórmulas y despejes</option>
+              <option value="Mixto: Teoría + Problemas + Preguntas trampa del profesor">Mixto: Teoría + Problemas + Preguntas trampa</option>
+            </select>
+          </div>
+          <div class="form-group mb-0">
+            <label class="form-label" for="guiaDifficultTopics">Temas o unidades más difíciles a enfatizar</label>
+            <textarea id="guiaDifficultTopics" class="form-textarea" style="min-height: 65px;" placeholder="Ej. Unidades 2 y 3: Leyes de Newton, Termodinámica y despejes difíciles..."></textarea>
+          </div>
+        </div>
+
+        <!-- Panel 3: Flashcards -->
+        <div class="service-dynamic-panel" id="servicePanel-flashcards" style="display: none;">
+          <div class="service-panel-header">
+            <div class="service-panel-title">
+              <i data-lucide="layers" style="width: 18px; height: 18px; color: var(--color-primary);"></i>
+              <span>Personalización de Flashcards Activas</span>
+            </div>
+            <span class="ecosystem-pill">Google Sheets + Anki/Quizlet</span>
+          </div>
+          <div class="grid-2 mb-12">
+            <div class="form-group mb-0">
+              <label class="form-label" for="fcTotal">Cantidad total de flashcards</label>
+              <input type="number" id="fcTotal" class="form-input" value="30" min="10" max="300" placeholder="Ej. 30">
+              <span class="form-tip">Elige el total para desbloquear la distribución por nivel.</span>
+            </div>
+            <div class="form-group mb-0">
+              <label class="form-label" for="fcApp">Plataforma de estudio</label>
+              <select id="fcApp" class="form-select">
+                <option value="Google Sheets + Archivo Anki (.apkg)" selected>Google Sheets + Archivo Anki (.apkg)</option>
+                <option value="Enlace interactivo Quizlet">Enlace interactivo Quizlet</option>
+                <option value="PDF imprimible para recortar">PDF imprimible para recortar</option>
+              </select>
+            </div>
+          </div>
+          
+          <label class="form-label mb-8">Distribución por Nivel de Dificultad (Suma en vivo):</label>
+          <div class="grid-4-form">
+            <div class="form-group mb-0">
+              <label class="form-label" style="font-size: 0.78rem;" for="fcEasy">🟢 Fácil</label>
+              <input type="number" id="fcEasy" class="form-input" value="10" min="0">
+            </div>
+            <div class="form-group mb-0">
+              <label class="form-label" style="font-size: 0.78rem;" for="fcMed">🟡 Medio</label>
+              <input type="number" id="fcMed" class="form-input" value="10" min="0">
+            </div>
+            <div class="form-group mb-0">
+              <label class="form-label" style="font-size: 0.78rem;" for="fcAdv">🟠 Avanzado</label>
+              <input type="number" id="fcAdv" class="form-input" value="5" min="0">
+            </div>
+            <div class="form-group mb-0">
+              <label class="form-label" style="font-size: 0.78rem;" for="fcExp">🔴 Experto</label>
+              <input type="number" id="fcExp" class="form-input" value="5" min="0">
+            </div>
+          </div>
+
+          <div class="fc-counter-container">
+            <span>Comprobación automática:</span>
+            <div id="fcCounterBadge" class="fc-badge fc-badge-ok">✓ Exacto: 30 de 30 fichas asignadas</div>
+          </div>
+
+          <div class="form-group mt-12 mb-0">
+            <label class="form-label" for="fcContent">¿Incluyen fórmulas o esquemas visuales?</label>
+            <select id="fcContent" class="form-select">
+              <option value="Solo conceptos y definiciones clave" selected>Solo conceptos y definiciones clave</option>
+              <option value="Incluye fórmulas matemáticas / químicas">Incluye fórmulas matemáticas / químicas</option>
+              <option value="Incluye diagramas y esquemas visuales">Incluye diagramas y esquemas visuales</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Panel 4: Examen de Práctica y Simulador -->
+        <div class="service-dynamic-panel" id="servicePanel-examen-de-practica" style="display: none;">
+          <div class="service-panel-header">
+            <div class="service-panel-title">
+              <i data-lucide="check-square" style="width: 18px; height: 18px; color: var(--color-primary);"></i>
+              <span>Personalización de Examen y Simulador</span>
+            </div>
+            <span class="ecosystem-pill">Google Forms + Docs + PDF</span>
+          </div>
+          <div class="grid-3 mb-12" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--space-12, 12px);">
+            <div class="form-group mb-0">
+              <label class="form-label" for="simQuestionsCount">Número de reactivos</label>
+              <select id="simQuestionsCount" class="form-select">
+                <option value="20 reactivos">20 reactivos</option>
+                <option value="30 reactivos" selected>30 reactivos</option>
+                <option value="40 reactivos">40 reactivos</option>
+                <option value="50+ reactivos">50+ reactivos</option>
+              </select>
+            </div>
+            <div class="form-group mb-0">
+              <label class="form-label" for="simDifficulty">Dificultad de prueba</label>
+              <select id="simDifficulty" class="form-select">
+                <option value="Nivel Parcial Estándar">Nivel Parcial Estándar</option>
+                <option value="Nivel Exigente / Con Trampas" selected>Nivel Exigente / Con Trampas</option>
+                <option value="Nivel Extraordinario / Departamental">Nivel Extraordinario / Departamental</option>
+              </select>
+            </div>
+            <div class="form-group mb-0">
+              <label class="form-label" for="simTargetGrade">Calificación meta</label>
+              <select id="simTargetGrade" class="form-select">
+                <option value="10 / 9 para promedio" selected>10 / 9 para promedio</option>
+                <option value="8 para exentar">8 para exentar</option>
+                <option value="6 para salvar materia">6 para salvar materia</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group mb-12">
+            <label class="form-label" for="simMultiSubject">¿Quieres incluir más de una materia? (Opcional)</label>
+            <input type="text" id="simMultiSubject" class="form-input" placeholder="Ej. 15 preguntas de Física III y 15 de Matemáticas IV (o déjalo en blanco si es solo una)">
+          </div>
+
+          <!-- Sección Sobre el Profesor -->
+          <div style="background: #ffffff; border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 12px; margin-bottom: 12px;">
+            <div style="font-weight: 700; font-size: 0.86rem; color: var(--color-navy); margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
+              <i data-lucide="user" style="width: 15px; height: 15px; color: var(--color-primary);"></i> Sobre tu Profesor(a) de la Prepa 4
+            </div>
+            <div class="grid-2">
+              <div class="form-group mb-0">
+                <label class="form-label" style="font-size: 0.78rem;" for="simTeacherName">Nombre del Profesor(a) (completo de preferencia)</label>
+                <input type="text" id="simTeacherName" class="form-input" placeholder="Ej. Prof. Roberto García">
+              </div>
+              <div class="form-group mb-0">
+                <label class="form-label" style="font-size: 0.78rem;" for="simTeacherStyle">Estilo o mañas de evaluación</label>
+                <select id="simTeacherStyle" class="form-select">
+                  <option value="Preguntas conceptuales con opciones trampa" selected>Opciones con trampas conceptuales</option>
+                  <option value="Preguntas abiertas de desarrollo largo">Preguntas abiertas de desarrollo largo</option>
+                  <option value="Problemas numéricos con despejes difíciles">Problemas numéricos y despejes</option>
+                  <option value="Pregunta lo que dice en clase pero no está en libros">Pregunta detalles dichos en clase</option>
+                  <option value="Preguntas textuales de sus diapositivas">Textual de sus diapositivas</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group mb-0">
+            <label class="form-label" for="simDate">Fecha estimada de tu examen</label>
+            <input type="date" id="simDate" class="form-input">
+          </div>
+        </div>
+
+        <!-- Panel 5: Corrección Académica -->
+        <div class="service-dynamic-panel" id="servicePanel-correccion-academica" style="display: none;">
+          <div class="service-panel-header">
+            <div class="service-panel-title">
+              <i data-lucide="edit-3" style="width: 18px; height: 18px; color: var(--color-primary);"></i>
+              <span>Personalización de Corrección y Estilo APA</span>
+            </div>
+            <span class="ecosystem-pill">Google Docs + Word/Pages</span>
+          </div>
+          <div class="grid-2 mb-12">
+            <div class="form-group mb-0">
+              <label class="form-label" for="corrLength">Extensión del trabajo</label>
+              <select id="corrLength" class="form-select">
+                <option value="1 a 5 cuartillas">1 a 5 cuartillas</option>
+                <option value="6 a 15 cuartillas" selected>6 a 15 cuartillas</option>
+                <option value="16 a 30 cuartillas">16 a 30 cuartillas</option>
+                <option value="31 a 60 cuartillas">31 a 60 cuartillas</option>
+                <option value="Tesis / 60+ cuartillas">Tesis / 60+ cuartillas</option>
+              </select>
+            </div>
+            <div class="form-group mb-0">
+              <label class="form-label" for="corrCitation">Norma de citación requerida</label>
+              <select id="corrCitation" class="form-select">
+                <option value="APA 7ma edición" selected>APA 7ma edición</option>
+                <option value="Vancouver">Vancouver</option>
+                <option value="Chicago / Turabian">Chicago / Turabian</option>
+                <option value="MLA 9na edición">MLA 9na edición</option>
+                <option value="Rúbrica libre del profesor">Rúbrica libre del profesor</option>
+              </select>
+            </div>
+          </div>
+          <div class="grid-2">
+            <div class="form-group mb-0">
+              <label class="form-label" for="corrPriority">Prioridad de revisión</label>
+              <select id="corrPriority" class="form-select">
+                <option value="Ortografía, sintaxis y formato de citas APA" selected>Ortografía, sintaxis y citas APA</option>
+                <option value="Coherencia argumental y estructura de párrafos">Coherencia y estructura de párrafos</option>
+                <option value="Revisión integral completa">Revisión integral completa</option>
+              </select>
+            </div>
+            <div class="form-group mb-0">
+              <label class="form-label" for="corrFormat">Formato de tu borrador</label>
+              <select id="corrFormat" class="form-select">
+                <option value="Enlace a Google Docs" selected>Enlace a Google Docs</option>
+                <option value="Archivo Microsoft Word (.docx)">Archivo Microsoft Word (.docx)</option>
+                <option value="Archivo Apple Pages o PDF">Archivo Apple Pages o PDF</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 6: Edición Natural y Humanización -->
+        <div class="service-dynamic-panel" id="servicePanel-edicion-natural" style="display: none;">
+          <div class="service-panel-header">
+            <div class="service-panel-title">
+              <i data-lucide="feather" style="width: 18px; height: 18px; color: var(--color-primary);"></i>
+              <span>Personalización de Edición Natural</span>
+            </div>
+            <span class="ecosystem-pill">Google Docs + Word/Pages</span>
+          </div>
+          <div class="grid-2 mb-12">
+            <div class="form-group mb-0">
+              <label class="form-label" for="editLength">Extensión del borrador</label>
+              <select id="editLength" class="form-select">
+                <option value="Hasta 1,500 palabras">Hasta 1,500 palabras</option>
+                <option value="1,500 a 3,500 palabras" selected>1,500 a 3,500 palabras</option>
+                <option value="3,500 a 7,000 palabras">3,500 a 7,000 palabras</option>
+                <option value="7,000+ palabras">7,000+ palabras</option>
+              </select>
+            </div>
+            <div class="form-group mb-0">
+              <label class="form-label" for="editOrigin">Origen del texto</label>
+              <select id="editOrigin" class="form-select">
+                <option value="Redactado con IA y suena robótico o repetitivo" selected>Redactado con IA (suena tieso)</option>
+                <option value="Borrador propio pero acartonado">Borrador propio (le falta fluidez)</option>
+                <option value="Traducción literal de artículos en inglés">Traducción de inglés</option>
+              </select>
+            </div>
+          </div>
+          <div class="grid-2">
+            <div class="form-group mb-0">
+              <label class="form-label" for="editTone">Tono deseado</label>
+              <select id="editTone" class="form-select">
+                <option value="Estudiantil formal y fluido" selected>Estudiantil formal y fluido</option>
+                <option value="Ensayo reflexivo / crítico">Ensayo reflexivo / crítico</option>
+                <option value="Reporte científico / técnico">Reporte científico / técnico</option>
+              </select>
+            </div>
+            <div class="form-group mb-0">
+              <label class="form-label" for="editGoal">Objetivo principal</label>
+              <select id="editGoal" class="form-select">
+                <option value="Humanización total y eliminar fórmulas repetitivas" selected>Humanización y fluidez total</option>
+                <option value="Enriquecer vocabulario sin palabras raras">Vocabulario natural y preciso</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 7: Diagnóstico y Mejora de Trabajo -->
+        <div class="service-dynamic-panel" id="servicePanel-mejora-de-trabajo" style="display: none;">
+          <div class="service-panel-header">
+            <div class="service-panel-title">
+              <i data-lucide="trending-up" style="width: 18px; height: 18px; color: var(--color-primary);"></i>
+              <span>Personalización de Diagnóstico y Mejora</span>
+            </div>
+            <span class="ecosystem-pill">Google Docs + Reporte</span>
+          </div>
+          <div class="grid-2 mb-12">
+            <div class="form-group mb-0">
+              <label class="form-label" for="mejoraGoal">Meta de calificación</label>
+              <select id="mejoraGoal" class="form-select">
+                <option value="Subir de 7 preliminar a 9 o 10 definitivo" selected>Subir de 7 a 9 o 10 definitivo</option>
+                <option value="Alinear con rúbrica exigente antes de entregar">Alinear con rúbrica exigente</option>
+                <option value="Reestructuración y enriquecimiento general">Reestructuración general</option>
+              </select>
+            </div>
+            <div class="form-group mb-0">
+              <label class="form-label" for="mejoraWeak">Puntos débiles a reforzar</label>
+              <select id="mejoraWeak" class="form-select">
+                <option value="Marco teórico débil y fuentes dudosas (Wikipedia/blogs)" selected>Marco teórico y fuentes dudosas</option>
+                <option value="Introducción y justificación flojas">Introducción y justificación</option>
+                <option value="Conclusiones sin fuerza argumental">Conclusiones sin fuerza</option>
+                <option value="Falta de hilo conductor entre apartados">Falta de coherencia/hilo conductor</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group mb-0">
+            <label class="form-label" for="mejoraRubric">Lineamientos específicos o rúbrica de tu profesor</label>
+            <textarea id="mejoraRubric" class="form-textarea" style="min-height: 65px;" placeholder="Puntos exactos que calificará el docente o comentarios que te hizo..."></textarea>
+          </div>
+        </div>
+
+        <!-- Panel 8: Documento Académico Base -->
+        <div class="service-dynamic-panel" id="servicePanel-documento-academico" style="display: none;">
+          <div class="service-panel-header">
+            <div class="service-panel-title">
+              <i data-lucide="file-text" style="width: 18px; height: 18px; color: var(--color-primary);"></i>
+              <span>Personalización de Documento Académico</span>
+            </div>
+            <span class="ecosystem-pill">Google Docs + PDF APA 7</span>
+          </div>
+          <div class="grid-2 mb-12">
+            <div class="form-group mb-0">
+              <label class="form-label" for="docType">Tipo de documento</label>
+              <select id="docType" class="form-select">
+                <option value="Ensayo académico formal" selected>Ensayo académico formal</option>
+                <option value="Reporte de investigación / práctica">Reporte de investigación / práctica</option>
+                <option value="Monografía temática">Monografía temática</option>
+                <option value="Estado del arte / Marco teórico">Estado del arte / Marco teórico</option>
+                <option value="Artículo de opinión fundamentado">Artículo de opinión fundamentado</option>
+              </select>
+            </div>
+            <div class="form-group mb-0">
+              <label class="form-label" for="docLength">Extensión requerida</label>
+              <select id="docLength" class="form-select">
+                <option value="2 a 4 cuartillas">2 a 4 cuartillas</option>
+                <option value="5 a 8 cuartillas" selected>5 a 8 cuartillas</option>
+                <option value="9 a 15 cuartillas">9 a 15 cuartillas</option>
+                <option value="16 a 25 cuartillas">16 a 25 cuartillas</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group mb-12">
+            <label class="form-label" for="docTopic">Tema delimitado y Tesis / Postura central *</label>
+            <textarea id="docTopic" class="form-textarea" style="min-height: 65px;" placeholder="Ej. Título del ensayo, hipótesis a defender o preguntas guía de tu profesor..."></textarea>
+          </div>
+          <div class="form-group mb-0">
+            <label class="form-label" for="docSources">Requisitos de fuentes bibliográficas</label>
+            <select id="docSources" class="form-select">
+              <option value="Mínimo 5 fuentes académicas indexadas (Scielo/Redalyc)" selected>Mínimo 5 fuentes académicas (Scielo/Redalyc)</option>
+              <option value="Mínimo 10 fuentes con citas APA 7 verificables">Mínimo 10 fuentes con citas APA 7</option>
+              <option value="Libros de texto UNAM y artículos seminales">Libros de texto UNAM y artículos</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Panel 9: Búsqueda Bibliográfica -->
+        <div class="service-dynamic-panel" id="servicePanel-investigacion" style="display: none;">
+          <div class="service-panel-header">
+            <div class="service-panel-title">
+              <i data-lucide="search" style="width: 18px; height: 18px; color: var(--color-primary);"></i>
+              <span>Personalización de Búsqueda Bibliográfica</span>
+            </div>
+            <span class="ecosystem-pill">Google Docs + Google Sheets</span>
+          </div>
+          <div class="form-group mb-12">
+            <label class="form-label" for="invTopic">Tema de investigación y Palabras clave *</label>
+            <textarea id="invTopic" class="form-textarea" style="min-height: 65px;" placeholder="Ej. Tesis: La gentrificación en la CDMX; Palabras clave: vivienda, desplazamiento, políticas públicas..."></textarea>
+          </div>
+          <div class="grid-3" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--space-12, 12px);">
+            <div class="form-group mb-0">
+              <label class="form-label" for="invCount">Cantidad de fuentes</label>
+              <select id="invCount" class="form-select">
+                <option value="5 artículos / libros seminales">5 artículos/libros</option>
+                <option value="10 artículos científicos indexados" selected>10 artículos indexados</option>
+                <option value="15 a 20 fuentes especializadas">15 a 20 fuentes</option>
+              </select>
+            </div>
+            <div class="form-group mb-0">
+              <label class="form-label" for="invLang">Idiomas de fuentes</label>
+              <select id="invLang" class="form-select">
+                <option value="Solo español">Solo español</option>
+                <option value="Español e Inglés" selected>Español e Inglés</option>
+                <option value="Multilingüe internacional">Multilingüe</option>
+              </select>
+            </div>
+            <div class="form-group mb-0">
+              <label class="form-label" for="invDeliverable">Entregable</label>
+              <select id="invDeliverable" class="form-select">
+                <option value="Marco Teórico Docs + Fichas Sheets" selected>Docs + Sheets</option>
+                <option value="Solo fichero bibliográfico">Solo fichero</option>
+                <option value="Base Zotero / Mendeley">Base Zotero / Word</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 10: Presentación Visual -->
+        <div class="service-dynamic-panel" id="servicePanel-presentacion" style="display: none;">
+          <div class="service-panel-header">
+            <div class="service-panel-title">
+              <i data-lucide="layout" style="width: 18px; height: 18px; color: var(--color-primary);"></i>
+              <span>Personalización de Presentación Visual</span>
+            </div>
+            <span class="ecosystem-pill">Google Slides + PPTX/Canva</span>
+          </div>
+          <div class="grid-2 mb-12">
+            <div class="form-group mb-0">
+              <label class="form-label" for="presSlides">Número de diapositivas</label>
+              <select id="presSlides" class="form-select">
+                <option value="8 a 10 diapositivas">8 a 10 láminas</option>
+                <option value="12 a 15 diapositivas" selected>12 a 15 láminas</option>
+                <option value="16 a 20 diapositivas">16 a 20 láminas</option>
+                <option value="25+ diapositivas">25+ láminas</option>
+              </select>
+            </div>
+            <div class="form-group mb-0">
+              <label class="form-label" for="presBgStyle">Estilo de fondo y contraste *</label>
+              <select id="presBgStyle" class="form-select" style="font-weight: 600; color: var(--color-navy);">
+                <option value="Fondo Oscuro (Recomendado por impacto visual y modernidad)" selected>🌙 Fondo Oscuro (Recomendado)</option>
+                <option value="Fondo Claro (Minimalista editorial clásico)">☀️ Fondo Claro (Editorial clásico)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group mb-12">
+            <label class="form-label" for="presTopic">Tema bien segmentado y delimitado *</label>
+            <input type="text" id="presTopic" class="form-input" placeholder="Ej. Factores de mortalidad acelerada en las tortugas marinas del Pacífico">
+            <span class="form-tip">💡 <strong>Consejo Encardomy:</strong> Evita temas genéricos como <em>'Las tortugas'</em>; segmenta el enfoque para causar mayor impacto en tu exposición.</span>
+          </div>
+          <div class="grid-2">
+            <div class="form-group mb-0">
+              <label class="form-label" for="presNotes">¿Notas del orador (guion de qué decir)?</label>
+              <select id="presNotes" class="form-select">
+                <option value="Sí, incluir guion detallado de exposición debajo de cada lámina" selected>Sí, guion de qué decir (Recomendado)</option>
+                <option value="Solo diapositivas limpias con puntos clave">Solo diapositivas limpias</option>
+              </select>
+            </div>
+            <div class="form-group mb-0">
+              <label class="form-label" for="presApp">Herramienta de entrega</label>
+              <select id="presApp" class="form-select">
+                <option value="Google Slides editable + PDF de proyección" selected>Google Slides editable + PDF</option>
+                <option value="Plantilla en Canva con enlace editable">Plantilla Canva editable</option>
+                <option value="Microsoft PowerPoint (.pptx)">Microsoft PowerPoint (.pptx)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 11: Infografía -->
+        <div class="service-dynamic-panel" id="servicePanel-infografia" style="display: none;">
+          <div class="service-panel-header">
+            <div class="service-panel-title">
+              <i data-lucide="pie-chart" style="width: 18px; height: 18px; color: var(--color-primary);"></i>
+              <span>Personalización de Infografía y Esquemas</span>
+            </div>
+            <span class="ecosystem-pill">Google Drawings/Canva + PNG 4K</span>
+          </div>
+          <div class="grid-2 mb-12">
+            <div class="form-group mb-0">
+              <label class="form-label" for="infoPalette">Paleta de colores principal *</label>
+              <select id="infoPalette" class="form-select" style="font-weight: 600;">
+                <option value="Azul Eléctrico & Marino Encardomy (#2D7FF9, #123B6A)" selected>🎨 Azul Eléctrico & Marino Encardomy (Recomendada)</option>
+                <option value="Formal Académico (Azul pizarra, grafito y menta)">Formal Académico (Pizarra y Menta)</option>
+                <option value="Tonos Cálidos Dinámicos (Ámbar, terracota y blanco)">Tonos Cálidos (Ámbar y Terracota)</option>
+                <option value="Minimalista Monocromático de Alto Contraste">Minimalista Monocromático</option>
+                <option value="Personalizada según materia escolar">Personalizada según materia</option>
+              </select>
+            </div>
+            <div class="form-group mb-0">
+              <label class="form-label" for="infoOrient">Orientación y formato</label>
+              <select id="infoOrient" class="form-select">
+                <option value="Póster vertical (Carta / Tabloide para imprimir)" selected>Póster vertical (Carta / Tabloide)</option>
+                <option value="Lámina horizontal 16:9 para diapositiva">Horizontal 16:9 (Presentación)</option>
+                <option value="Formato vertical / cuadrado para celular">Vertical para celular</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group mb-0">
+            <label class="form-label" for="infoType">Tipo de representación visual</label>
+            <select id="infoType" class="form-select">
+              <option value="Proceso paso a paso / Diagrama de flujo" selected>Proceso paso a paso / Diagrama de flujo</option>
+              <option value="Línea de tiempo histórica y cronología">Línea de tiempo histórica</option>
+              <option value="Cuadro comparativo visual de conceptos">Cuadro comparativo de conceptos</option>
+              <option value="Gráficos estadísticos y síntesis de datos">Gráficos estadísticos y datos</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Panel 12: Proyecto Encardomy -->
+        <div class="service-dynamic-panel" id="servicePanel-proyecto-encardomy" style="display: none;">
+          <div class="service-panel-header">
+            <div class="service-panel-title">
+              <i data-lucide="briefcase" style="width: 18px; height: 18px; color: var(--color-primary);"></i>
+              <span>Personalización de Proyecto Semestral</span>
+            </div>
+            <span class="ecosystem-pill">Suite Google Workspace Completa</span>
+          </div>
+          <div class="grid-2 mb-12">
+            <div class="form-group mb-0">
+              <label class="form-label" for="projType">Tipo de proyecto</label>
+              <select id="projType" class="form-select">
+                <option value="Trabajo Integrador Semestral" selected>Trabajo Integrador Semestral</option>
+                <option value="Proyecto de Titulación / Práctica Técnica">Proyecto de Titulación / Práctica</option>
+                <option value="Proyecto de Feria de las Ciencias UNAM">Proyecto de Feria de las Ciencias</option>
+                <option value="Tesina / Monografía extensa">Tesina / Monografía extensa</option>
+              </select>
+            </div>
+            <div class="form-group mb-0">
+              <label class="form-label" for="projStage">Fase o avance actual</label>
+              <select id="projStage" class="form-select">
+                <option value="Desde cero (definición de tema y objetivos)" selected>Desde cero (tema y objetivos)</option>
+                <option value="Esquema y marco teórico en proceso">Esquema y marco en proceso</option>
+                <option value="Borrador avanzado que requiere pulido">Borrador avanzado a pulir</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group mb-12">
+            <label class="form-label" for="projDeadlines">Fechas de entregas parciales y entrega final</label>
+            <input type="text" id="projDeadlines" class="form-input" placeholder="Ej. Primer avance 15 Octubre, Segundo 30 Octubre, Entrega final 15 Noviembre">
+          </div>
+          <div class="form-group mb-0">
+            <label class="form-label" for="projRubric">Rúbrica oficial o lineamientos de los profesores de la Prepa 4</label>
+            <textarea id="projRubric" class="form-textarea" style="min-height: 65px;" placeholder="Puntos específicos que exigen los profesores del colegio/academia..."></textarea>
+          </div>
+        </div>
+
+        <!-- 5. Tiempo de entrega -->
+        <div class="form-group mb-16">
+          <label class="form-label" for="orderUrgencySelect">Tiempo de entrega deseado</label>
+          <select id="orderUrgencySelect" class="form-select">
+            <option value="Estándar (24 a 48 horas)" selected>Estándar (24 a 48 horas)</option>
+            <option value="Express urgente (Menos de 12 a 24 horas)">Express urgente (Menos de 12 a 24 horas)</option>
+            <option value="Con calma (3 a 5 días hábiles)">Con calma (3 a 5 días hábiles)</option>
+          </select>
+        </div>
+
+        <!-- 6. Notas generales y enlaces -->
+        <div class="form-group mb-20">
+          <label class="form-label" for="orderDetailsInput">Notas adicionales o enlace a tu carpeta de Google Drive (Opcional)</label>
+          <textarea id="orderDetailsInput" class="form-textarea" style="min-height: 65px;" placeholder="Ej. Ya subí los archivos a Google Drive, o indicación especial de tu profesor..."></textarea>
+        </div>
+
+        <!-- 7. Botón de Envío -->
+        <button type="submit" id="sendWhatsAppBtn" class="btn btn-primary btn-block btn-lg">
+          <i data-lucide="message-circle"></i>
+          <span>Enviar Cotización a WhatsApp (+52 55 7198 5641)</span>
+        </button>
+
+                <div style="text-align: center; margin-top: 10px; font-size: 0.78rem; color: var(--color-text-muted);">
+          🔒 Tus datos están protegidos. Al solicitar tu cotización aceptas nuestro <a href="../privacidad.html" target="_blank" style="text-decoration: underline; color: var(--color-primary); font-weight: 600;">Aviso de Privacidad Integral</a>.
+        </div>
+      </form>
+    </div>
+  </div>
 
         <!-- 2. Grado, Grupo y Sección (Lógica Dependiente) -->
         <div class="grid-3 mb-16" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--space-12, 12px);">

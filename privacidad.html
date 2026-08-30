@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Encardomy — Servicios Académicos Inteligentes | IA + Revisión Humana</title>
-  <meta name="description" content="Servicios académicos para estudiantes de preparatoria y universidad. Resúmenes, guías de estudio, corrección de estilo, presentaciones y proyectos. Velocidad de IA con revisión humana experta.">
+  <title>Aviso de Privacidad Integral — Encardomy</title>
+  <meta name="description" content="Aviso de Privacidad Integral de Encardomy de conformidad con la legislación mexicana aplicable. Transparencia, protección de datos y derechos ARCO.">
   
   <!-- Google Fonts: Sora (Headings) & Inter (Body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,26 +16,90 @@
   
   <!-- Hoja de estilos oficial de Encardomy -->
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .legal-body {
+      color: var(--color-text-dark);
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+    .legal-body h2 {
+      font-size: 1.45rem;
+      color: var(--color-navy);
+      margin-top: var(--space-40);
+      margin-bottom: var(--space-16);
+      padding-bottom: var(--space-8);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .legal-body h3 {
+      font-size: 1.15rem;
+      color: var(--color-navy);
+      margin-top: var(--space-24);
+      margin-bottom: var(--space-12, 12px);
+    }
+    .legal-body p {
+      margin-bottom: var(--space-16);
+    }
+    .legal-body ul, .legal-body ol {
+      margin-left: var(--space-24);
+      margin-bottom: var(--space-16);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .legal-contact-box {
+      background: var(--color-blue-tint);
+      border: 1px solid rgba(45, 127, 249, 0.3);
+      border-radius: var(--radius-lg);
+      padding: var(--space-24);
+      margin: var(--space-24) 0;
+    }
+    .toc-box {
+      background: var(--color-bg-subtle);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-24);
+      margin-bottom: var(--space-32);
+    }
+    .toc-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    @media (min-width: 640px) {
+      .toc-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .toc-link {
+      font-size: 0.88rem;
+      color: var(--color-navy);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .toc-link:hover {
+      color: var(--color-primary);
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- ==========================================================================
-       SITE HEADER / NAVEGACIÓN GLOBAL
-       ========================================================================== -->
+  <!-- Header Global -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="brand-logo" aria-label="Ir al inicio de Encardomy">
         <span class="logo-symbol">E</span>
         <span>Encardomy</span>
-        <span class="logo-tagline">&bull; Académico</span>
+        <span class="logo-tagline">&bull; Legal & Privacidad</span>
       </a>
 
       <nav class="nav-desktop" aria-label="Navegación principal">
-        <a href="index.html" class="nav-link active">Inicio</a>
+        <a href="index.html" class="nav-link">Inicio</a>
         <a href="categorias.html" class="nav-link">Catálogo & Categorías</a>
-        <a href="#proceso" class="nav-link">Cómo Funciona</a>
-        <a href="#diferenciador" class="nav-link">IA + Humano</a>
-        <a href="#faq" class="nav-link">Preguntas</a>
+        <a href="index.html#proceso" class="nav-link">Cómo Funciona</a>
+        <a href="privacidad.html" class="nav-link active">Privacidad</a>
       </nav>
 
       <div class="header-actions">
@@ -66,13 +130,9 @@
       </button>
     </div>
     <ul class="drawer-links">
-      <li><a href="index.html" class="drawer-link active"><span>🏠 Inicio</span> <i data-lucide="chevron-right"></i></a></li>
-      <li><a href="categorias.html" class="drawer-link"><span>📚 Catálogo Completo (12 Servicios)</span> <i data-lucide="chevron-right"></i></a></li>
-      <li><a href="categorias.html?cat=estudiar" class="drawer-link"><span>🎯 Estudiar (Resúmenes, Guías)</span> <i data-lucide="chevron-right"></i></a></li>
-      <li><a href="categorias.html?cat=mejorar" class="drawer-link"><span>✨ Mejorar (Corrección, Edición)</span> <i data-lucide="chevron-right"></i></a></li>
-      <li><a href="categorias.html?cat=crear" class="drawer-link"><span>✍️ Crear (Ensayos, Marcos)</span> <i data-lucide="chevron-right"></i></a></li>
-      <li><a href="categorias.html?cat=disenar" class="drawer-link"><span>🎨 Diseñar (Diapositivas, Infografías)</span> <i data-lucide="chevron-right"></i></a></li>
-      <li><a href="categorias.html?cat=proyectos" class="drawer-link"><span>🚀 Proyectos Semestrales</span> <i data-lucide="chevron-right"></i></a></li>
+      <li><a href="index.html" class="drawer-link"><span>🏠 Inicio</span> <i data-lucide="chevron-right"></i></a></li>
+      <li><a href="categorias.html" class="drawer-link"><span>📚 Catálogo Completo</span> <i data-lucide="chevron-right"></i></a></li>
+      <li><a href="privacidad.html" class="drawer-link active"><span>🔒 Aviso de Privacidad</span> <i data-lucide="chevron-right"></i></a></li>
     </ul>
     <div class="mt-32">
       <button class="btn btn-primary btn-block btn-lg" data-open-order data-service-id="resumen">
@@ -82,415 +142,427 @@
     </div>
   </aside>
 
-  <!-- ==========================================================================
-       HERO PRINCIPAL — COMPRENSIÓN EN <5 SEGUNDOS
-       ========================================================================== -->
-  <main>
-    <section class="section-padding bg-subtle" style="border-bottom: 1px solid var(--color-border); position: relative;">
-      <div class="container">
-        <div style="max-width: 820px; margin: 0 auto; text-align: center;">
-          <div class="mb-16">
-            <span class="badge badge-success">
-              <i data-lucide="check-circle" style="width: 14px; height: 14px;"></i>
-              Velocidad IA &bull; Verificación Humana 100% Real
-            </span>
-          </div>
-
-          <h1 class="mb-24" style="color: var(--color-navy);">
-            Tus trabajos escolares y estudio resueltos con <span style="color: var(--color-primary);">rigor, rapidez y claridad</span>
-          </h1>
-
-          <p class="mb-32 text-muted" style="font-size: 1.18rem; max-width: 680px; margin-left: auto; margin-right: auto;">
-            Encardomy crea resúmenes, guías de estudio, diapositivas y corrección académica de alto nivel. La IA acelera la producción preliminar y una persona experta revisa, corrige, verifica fuentes y humaniza cada entrega.
-          </p>
-
-          <div style="display: flex; flex-wrap: wrap; gap: var(--space-16); justify-content: center; align-items: center;" class="mb-32">
-            <a href="categorias.html" class="btn btn-primary btn-lg">
-              <i data-lucide="grid"></i>
-              <span>Explorar los 12 Servicios</span>
-            </a>
-            <button class="btn btn-secondary btn-lg" data-open-order data-service-id="resumen">
-              <i data-lucide="message-circle" style="color: var(--color-primary);"></i>
-              <span>Cotizar por WhatsApp</span>
-            </button>
-          </div>
-
-          <!-- Micro Garantía de Transparencia -->
-          <div style="display: inline-flex; align-items: center; gap: var(--space-8); background: var(--color-white); padding: 8px 18px; border-radius: var(--radius-full); border: 1px solid var(--color-border); font-size: 0.86rem; color: var(--color-text-dark);">
-            <i data-lucide="shield-check" style="color: var(--color-success); width: 16px; height: 16px;"></i>
-            <span>Cero promesas falsas de "indetectable" &bull; Rigor metodológico, fuentes comprobables y criterio humano</span>
-          </div>
+  <!-- Contenido Principal -->
+  <main class="section-padding bg-surface">
+    <div class="container container-narrow">
+      
+      <!-- Migajas de Pan y Encabezado -->
+      <div class="mb-24">
+        <a href="index.html" style="font-size: 0.88rem; display: inline-flex; align-items: center; gap: 6px; font-weight: 600;" class="mb-16">
+          <i data-lucide="arrow-left" style="width: 16px; height: 16px;"></i> Volver a la página principal
+        </a>
+        <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 12px;">
+          <span class="badge badge-primary">Transparencia Legal</span>
+          <span class="badge badge-success">Legislación Mexicana</span>
         </div>
+        <h1 style="color: var(--color-navy); font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 8px;">
+          AVISO DE PRIVACIDAD INTEGRAL
+        </h1>
+        <p class="text-muted" style="font-weight: 600; font-size: 0.95rem;">
+          Última actualización: 29 de agosto de 2026
+        </p>
       </div>
-    </section>
 
-    <!-- ==========================================================================
-         EL PROCESO ENCARDOMY: IA + REVISIÓN HUMANA (TRANSPARENTE Y REAL)
-         ========================================================================== -->
-    <section class="section-padding" id="proceso">
-      <div class="container">
-        <div class="text-center mb-48">
-          <span class="badge badge-primary mb-16">Metodología de Calidad</span>
-          <h2>Cómo logramos entregas impecables en tiempo récord</h2>
-          <p class="text-muted" style="max-width: 620px; margin: var(--space-8) auto 0;">
-            No dejamos tu calificación en manos de un algoritmo automático ni te hacemos esperar semanas.
+      <!-- Tarjeta Principal de Contenido -->
+      <div class="card legal-body" style="padding: var(--space-32);">
+        
+        <p>
+          Encardomy, nombre comercial utilizado por <strong>Diego Periañex Hernández</strong>, con domicilio en la Ciudad de México, Código Postal <strong>06700</strong>, en lo sucesivo <strong>“Encardomy”</strong> o <strong>“el Responsable”</strong>, es responsable del tratamiento y protección de los datos personales que sean proporcionados por las personas usuarias, clientes, prospectos y demás personas titulares de datos personales que interactúen con nuestros servicios, sitio web, formularios, canales de comunicación o medios de contratación.
+        </p>
+
+        <!-- Cuadro de Contacto Inmediato -->
+        <div class="legal-contact-box">
+          <h4 style="color: var(--color-navy); margin-bottom: 8px; font-size: 1.05rem;">
+            📬 Canales Oficiales de Contacto y Privacidad:
+          </h4>
+          <p style="margin-bottom: 6px; font-size: 0.95rem;">
+            <strong>Correo electrónico:</strong> <a href="mailto:encardomy@gmail.com" style="font-weight: 600;">encardomy@gmail.com</a>
+          </p>
+          <p style="margin-bottom: 0; font-size: 0.95rem;">
+            <strong>WhatsApp Oficial:</strong> <a href="https://wa.me/525571985641" target="_blank" style="font-weight: 600;">+52 55 7198 5641</a>
           </p>
         </div>
 
-        <div class="process-grid">
-          <!-- Paso 1 -->
-          <div class="process-step">
-            <div class="process-icon process-icon-ai">
-              <i data-lucide="cpu" style="width: 24px; height: 24px;"></i>
-            </div>
-            <h4>1. Aceleración con IA</h4>
-            <p class="text-muted" style="font-size: 0.94rem;">
-              Modelos avanzados sintetizan lecturas densas, estructuran borradores y generan reactivos en minutos para ganar tiempo.
-            </p>
-          </div>
+        <p>
+          El presente Aviso de Privacidad se emite de conformidad con la legislación mexicana aplicable en materia de protección de datos personales y tiene como finalidad informar de manera clara cómo obtenemos, utilizamos, almacenamos, protegemos y, en su caso, comunicamos los datos personales que nos sean proporcionados.
+        </p>
 
-          <!-- Paso 2 -->
-          <div class="process-step" style="border-color: var(--color-success); box-shadow: var(--shadow-sm);">
-            <div class="process-icon process-icon-human">
-              <i data-lucide="user-check" style="width: 24px; height: 24px;"></i>
-            </div>
-            <h4 style="color: #167a50;">2. Revisión Humana Experta</h4>
-            <p class="text-muted" style="font-size: 0.94rem;">
-              Una persona especializada verifica citas en repositorios reales, elimina rigidez, corrige ortografía y adapta el tono a tu nivel escolar.
-            </p>
-          </div>
-
-          <!-- Paso 3 -->
-          <div class="process-step">
-            <div class="process-icon process-icon-deliver">
-              <i data-lucide="check-circle" style="width: 24px; height: 24px;"></i>
-            </div>
-            <h4>3. Entrega Lista y Editable</h4>
-            <p class="text-muted" style="font-size: 0.94rem;">
-              Recibes tus archivos en PDF formateado + DOCX o PPTX editable para que repases, hagas tus propios ajustes y entregues con total confianza.
-            </p>
+        <!-- Índice de Contenido Rápido -->
+        <div class="toc-box">
+          <h4 style="font-size: 0.95rem; color: var(--color-navy); margin-bottom: 12px; font-weight: 700;">
+            📋 Contenido del Aviso de Privacidad:
+          </h4>
+          <div class="toc-grid">
+            <a href="#sec-1" class="toc-link">1. ¿Qué datos personales recopilamos?</a>
+            <a href="#sec-2" class="toc-link">2. ¿Cómo obtenemos los datos personales?</a>
+            <a href="#sec-3" class="toc-link">3. Finalidades del tratamiento</a>
+            <a href="#sec-4" class="toc-link">4. Finalidades secundarias</a>
+            <a href="#sec-5" class="toc-link">5. Portafolio y presentación de trabajos</a>
+            <a href="#sec-6" class="toc-link">6. Uso de herramientas tecnológicas e IA</a>
+            <a href="#sec-7" class="toc-link">7. Proveedores y terceros</a>
+            <a href="#sec-8" class="toc-link">8. Transferencia de datos personales</a>
+            <a href="#sec-9" class="toc-link">9. Conservación de los datos</a>
+            <a href="#sec-10" class="toc-link">10. Seguridad de los datos personales</a>
+            <a href="#sec-11" class="toc-link">11. Derechos ARCO</a>
+            <a href="#sec-12" class="toc-link">12. ¿Cómo ejercer los derechos ARCO?</a>
+            <a href="#sec-13" class="toc-link">13. Plazos para las solicitudes ARCO</a>
+            <a href="#sec-14" class="toc-link">14. Limitación del uso o divulgación</a>
+            <a href="#sec-15" class="toc-link">15. Revocación del consentimiento</a>
+            <a href="#sec-16" class="toc-link">16. Menores de edad</a>
+            <a href="#sec-17" class="toc-link">17. Información de terceros</a>
+            <a href="#sec-18" class="toc-link">18. Cookies y seguimiento</a>
+            <a href="#sec-19" class="toc-link">19. Cambios al aviso de privacidad</a>
+            <a href="#sec-20" class="toc-link">20. Autoridad competente</a>
+            <a href="#sec-21" class="toc-link">21. Aceptación y puesta a disposición</a>
           </div>
         </div>
+
+        <!-- Secciones 1 a 21 -->
+        <section id="sec-1">
+          <h2>1. ¿QUÉ DATOS PERSONALES RECOPILAMOS?</h2>
+          <p>Dependiendo del servicio solicitado y de la forma en que usted interactúe con Encardomy, podremos recopilar y tratar las siguientes categorías de datos personales:</p>
+          
+          <h3>A. Datos de identificación</h3>
+          <p>Podremos recopilar:</p>
+          <ul>
+            <li>Nombre.</li>
+            <li>Apellidos, cuando sean proporcionados voluntariamente.</li>
+            <li>Apodo, cuando sea proporcionado voluntariamente.</li>
+          </ul>
+          <p>Los apellidos y el apodo no serán obligatorios cuando no sean necesarios para prestar el servicio solicitado.</p>
+
+          <h3>B. Datos de contacto</h3>
+          <p>Podremos tratar:</p>
+          <ul>
+            <li>Número telefónico.</li>
+            <li>Número asociado a WhatsApp.</li>
+          </ul>
+          <p>El número telefónico puede ser visible para Encardomy cuando la persona usuaria establece comunicación mediante WhatsApp.</p>
+          <p>Encardomy no requiere necesariamente que el usuario proporcione un correo electrónico para solicitar una cotización.</p>
+
+          <h3>C. Datos académicos</h3>
+          <p>Para poder comprender las características del servicio solicitado podremos recopilar:</p>
+          <ul>
+            <li>Grado académico.</li>
+            <li>Grupo.</li>
+            <li>Materia.</li>
+            <li>Nombre del profesor, cuando resulte relevante o sea proporcionado.</li>
+            <li>Fecha de entrega.</li>
+            <li>Información relacionada con el proyecto, actividad o material solicitado.</li>
+            <li>Calificación esperada, cuando sea proporcionada.</li>
+            <li>Información necesaria para comprender las características académicas del servicio solicitado.</li>
+          </ul>
+          <p>Actualmente, los servicios de Encardomy están dirigidos al alumnado de <strong>Preparatoria 4</strong>.</p>
+          <p>El grado y grupo pueden permitir realizar inferencias aproximadas relacionadas con la edad de una persona. Encardomy no solicita directamente la fecha de nacimiento para prestar sus servicios.</p>
+
+          <h3>D. Material proporcionado por el usuario</h3>
+          <p>Cuando sea necesario para realizar un servicio, la persona usuaria podrá proporcionar voluntariamente:</p>
+          <ul>
+            <li>Fotografías.</li>
+            <li>Videos.</li>
+            <li>Documentos académicos.</li>
+            <li>Apuntes.</li>
+            <li>Archivos digitales.</li>
+            <li>Instrucciones académicas.</li>
+            <li>Material relacionado con el proyecto solicitado.</li>
+          </ul>
+          <p>Estos materiales serán tratados únicamente en la medida necesaria para prestar el servicio correspondiente y de acuerdo con las finalidades establecidas en este Aviso.</p>
+
+          <h3>E. Información sobre necesidades educativas</h3>
+          <p>En determinados casos, una persona usuaria podrá proporcionar información relacionada con necesidades educativas específicas con el propósito de adaptar el servicio solicitado.</p>
+          <p>Encardomy procurará limitar la recopilación de esta información a lo estrictamente necesario para la finalidad correspondiente.</p>
+          <p>Cuando dicha información pueda constituir un <strong>dato personal sensible</strong> conforme a la legislación aplicable, su tratamiento estará sujeto a los requisitos legales correspondientes, incluyendo, cuando resulte exigible, la obtención del consentimiento expreso y por escrito de la persona titular.</p>
+          <p>La persona usuaria no deberá proporcionar información sensible que no sea necesaria para la prestación del servicio.</p>
+
+          <h3>F. Información relacionada con pagos</h3>
+          <p>Encardomy no solicita directamente números completos de tarjetas bancarias mediante sus formularios o conversaciones de WhatsApp.</p>
+          <p>Los pagos podrán realizarse mediante un enlace seguro proporcionado por <strong>Clip</strong>.</p>
+          <p>Los datos financieros o patrimoniales que sean tratados directamente por el proveedor de pago estarán sujetos también a los términos, condiciones y políticas de privacidad aplicables de dicho proveedor.</p>
+          <p>Encardomy podrá recibir o conservar información relacionada con la confirmación de una operación de pago, pero no pretende almacenar directamente números completos de tarjetas bancarias.</p>
+        </section>
+
+        <section id="sec-2">
+          <h2>2. ¿CÓMO OBTENEMOS LOS DATOS PERSONALES?</h2>
+          <p>Los datos personales pueden ser obtenidos mediante:</p>
+          <ul>
+            <li>Sitio web de Encardomy.</li>
+            <li>Formularios digitales.</li>
+            <li>Google Forms, cuando sea utilizado.</li>
+            <li>WhatsApp.</li>
+            <li>Comunicaciones directas con Encardomy.</li>
+            <li>Archivos enviados voluntariamente por la persona usuaria.</li>
+            <li>Información proporcionada durante el proceso de cotización.</li>
+            <li>Información proporcionada durante la contratación y prestación del servicio.</li>
+            <li>Información relacionada con el pago o confirmación de la operación.</li>
+          </ul>
+          <p>Cuando una persona proporcione a Encardomy datos personales de terceros incluidos dentro de documentos, fotografías, videos, trabajos escolares u otros materiales, dicha persona será responsable de contar con las autorizaciones que correspondan para proporcionar dichos datos.</p>
+          <p>Cuando Encardomy obtenga datos personales que no hayan sido proporcionados directamente por su titular, se atenderán las obligaciones legales aplicables respecto de la puesta a disposición del presente Aviso de Privacidad.</p>
+        </section>
+
+        <section id="sec-3">
+          <h2>3. FINALIDADES DEL TRATAMIENTO</h2>
+          <p>Los datos personales serán tratados para las siguientes finalidades.</p>
+          
+          <h3>3.1 Finalidades primarias</h3>
+          <p>Estas son las finalidades necesarias para poder atender una solicitud, cotizar, contratar y prestar los servicios de Encardomy:</p>
+          <ol>
+            <li>Identificar a la persona que solicita información o servicios.</li>
+            <li>Atender solicitudes de cotización.</li>
+            <li>Comunicarnos con la persona usuaria.</li>
+            <li>Enviar cotizaciones y propuestas de servicio.</li>
+            <li>Determinar las características del servicio solicitado.</li>
+            <li>Personalizar el servicio de acuerdo con la información proporcionada.</li>
+            <li>Elaborar los materiales contratados.</li>
+            <li>Dar seguimiento al proyecto.</li>
+            <li>Solicitar información adicional necesaria para realizar el servicio.</li>
+            <li>Confirmar pagos.</li>
+            <li>Gestionar la prestación y entrega de los servicios.</li>
+            <li>Atender solicitudes de modificación o ajustes relacionados con el servicio contratado.</li>
+            <li>Resolver dudas, aclaraciones, reclamaciones o incidencias.</li>
+            <li>Mantener registros relacionados con las operaciones realizadas.</li>
+            <li>Cumplir obligaciones legales aplicables.</li>
+            <li>Ejercer o defender derechos de Encardomy o de las personas titulares cuando resulte necesario.</li>
+            <li>Mantener medidas de seguridad y control sobre la información.</li>
+          </ol>
+          <p>El tratamiento para estas finalidades se realizará únicamente en la medida necesaria, adecuada y relevante para las actividades correspondientes.</p>
+        </section>
+
+        <section id="sec-4">
+          <h2>4. FINALIDADES SECUNDARIAS</h2>
+          <p>Adicionalmente, y cuando corresponda, Encardomy podrá tratar determinados datos personales para las siguientes finalidades secundarias:</p>
+          <ol>
+            <li>Enviar promociones.</li>
+            <li>Informar sobre descuentos.</li>
+            <li>Informar sobre nuevos servicios.</li>
+            <li>Comunicar novedades de Encardomy.</li>
+            <li>Enviar comunicaciones comerciales o de marketing.</li>
+            <li>Realizar actividades de fidelización.</li>
+            <li>Mejorar nuestros servicios y experiencia de usuario.</li>
+            <li>Elaborar estadísticas internas.</li>
+            <li>Analizar tendencias generales de utilización de los servicios.</li>
+          </ol>
+          <p>Cuando la legislación aplicable requiera consentimiento para alguna de estas finalidades, Encardomy solicitará dicho consentimiento.</p>
+          <p>La persona titular podrá oponerse o limitar el uso de sus datos para finalidades secundarias mediante los mecanismos establecidos en este Aviso de Privacidad.</p>
+        </section>
+
+        <section id="sec-5">
+          <h2>5. PORTAFOLIO Y PRESENTACIÓN DE TRABAJOS</h2>
+          <p>Encardomy podrá utilizar materiales, diseños o trabajos realizados como ejemplos de su capacidad profesional y portafolio, siempre que se adopten medidas razonables para evitar la identificación directa de la persona cliente.</p>
+          <p>En particular, Encardomy podrá mostrar ejemplos de trabajos terminados <strong>sin publicar deliberadamente el nombre, apellidos, teléfono, grupo u otros datos que permitan identificar directamente al estudiante</strong>.</p>
+          <p>Antes de publicar un material como ejemplo, Encardomy procurará eliminar o disociar los datos personales que aparezcan en él.</p>
+          <p>Encardomy no utilizará deliberadamente un trabajo como ejemplo público cuando conserve datos personales que permitan identificar directamente al estudiante, salvo que exista una autorización válida para hacerlo.</p>
+        </section>
+
+        <section id="sec-6">
+          <h2>6. USO DE HERRAMIENTAS TECNOLÓGICAS E INTELIGENCIA ARTIFICIAL</h2>
+          <p>Encardomy utiliza herramientas tecnológicas y, en determinados procesos, herramientas de inteligencia artificial para apoyar actividades relacionadas con la elaboración, organización, revisión, diseño o preparación preliminar de determinados servicios.</p>
+          <p>Entre las herramientas que pueden utilizarse se encuentran servicios proporcionados por terceros, incluyendo, según las necesidades del servicio:</p>
+          <ul>
+            <li>ChatGPT.</li>
+            <li>Gemini.</li>
+            <li>Claude.</li>
+            <li>Canva.</li>
+            <li>Microsoft Copilot.</li>
+            <li>Grok.</li>
+            <li>Otras herramientas tecnológicas del ecosistema de Google u otros proveedores.</li>
+          </ul>
+          <p>El uso concreto de una herramienta dependerá del servicio solicitado y de las necesidades operativas de Encardomy.</p>
+          <p>Encardomy procurará evitar el envío innecesario de datos personales a herramientas de terceros y limitar la información compartida a la necesaria para la finalidad correspondiente.</p>
+          <p>Cuando un proveedor tecnológico actúe como encargado del tratamiento por cuenta de Encardomy, se procurará que el tratamiento se realice conforme a las obligaciones aplicables y bajo medidas de protección adecuadas.</p>
+          <p>Las herramientas de inteligencia artificial no sustituyen las obligaciones de Encardomy respecto del tratamiento de datos personales.</p>
+        </section>
+
+        <section id="sec-7">
+          <h2>7. PROVEEDORES Y TERCEROS</h2>
+          <p>Para operar Encardomy pueden intervenir proveedores tecnológicos y de servicios necesarios para determinadas funciones.</p>
+          <p>Entre ellos pueden encontrarse:</p>
+          <ul>
+            <li>WhatsApp, para comunicaciones.</li>
+            <li>Google y sus servicios, incluyendo Google Forms y Google Drive cuando sean utilizados.</li>
+            <li>Clip, para el procesamiento de pagos mediante sus propios sistemas.</li>
+            <li>Proveedores de herramientas de inteligencia artificial.</li>
+            <li>Proveedores de alojamiento, almacenamiento, comunicación u otros servicios tecnológicos que resulten necesarios para operar Encardomy.</li>
+          </ul>
+          <p>Estos terceros podrán tratar información cuando resulte necesario para prestar el servicio correspondiente.</p>
+          <p>Encardomy procurará limitar el acceso de terceros a la información únicamente a los datos necesarios para cumplir la función correspondiente.</p>
+          <p>Los proveedores externos también podrán encontrarse sujetos a sus propios avisos de privacidad y términos de servicio.</p>
+        </section>
+
+        <section id="sec-8">
+          <h2>8. TRANSFERENCIA DE DATOS PERSONALES</h2>
+          <p>Encardomy no comercializa deliberadamente bases de datos personales de sus clientes.</p>
+          <p>Los datos personales podrán ser comunicados o transferidos cuando resulte necesario para:</p>
+          <ul>
+            <li>Prestar el servicio solicitado.</li>
+            <li>Procesar o confirmar pagos.</li>
+            <li>Utilizar servicios tecnológicos necesarios para la operación.</li>
+            <li>Cumplir obligaciones legales.</li>
+            <li>Atender requerimientos de autoridades competentes.</li>
+            <li>Ejercer o defender derechos.</li>
+            <li>Cumplir una obligación derivada de una relación jurídica.</li>
+          </ul>
+          <p>Cuando una transferencia requiera consentimiento conforme a la legislación aplicable, Encardomy solicitará el consentimiento correspondiente.</p>
+        </section>
+
+        <section id="sec-9">
+          <h2>9. CONSERVACIÓN DE LOS DATOS PERSONALES</h2>
+          <p>Encardomy conservará los datos personales durante el tiempo que resulte necesario para cumplir las finalidades para las cuales fueron recopilados, cumplir obligaciones legales, atender posibles responsabilidades y mantener evidencia de las relaciones jurídicas correspondientes.</p>
+          <p>Una vez que los datos dejen de ser necesarios para las finalidades correspondientes, se procederá a su eliminación, bloqueo o supresión conforme a la legislación aplicable y a las necesidades de conservación legalmente justificadas.</p>
+          <p>Los archivos proporcionados por los usuarios podrán conservarse durante el tiempo necesario para prestar el servicio, atender modificaciones, aclaraciones, reclamaciones o responsabilidades relacionadas con la operación.</p>
+          <p>Los periodos específicos de conservación podrán variar dependiendo del tipo de información y de la finalidad para la cual fue obtenida.</p>
+        </section>
+
+        <section id="sec-10">
+          <h2>10. SEGURIDAD DE LOS DATOS PERSONALES</h2>
+          <p>Encardomy implementará medidas administrativas, técnicas y físicas razonables para proteger los datos personales contra:</p>
+          <ul>
+            <li>Daño.</li>
+            <li>Pérdida.</li>
+            <li>Alteración.</li>
+            <li>Destrucción.</li>
+            <li>Acceso no autorizado.</li>
+            <li>Tratamiento no autorizado.</li>
+            <li>Divulgación indebida.</li>
+          </ul>
+          <p>El acceso a la información deberá limitarse a las personas que necesiten conocerla para cumplir las funciones correspondientes.</p>
+          <p>Las personas que intervengan en el tratamiento de datos personales estarán sujetas a obligaciones de confidencialidad conforme corresponda.</p>
+          <p>En caso de que ocurra una vulneración de seguridad que pueda afectar de manera significativa los derechos patrimoniales o morales de las personas titulares, Encardomy realizará las acciones y comunicaciones que resulten exigibles conforme a la legislación aplicable.</p>
+        </section>
+
+        <section id="sec-11">
+          <h2>11. DERECHOS ARCO</h2>
+          <p>La persona titular de los datos personales tiene derecho a ejercer los derechos:</p>
+          <ul>
+            <li><strong>A — Acceso:</strong> conocer qué datos personales tiene Encardomy y cómo son tratados.</li>
+            <li><strong>R — Rectificación:</strong> solicitar la corrección de datos personales inexactos, incompletos o desactualizados.</li>
+            <li><strong>C — Cancelación:</strong> solicitar que sus datos personales sean cancelados cuando corresponda.</li>
+            <li><strong>O — Oposición:</strong> oponerse al tratamiento de sus datos personales en los casos previstos por la legislación aplicable.</li>
+          </ul>
+        </section>
+
+        <section id="sec-12">
+          <h2>12. ¿CÓMO EJERCER LOS DERECHOS ARCO?</h2>
+          <p>Las solicitudes podrán enviarse al correo electrónico:</p>
+          <p style="font-weight: 700; color: var(--color-primary);"><a href="mailto:encardomy@gmail.com">encardomy@gmail.com</a></p>
+          <p>También podrá utilizarse el número de WhatsApp oficial:</p>
+          <p style="font-weight: 700; color: var(--color-navy);"><a href="https://wa.me/525571985641" target="_blank">+52 55 7198 5641</a></p>
+          
+          <p>La solicitud deberá contener, como mínimo:</p>
+          <ol>
+            <li>Nombre de la persona titular.</li>
+            <li>Medio para recibir la respuesta.</li>
+            <li>Documentación que permita acreditar la identidad de la persona titular o, cuando corresponda, la representación legal.</li>
+            <li>Descripción clara de los datos personales relacionados con la solicitud.</li>
+            <li>Derecho ARCO que desea ejercer.</li>
+            <li>Cualquier información adicional que facilite localizar los datos.</li>
+          </ol>
+          <p>Encardomy podrá solicitar información adicional cuando sea necesaria para verificar la identidad de la persona solicitante o localizar los datos correspondientes.</p>
+          <p>El ejercicio de los derechos ARCO será gratuito, salvo los casos en que legalmente puedan cobrarse costos de reproducción, copias o envío.</p>
+        </section>
+
+        <section id="sec-13">
+          <h2>13. PLAZOS PARA LAS SOLICITUDES ARCO</h2>
+          <p>Encardomy atenderá las solicitudes de derechos ARCO dentro de los plazos establecidos por la legislación aplicable.</p>
+          <p>Actualmente, la legislación establece un plazo máximo de <strong>20 días</strong> para comunicar la determinación respecto de la solicitud y, cuando resulte procedente, un plazo de <strong>15 días</strong> adicionales para hacerla efectiva.</p>
+          <p>Los plazos podrán ampliarse en los casos y condiciones permitidos por la legislación aplicable.</p>
+        </section>
+
+        <section id="sec-14">
+          <h2>14. LIMITACIÓN DEL USO O DIVULGACIÓN</h2>
+          <p>La persona titular podrá solicitar la limitación del uso o divulgación de sus datos personales para determinadas finalidades, particularmente respecto de finalidades secundarias o de marketing.</p>
+          <p>Para ello podrá comunicarse mediante:</p>
+          <ul>
+            <li><strong>Correo:</strong> <a href="mailto:encardomy@gmail.com">encardomy@gmail.com</a></li>
+            <li><strong>WhatsApp:</strong> <a href="https://wa.me/525571985641" target="_blank">+52 55 7198 5641</a></li>
+          </ul>
+          <p>Encardomy podrá establecer mecanismos adicionales para registrar solicitudes de exclusión de comunicaciones comerciales.</p>
+        </section>
+
+        <section id="sec-15">
+          <h2>15. REVOCACIÓN DEL CONSENTIMIENTO</h2>
+          <p>La persona titular podrá revocar su consentimiento para el tratamiento de sus datos personales cuando legalmente resulte procedente.</p>
+          <p>La solicitud deberá enviarse a: <a href="mailto:encardomy@gmail.com" style="font-weight: 600;">encardomy@gmail.com</a></p>
+          <p>La revocación no tendrá efectos retroactivos.</p>
+          <p>La revocación del consentimiento podrá impedir que Encardomy continúe prestando determinados servicios cuando el tratamiento de los datos sea indispensable para la relación jurídica o para la prestación solicitada.</p>
+        </section>
+
+        <section id="sec-16">
+          <h2>16. MENORES DE EDAD</h2>
+          <p>Los servicios de Encardomy pueden ser utilizados por estudiantes menores de 18 años.</p>
+          <p>Cuando una persona menor de edad proporcione datos personales, Encardomy procurará aplicar medidas razonables para proteger su información y limitar el tratamiento a las finalidades necesarias.</p>
+          <p>Cuando el tratamiento requiera la intervención o autorización de quien ejerza la patria potestad, tutela o representación legal, se solicitará dicha intervención conforme corresponda.</p>
+          <p>Cuando el pago se realice mediante una tarjeta bancaria perteneciente a un adulto, la persona titular de dicha tarjeta deberá autorizar el uso correspondiente.</p>
+          <p>La utilización de una cuenta bancaria para adolescentes o de otros medios de pago estará sujeta a las reglas y condiciones del proveedor financiero correspondiente.</p>
+          <p>Encardomy no solicita de manera general la fecha de nacimiento de los usuarios.</p>
+        </section>
+
+        <section id="sec-17">
+          <h2>17. INFORMACIÓN DE TERCEROS</h2>
+          <p>Si una persona usuaria proporciona fotografías, videos, documentos, trabajos escolares, capturas de pantalla, archivos o cualquier otro material que contenga datos personales de terceros, deberá procurar contar con las autorizaciones necesarias para compartir dicha información.</p>
+          <p>Encardomy utilizará dichos materiales únicamente en la medida necesaria para cumplir con la finalidad para la cual fueron proporcionados.</p>
+        </section>
+
+        <section id="sec-18">
+          <h2>18. COOKIES Y TECNOLOGÍAS DE SEGUIMIENTO</h2>
+          <p>Actualmente, el sitio web de Encardomy <strong>no utiliza deliberadamente herramientas propias de seguimiento publicitario, Google Analytics, Meta Pixel u otras herramientas similares de analítica o publicidad personalizada</strong>.</p>
+          <p>Esta situación podrá cambiar en el futuro.</p>
+          <p>Si Encardomy incorpora nuevas tecnologías que impliquen tratamiento adicional de datos personales, este Aviso de Privacidad será actualizado cuando corresponda y se proporcionará la información necesaria conforme a la legislación aplicable.</p>
+        </section>
+
+        <section id="sec-19">
+          <h2>19. CAMBIOS AL AVISO DE PRIVACIDAD</h2>
+          <p>Encardomy podrá modificar, actualizar o complementar este Aviso de Privacidad cuando:</p>
+          <ul>
+            <li>Cambien las actividades de Encardomy;</li>
+            <li>Se incorporen nuevos servicios;</li>
+            <li>Se incorporen nuevas herramientas tecnológicas;</li>
+            <li>Cambien los mecanismos de recopilación de datos;</li>
+            <li>Existan modificaciones legales;</li>
+            <li>Resulte necesario mejorar las medidas de protección de datos.</li>
+          </ul>
+          <p>La versión vigente estará disponible en el sitio web oficial de Encardomy.</p>
+          <p>Cuando un cambio implique nuevas finalidades o modificaciones que requieran informar nuevamente a las personas titulares u obtener su consentimiento, Encardomy realizará las acciones correspondientes conforme a la legislación aplicable.</p>
+        </section>
+
+        <section id="sec-20">
+          <h2>20. AUTORIDAD COMPETENTE</h2>
+          <p>La persona titular que considere que su derecho a la protección de datos personales ha sido vulnerado podrá acudir ante la autoridad competente en materia de protección de datos personales, de conformidad con la legislación mexicana vigente.</p>
+        </section>
+
+        <section id="sec-21">
+          <h2>21. ACEPTACIÓN Y PUESTA A DISPOSICIÓN</h2>
+          <p>Al proporcionar sus datos personales a Encardomy, la persona titular reconoce haber tenido acceso al presente Aviso de Privacidad y haber recibido información sobre las finalidades del tratamiento de sus datos.</p>
+          <p>Cuando la legislación aplicable requiera consentimiento expreso o expreso y por escrito, Encardomy implementará los mecanismos correspondientes para obtenerlo.</p>
+          <p>El presente Aviso de Privacidad no sustituye los Términos y Condiciones, contratos, políticas de cancelación, políticas de propiedad intelectual u otros documentos que regulen la relación comercial entre Encardomy y sus clientes.</p>
+        </section>
+
+        <!-- Firma de Responsabilidad -->
+        <div style="border-top: 2px solid var(--color-border); padding-top: var(--space-24); margin-top: var(--space-32);">
+          <h4 style="color: var(--color-navy); margin-bottom: 8px;">RESPONSABLE DEL TRATAMIENTO</h4>
+          <p style="margin-bottom: 4px;"><strong>Diego Periañex Hernández</strong></p>
+          <p style="margin-bottom: 4px;">Nombre comercial: <strong>Encardomy</strong></p>
+          <p style="margin-bottom: 4px;">Ciudad de México, C.P. 06700</p>
+          <p style="margin-bottom: 4px;">Correo electrónico: <a href="mailto:encardomy@gmail.com">encardomy@gmail.com</a></p>
+          <p style="margin-bottom: 4px;">WhatsApp: <a href="https://wa.me/525571985641" target="_blank">+52 55 7198 5641</a></p>
+          <p style="margin-top: 12px; font-size: 0.85rem;" class="text-muted"><strong>Última actualización:</strong> 29 de agosto de 2026</p>
+        </div>
+
       </div>
-    </section>
 
-    <!-- ==========================================================================
-         EXPLORACIÓN POR CATEGORÍAS (CREAR, MEJORAR, DISEÑAR, ESTUDIAR, PROYECTOS)
-         ========================================================================== -->
-    <section class="section-padding bg-surface" id="categorias">
-      <div class="container">
-        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: var(--space-40); flex-wrap: wrap; gap: var(--space-16);">
-          <div>
-            <span class="badge badge-navy mb-8">Arquitectura Académica</span>
-            <h2>Explora por Categoría de Necesidad</h2>
-            <p class="text-muted">Elige lo que necesitas resolver hoy para tu escuela o universidad.</p>
-          </div>
-          <a href="categorias.html" class="btn btn-outline-primary">
-            <span>Ver Catálogo Completo</span>
-            <i data-lucide="arrow-right"></i>
-          </a>
-        </div>
-
-        <div class="grid-3">
-          <!-- Categoría Estudiar -->
-          <div class="card card-highlight">
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-16);">
-              <span class="badge badge-cat-estudiar">Estudiar</span>
-              <span class="text-muted" style="font-size: 0.85rem; font-weight: 600;">4 Servicios</span>
-            </div>
-            <h3 class="mb-8">Estudio & Memorización</h3>
-            <p class="text-muted mb-24" style="font-size: 0.92rem;">
-              Resúmenes ejecutivos, guías temáticas, flashcards para Anki y simuladores de exámenes para sacar la máxima nota con menos desgaste.
-            </p>
-            <div style="display: flex; flex-direction: column; gap: var(--space-8);" class="mb-24">
-              <a href="servicios/resumen.html" style="font-weight: 600; display: flex; align-items: center; gap: 6px;">
-                <i data-lucide="chevron-right" style="width: 16px; height: 16px;"></i> Resumen Académico
-              </a>
-              <a href="servicios/guia-de-estudio.html" style="font-weight: 600; display: flex; align-items: center; gap: 6px;">
-                <i data-lucide="chevron-right" style="width: 16px; height: 16px;"></i> Guía de Estudio
-              </a>
-              <a href="servicios/flashcards.html" style="font-weight: 600; display: flex; align-items: center; gap: 6px;">
-                <i data-lucide="chevron-right" style="width: 16px; height: 16px;"></i> Flashcards Anki/Quizlet
-              </a>
-              <a href="servicios/examen-de-practica.html" style="font-weight: 600; display: flex; align-items: center; gap: 6px;">
-                <i data-lucide="chevron-right" style="width: 16px; height: 16px;"></i> Examen de Práctica
-              </a>
-            </div>
-            <a href="categorias.html?cat=estudiar" class="btn btn-secondary btn-sm btn-block">Ver categoría</a>
-          </div>
-
-          <!-- Categoría Mejorar -->
-          <div class="card card-highlight">
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-16);">
-              <span class="badge badge-cat-mejorar">Mejorar</span>
-              <span class="text-muted" style="font-size: 0.85rem; font-weight: 600;">3 Servicios</span>
-            </div>
-            <h3 class="mb-8">Corrección & Estilo</h3>
-            <p class="text-muted mb-24" style="font-size: 0.92rem;">
-              Corrección ortotipográfica, formateo en APA 7, humanización de textos tiesos y enriquecimiento bibliográfico de borradores.
-            </p>
-            <div style="display: flex; flex-direction: column; gap: var(--space-8);" class="mb-24">
-              <a href="servicios/correccion-academica.html" style="font-weight: 600; display: flex; align-items: center; gap: 6px;">
-                <i data-lucide="chevron-right" style="width: 16px; height: 16px;"></i> Corrección Académica (APA)
-              </a>
-              <a href="servicios/edicion-natural.html" style="font-weight: 600; display: flex; align-items: center; gap: 6px;">
-                <i data-lucide="chevron-right" style="width: 16px; height: 16px;"></i> Edición Natural & Humanización
-              </a>
-              <a href="servicios/mejora-de-trabajo.html" style="font-weight: 600; display: flex; align-items: center; gap: 6px;">
-                <i data-lucide="chevron-right" style="width: 16px; height: 16px;"></i> Diagnóstico y Mejora
-              </a>
-            </div>
-            <a href="categorias.html?cat=mejorar" class="btn btn-secondary btn-sm btn-block">Ver categoría</a>
-          </div>
-
-          <!-- Categoría Crear -->
-          <div class="card card-highlight">
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-16);">
-              <span class="badge badge-cat-crear">Crear</span>
-              <span class="text-muted" style="font-size: 0.85rem; font-weight: 600;">2 Servicios</span>
-            </div>
-            <h3 class="mb-8">Redacción & Fuentes</h3>
-            <p class="text-muted mb-24" style="font-size: 0.92rem;">
-              Estructuras base para ensayos, monografías, estado del arte y búsqueda de literatura científica en bases indexadas.
-            </p>
-            <div style="display: flex; flex-direction: column; gap: var(--space-8);" class="mb-24">
-              <a href="servicios/documento-academico.html" style="font-weight: 600; display: flex; align-items: center; gap: 6px;">
-                <i data-lucide="chevron-right" style="width: 16px; height: 16px;"></i> Documento Académico Base
-              </a>
-              <a href="servicios/investigacion.html" style="font-weight: 600; display: flex; align-items: center; gap: 6px;">
-                <i data-lucide="chevron-right" style="width: 16px; height: 16px;"></i> Búsqueda Bibliográfica
-              </a>
-            </div>
-            <a href="categorias.html?cat=crear" class="btn btn-secondary btn-sm btn-block">Ver categoría</a>
-          </div>
-        </div>
-
-        <!-- Categorías complementarias: Diseñar y Proyectos -->
-        <div class="grid-2 mt-24">
-          <!-- Diseñar -->
-          <div class="card" style="border-left: 4px solid #EC4899;">
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-12, 12px);">
-              <span class="badge badge-cat-disenar">Diseñar</span>
-              <span class="text-muted" style="font-size: 0.85rem; font-weight: 600;">2 Servicios</span>
-            </div>
-            <h4>Presentaciones Visuales e Infografías</h4>
-            <p class="text-muted" style="font-size: 0.92rem; margin-bottom: var(--space-16);">
-              Diapositivas impactantes en Canva/PowerPoint con notas de orador e infografías de alta resolución.
-            </p>
-            <div style="display: flex; gap: var(--space-16); flex-wrap: wrap;">
-              <a href="servicios/presentacion.html" class="btn btn-secondary btn-sm">Presentación Diapositivas</a>
-              <a href="servicios/infografia.html" class="btn btn-secondary btn-sm">Infografía</a>
-            </div>
-          </div>
-
-          <!-- Proyectos -->
-          <div class="card" style="border-left: 4px solid #F59E0B;">
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-12, 12px);">
-              <span class="badge badge-cat-proyectos">Proyectos</span>
-              <span class="text-muted" style="font-size: 0.85rem; font-weight: 600;">1 Servicio Integral</span>
-            </div>
-            <h4>Proyecto Encardomy Semestral</h4>
-            <p class="text-muted" style="font-size: 0.92rem; margin-bottom: var(--space-16);">
-              Acompañamiento integral end-to-end para proyectos de titulación, integradores y tesinas de grado.
-            </p>
-            <a href="servicios/proyecto-encardomy.html" class="btn btn-secondary btn-sm">Ver Proyecto Encardomy</a>
-          </div>
-        </div>
+      <!-- Botón de regreso / Cotización -->
+      <div style="text-align: center; margin-top: var(--space-32);">
+        <a href="index.html" class="btn btn-secondary btn-lg mr-8">
+          <i data-lucide="home"></i> Ir a Inicio
+        </a>
+        <button class="btn btn-primary btn-lg" data-open-order data-service-id="resumen">
+          <i data-lucide="sparkles"></i> Solicitar Cotización
+        </button>
       </div>
-    </section>
 
-    <!-- ==========================================================================
-         DIFERENCIADOR PRINCIPAL: ¿POR QUÉ NO SOLO USAR CHATGPT?
-         ========================================================================== -->
-    <section class="section-padding" id="diferenciador">
-      <div class="container">
-        <div class="text-center mb-48">
-          <span class="badge badge-primary mb-16">Transparencia Radical</span>
-          <h2>¿Por qué Encardomy en lugar de usar IA genérica por tu cuenta?</h2>
-          <p class="text-muted" style="max-width: 660px; margin: var(--space-8) auto 0;">
-            Cualquiera puede generar texto genérico en 5 segundos. Lo difícil es que tenga rigor académico, fuentes reales y no te cueste una mala nota.
-          </p>
-        </div>
-
-        <div style="max-width: 900px; margin: 0 auto; overflow-x: auto;">
-          <table class="diff-table">
-            <thead>
-              <tr>
-                <th style="width: 30%;">Criterio Académico</th>
-                <th style="width: 35%;">IA Genérica sin Filtro</th>
-                <th style="width: 35%; background: var(--color-blue-tint); color: var(--color-primary);">Encardomy (IA + Humano)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Veracidad de Fuentes</strong></td>
-                <td>Inventa autores, títulos de libros y enlaces rotos ("alucinaciones").</td>
-                <td style="background: rgba(45, 127, 249, 0.05);"><strong style="color: var(--color-success);">✓ Verificadas:</strong> Consultamos Scielo, Redalyc y libros reales.</td>
-              </tr>
-              <tr>
-                <td><strong>Tono y Naturalidad</strong></td>
-                <td>Prosa tiesa, vocabulario robótico y frases repetitivas.</td>
-                <td style="background: rgba(45, 127, 249, 0.05);"><strong style="color: var(--color-success);">✓ Fluido:</strong> Un editor humano adapta la voz a tu grado escolar.</td>
-              </tr>
-              <tr>
-                <td><strong>Formato y Rúbrica</strong></td>
-                <td>Texto plano sin sangrías ni alineación con lo que pidió tu maestro.</td>
-                <td style="background: rgba(45, 127, 249, 0.05);"><strong style="color: var(--color-success);">✓ Exacto:</strong> Aplicamos APA 7, Vancouver o tu rúbrica institucional.</td>
-              </tr>
-              <tr>
-                <td><strong>Entregables Listos</strong></td>
-                <td>Copy-paste desordenado con errores de formato.</td>
-                <td style="background: rgba(45, 127, 249, 0.05);"><strong style="color: var(--color-success);">✓ Editorial:</strong> PDF listo + Word/Canva editable con diseño limpio.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         SECCIÓN DE AUTORIDAD Y SOCIAL PROOF (PLACEHOLDERS ESTRUCTURADOS)
-         ========================================================================== -->
-    <section class="section-padding bg-subtle">
-      <div class="container">
-        <div class="grid-2" style="align-items: center;">
-          <!-- Video Review Placeholder -->
-          <div class="placeholder-box">
-            <span class="badge badge-placeholder mb-8">[Placeholder: Video Review de Creador / Estudiante]</span>
-            <div class="placeholder-icon">
-              <i data-lucide="play-circle" style="width: 32px; height: 32px; color: var(--color-primary);"></i>
-            </div>
-            <h4 style="color: var(--color-navy);">Espacio reservado para Video de Testimonio Real</h4>
-            <p class="text-muted" style="font-size: 0.88rem; max-width: 380px;">
-              Aquí se integrará el video de un estudiante de preparatoria/universidad mostrando cómo utilizó Encardomy para estudiar y organizar sus entregas.
-            </p>
-          </div>
-
-          <!-- Social Proof / Testimonios Placeholder -->
-          <div>
-            <span class="badge badge-placeholder mb-16">[Placeholder: Testimonios de Alumnos en Proceso de Recolección]</span>
-            <h3 class="mb-16">Compromiso con la Honestidad Estudiantil</h3>
-            <p class="text-muted mb-24">
-              Encardomy no fabrica reseñas falsas con fotos de stock. Estamos reuniendo valoraciones reales de nuestra comunidad inicial de estudiantes en preparatorias y facultades universitarias.
-            </p>
-            
-            <div class="card p-16 mb-16" style="background: var(--color-white); border-left: 4px solid var(--color-success);">
-              <div style="display: flex; gap: 8px; align-items: center;" class="mb-8">
-                <i data-lucide="clock" style="color: var(--color-primary); width: 18px; height: 18px;"></i>
-                <strong style="font-size: 0.95rem;">Garantía de Tiempo de Respuesta</strong>
-              </div>
-              <p class="text-muted" style="font-size: 0.88rem;">
-                Cotizamos tu trabajo en menos de 15 minutos en horario escolar y entregamos en plazos desde 12 horas.
-              </p>
-            </div>
-
-            <div class="card p-16" style="background: var(--color-white); border-left: 4px solid var(--color-navy);">
-              <div style="display: flex; gap: 8px; align-items: center;" class="mb-8">
-                <i data-lucide="file-check" style="color: var(--color-navy); width: 18px; height: 18px;"></i>
-                <strong style="font-size: 0.95rem;">Ronda de Ajustes Incluida</strong>
-              </div>
-              <p class="text-muted" style="font-size: 0.88rem;">
-                Todos nuestros servicios incluyen revisión posterior si tu profesor solicita ajustes específicos de formato o enfoque.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         FAQ GENERAL DE ENCARDOMY
-         ========================================================================== -->
-    <section class="section-padding" id="faq">
-      <div class="container container-narrow">
-        <div class="text-center mb-48">
-          <span class="badge badge-primary mb-16">Dudas Frecuentes</span>
-          <h2>Preguntas Comunes sobre Encardomy</h2>
-          <p class="text-muted">Todo lo que necesitas saber antes de solicitar tu primer servicio.</p>
-        </div>
-
-        <div class="faq-list">
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span>¿Cómo funciona el proceso de cotización y pedido?</span>
-              <span class="faq-icon"><i data-lucide="chevron-down"></i></span>
-            </button>
-            <div class="faq-answer">
-              <p class="text-muted">
-                1. Eliges el servicio en nuestro catálogo. 2. Nos envías los detalles o archivos por WhatsApp. 3. Te enviamos una propuesta rápida con tiempo de entrega. 4. Producimos tu trabajo con IA y revisión humana, y te entregamos los archivos listos y editables.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span>¿Prometen que el trabajo será "indetectable" por software de IA?</span>
-              <span class="faq-icon"><i data-lucide="chevron-down"></i></span>
-            </button>
-            <div class="faq-answer">
-              <p class="text-muted">
-                No. Encardomy no hace falsas promesas de "indetectabilidad", ya que los detectores automáticos son inconsistentes e inexactos. Lo que garantizamos es <strong>calidad y rigor humano real</strong>: fuentes legítimas verificadas, coherencia argumental, ortografía profesional y adaptación a tu grado escolar.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span>¿En qué formatos recibo mis documentos?</span>
-              <span class="faq-icon"><i data-lucide="chevron-down"></i></span>
-            </button>
-            <div class="faq-answer">
-              <p class="text-muted">
-                Siempre entregamos una versión final en <strong>PDF de alta calidad</strong> y la versión editable correspondiente (<strong>Word .docx, PowerPoint .pptx, mazo de Anki .apkg o enlace de Canva</strong>) para que tengas control total de tu material.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span>¿Qué pasa si mi profesor me pide correcciones?</span>
-              <span class="faq-icon"><i data-lucide="chevron-down"></i></span>
-            </button>
-            <div class="faq-answer">
-              <p class="text-muted">
-                Todos nuestros servicios incluyen una ronda de ajustes sin costo adicional basada en la retroalimentación de tu profesor, siempre que esté dentro del alcance acordado inicialmente.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         CALL TO ACTION FINAL
-         ========================================================================== -->
-    <section class="section-padding bg-navy text-center" style="position: relative; overflow: hidden;">
-      <div class="container">
-        <div style="max-width: 680px; margin: 0 auto;">
-          <span class="badge badge-primary mb-16" style="background: rgba(45, 127, 249, 0.3); color: #FFFFFF;">
-            Empieza Hoy Mismo
-          </span>
-          <h2 class="mb-16" style="color: #FFFFFF;">¿Tienes una entrega o examen en puerta?</h2>
-          <p style="color: #b0c6e0; font-size: 1.1rem;" class="mb-32">
-            Ponte en contacto con nosotros ahora. Cuéntanos qué materia o trabajo tienes pendiente y recibe una propuesta clara en minutos.
-          </p>
-          <div style="display: flex; gap: var(--space-16); justify-content: center; flex-wrap: wrap;">
-            <a href="categorias.html" class="btn btn-secondary btn-lg">
-              Explorar Catálogo
-            </a>
-            <button class="btn btn-primary btn-lg" data-open-order data-service-id="resumen">
-              <i data-lucide="message-circle"></i>
-              <span>Cotizar por WhatsApp</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
   </main>
 
-  <!-- ==========================================================================
-       FOOTER GLOBAL
-       ========================================================================== -->
+  <!-- Footer Global -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -516,34 +588,32 @@
         </div>
 
         <div>
-          <h4 class="footer-col-title">Servicios Populares</h4>
+          <h4 class="footer-col-title">Legal & Privacidad</h4>
           <ul class="footer-links">
-            <li><a href="servicios/resumen.html">Resumen Académico</a></li>
-            <li><a href="servicios/guia-de-estudio.html">Guía de Estudio</a></li>
-            <li><a href="servicios/correccion-academica.html">Corrección APA</a></li>
-            <li><a href="servicios/presentacion.html">Presentaciones</a></li>
-            <li><a href="servicios/flashcards.html">Flashcards Anki</a></li>
-            <li><a href="privacidad.html" style="font-weight: 700; color: #FFFFFF;">🔒 Aviso de Privacidad</a></li>
+            <li><a href="privacidad.html" style="color: var(--color-white); font-weight: 700;">🔒 Aviso de Privacidad</a></li>
+            <li><a href="index.html#diferenciador">Compromiso Ético</a></li>
+            <li><a href="index.html#proceso">Metodología IA + Humano</a></li>
+            <li><a href="mailto:encardomy@gmail.com">Contacto Legal</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="footer-col-title">Transparencia</h4>
+          <h4 class="footer-col-title">Atención Oficial</h4>
           <p style="color: #9cb5d3; font-size: 0.86rem;" class="mb-16">
-            Encardomy promueve el estudio ético, el aprendizaje activo y el rigor académico. No realizamos fraudes ni exámenes en tiempo real.
+            Atención exclusiva para la Escuela Nacional Preparatoria 4 "Vidal Castañeda y Nájera" (UNAM).
           </p>
-          <button class="btn btn-primary btn-sm btn-block" data-open-order data-service-id="resumen">
-            <i data-lucide="message-circle"></i> Contacto WhatsApp
-          </button>
+          <a href="https://wa.me/525571985641" target="_blank" class="btn btn-primary btn-sm btn-block">
+            <i data-lucide="message-circle"></i> WhatsApp +52 55 7198 5641
+          </a>
         </div>
       </div>
 
       <div class="footer-bottom">
         <div>
-          &copy; 2026 Encardomy &bull; Identidad visual oficial (#2D7FF9, #123B6A, Sora & Inter).
+          &copy; 2026 Encardomy &bull; Diego Periañex Hernández &bull; C.P. 06700, CDMX.
         </div>
-        <div style="display: flex; gap: var(--space-16);">
-          <a href="privacidad.html" style="color: #b0c6e0; text-decoration: underline;">Aviso de Privacidad</a>
+        <div style="display: flex; gap: var(--space-16); align-items: center; flex-wrap: wrap;">
+          <a href="privacidad.html" style="color: #b0c6e0; text-decoration: underline;">Aviso de Privacidad Integral</a>
           <span>&bull;</span>
           <span>Accesibilidad WCAG AA</span>
           <span>&bull;</span>
@@ -552,22 +622,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- Barra flotante inferior para móviles -->
-  <div class="mobile-bottom-bar">
-    <div>
-      <div style="font-family: var(--font-heading); font-weight: 700; font-size: 0.88rem; color: var(--color-navy);">
-        ¿Necesitas ayuda con tu tarea?
-      </div>
-      <div style="font-size: 0.76rem; color: var(--color-text-muted);">
-        Prepa 4 UNAM &bull; Respuesta en &lt;15 min
-      </div>
-    </div>
-    <button class="btn btn-primary btn-sm" data-open-order data-service-id="resumen">
-      <i data-lucide="message-circle"></i>
-      <span>Cotizar</span>
-    </button>
-  </div>
 
   <!-- ==========================================================================
        MODAL DE COTIZACIÓN INTELIGENTE Y PERSONALIZADA (EXCLUSIVO PREPA 4)
