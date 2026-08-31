@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Examen de Práctica y Simulador — Encardomy | Metodología 3P de 15 Secciones</title>
-  <meta name="description" content="Simulacros de prueba con reactivos de opción múltiple, problemas abiertos, rúbricas y retroalimentación de respuestas. Producción rápida con IA y revisión humana experta en Encardomy.">
+  <title>Términos de Contratación del Servicio — Encardomy</title>
+  <meta name="description" content="Términos de Contratación del Servicio de Encardomy. Condiciones de solicitud, cotización, pagos seguros con Clip, plazos de entrega y garantías para la Prepa 4.">
   
   <!-- Google Fonts: Sora (Headings) & Inter (Body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,34 +15,107 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   
   <!-- Hoja de estilos oficial de Encardomy -->
-  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .legal-body {
+      color: var(--color-text-dark);
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+    .legal-body h2 {
+      font-size: 1.35rem;
+      color: var(--color-navy);
+      margin-top: var(--space-40);
+      margin-bottom: var(--space-16);
+      padding-bottom: var(--space-8);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .legal-body h3 {
+      font-size: 1.10rem;
+      color: var(--color-navy);
+      margin-top: var(--space-24);
+      margin-bottom: var(--space-12, 12px);
+    }
+    .legal-body p {
+      margin-bottom: var(--space-16);
+    }
+    .legal-body ul, .legal-body ol {
+      margin-left: var(--space-24);
+      margin-bottom: var(--space-16);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .legal-contact-box {
+      background: var(--color-blue-tint);
+      border: 1px solid rgba(45, 127, 249, 0.3);
+      border-radius: var(--radius-lg);
+      padding: var(--space-24);
+      margin: var(--space-24) 0;
+    }
+    .toc-box {
+      background: var(--color-bg-subtle);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-24);
+      margin-bottom: var(--space-32);
+    }
+    .toc-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    @media (min-width: 640px) {
+      .toc-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (min-width: 992px) {
+      .toc-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+    .toc-link {
+      font-size: 0.84rem;
+      color: var(--color-navy);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .toc-link:hover {
+      color: var(--color-primary);
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- ==========================================================================
-       SITE HEADER / NAVEGACIÓN GLOBAL
-       ========================================================================== -->
+  <!-- Header Global -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="../index.html" class="brand-logo" aria-label="Ir al inicio de Encardomy">
+      <a href="index.html" class="brand-logo" aria-label="Ir al inicio de Encardomy">
         <span class="logo-symbol">E</span>
         <span>Encardomy</span>
-        <span class="logo-tagline">&bull; Estudiar</span>
+        <span class="logo-tagline">&bull; Contratación</span>
       </a>
 
       <nav class="nav-desktop" aria-label="Navegación principal">
-        <a href="../index.html" class="nav-link">Inicio</a>
-        <a href="../categorias.html" class="nav-link">Catálogo</a>
-        <a href="../legal.html" class="nav-link">Documentos Legales</a>
-        <a href="#oferta" class="nav-link">Qué Incluye</a>
-        <a href="#diferenciador" class="nav-link">IA + Humano</a>
-        <a href="#faq" class="nav-link">Preguntas</a>
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="categorias.html" class="nav-link">Catálogo</a>
+        <a href="legal.html" class="nav-link">Documentos Legales</a>
+        <a href="privacidad.html" class="nav-link">Privacidad</a>
+        <a href="propiedad-intelectual.html" class="nav-link">Propiedad Intelectual</a>
+        <a href="terminos-contratacion.html" class="nav-link active">Términos de Contratación</a>
       </nav>
 
       <div class="header-actions">
-        <button class="btn btn-primary btn-sm" data-open-order data-service-id="examen-de-practica">
+        <a href="legal.html" class="btn btn-secondary btn-sm" style="display: none; @media(min-width:640px){display:inline-flex;}">
+          Centro Legal
+        </a>
+        <button class="btn btn-primary btn-sm" data-open-order data-service-id="resumen">
           <i data-lucide="sparkles" style="width: 16px; height: 16px;"></i>
-          <span>Cotizar Servicio</span>
+          <span>Cotizar Rápido</span>
         </button>
         <button class="menu-toggle-btn" id="menuToggleBtn" aria-label="Abrir menú de navegación" aria-expanded="false">
           <i data-lucide="menu" style="width: 24px; height: 24px;"></i>
@@ -64,598 +137,620 @@
       </button>
     </div>
     <ul class="drawer-links">
-      <li><a href="../index.html" class="drawer-link"><span>🏠 Inicio</span> <i data-lucide="chevron-right"></i></a></li>
-      <li><a href="../categorias.html" class="drawer-link"><span>📚 Catálogo Completo</span> <i data-lucide="chevron-right"></i></a></li>
-      <li><a href="../legal.html" class="drawer-link"><span>⚖️ Documentos Legales</span> <i data-lucide="chevron-right"></i></a></li>
-      <li><a href="../categorias.html?cat=estudiar" class="drawer-link active"><span>🏷️ Categoría: Estudiar</span> <i data-lucide="chevron-right"></i></a></li>
+      <li><a href="index.html" class="drawer-link"><span>🏠 Inicio</span> <i data-lucide="chevron-right"></i></a></li>
+      <li><a href="categorias.html" class="drawer-link"><span>📚 Catálogo de Servicios</span> <i data-lucide="chevron-right"></i></a></li>
+      <li><a href="legal.html" class="drawer-link"><span>⚖️ Centro de Documentos Legales</span> <i data-lucide="chevron-right"></i></a></li>
+      <li><a href="privacidad.html" class="drawer-link"><span>🔒 Aviso de Privacidad</span> <i data-lucide="chevron-right"></i></a></li>
+      <li><a href="propiedad-intelectual.html" class="drawer-link"><span>💡 Propiedad Intelectual</span> <i data-lucide="chevron-right"></i></a></li>
+      <li><a href="terminos-contratacion.html" class="drawer-link active"><span>📋 Términos de Contratación</span> <i data-lucide="chevron-right"></i></a></li>
     </ul>
     <div class="mt-32">
-      <button class="btn btn-primary btn-block btn-lg" data-open-order data-service-id="examen-de-practica">
+      <button class="btn btn-primary btn-block btn-lg" data-open-order data-service-id="resumen">
         <i data-lucide="message-circle"></i>
-        <span>Cotizar este Servicio</span>
+        <span>Solicitar Cotización</span>
       </button>
     </div>
   </aside>
 
-  <!-- ==========================================================================
-       BREADCRUMB / RUTA DE NAVEGACIÓN
-       ========================================================================== -->
-  <div style="background: var(--color-bg-light); border-bottom: 1px solid var(--color-border); padding: 10px 0; font-size: 0.86rem;">
-    <div class="container" style="display: flex; align-items: center; gap: 8px; color: var(--color-text-muted);">
-      <a href="../index.html" style="color: var(--color-text-muted);">Inicio</a>
-      <span>&rsaquo;</span>
-      <a href="../categorias.html" style="color: var(--color-text-muted);">Catálogo</a>
-      <span>&rsaquo;</span>
-      <a href="../categorias.html?cat=estudiar" style="color: var(--color-text-muted);">Estudiar</a>
-      <span>&rsaquo;</span>
-      <span style="color: var(--color-navy); font-weight: 600;">Examen de Práctica y Simulador</span>
-    </div>
-  </div>
-
-  <main>
-    <!-- ==========================================================================
-         SECCIÓN 1: PORTADA / HERO PRINCIPAL (METODOLOGÍA 3P)
-         ========================================================================== -->
-    <section class="product-hero" id="portada">
-      <div class="container">
-        <div class="product-hero-grid">
-          <div>
-            <div class="mb-16">
-              <span class="badge badge-cat-estudiar">Estudiar</span>
-              <span class="badge badge-success" style="margin-left: 8px;">
-                <i data-lucide="shield-check" style="width: 13px; height: 13px;"></i> IA + Revisión Humana
-              </span>
-              <span class="ecosystem-pill" style="margin-left: 8px;">
-                <i data-lucide="folder-check" style="width: 13px; height: 13px;"></i> Google Workspace & MS/Apple
-              </span>
-            </div>
-            
-            <h1 class="mb-16" style="color: var(--color-navy);">Llega al examen real sabiendo exactamente qué esperar</h1>
-            <p class="text-muted mb-24" style="font-size: 1.12rem;">Diseñamos un simulacro con el mismo nivel de exigencia, formato de reactivos y tiempo estimado que tu evaluación escolar real.</p>
-
-            <div style="display: flex; gap: var(--space-16); flex-wrap: wrap;" class="mb-32">
-              <button class="btn btn-primary btn-lg" data-open-order data-service-id="examen-de-practica">
-                <i data-lucide="message-circle"></i>
-                <span>Solicitar Cotización por WhatsApp</span>
-              </button>
-              <a href="#muestras" class="btn btn-secondary btn-lg">
-                <i data-lucide="eye"></i>
-                <span>Ver Muestras y Mockups</span>
-              </a>
-            </div>
-
-            <!-- Micro-Trust Badges -->
-            <div style="display: flex; gap: var(--space-24); flex-wrap: wrap; font-size: 0.88rem; color: var(--color-text-muted); border-top: 1px solid var(--color-border); padding-top: var(--space-16);">
-              <div style="display: flex; align-items: center; gap: 6px;">
-                <i data-lucide="clock" style="color: var(--color-primary); width: 16px; height: 16px;"></i>
-                <span>Entrega: <strong>24 a 36 horas</strong></span>
-              </div>
-              <div style="display: flex; align-items: center; gap: 6px;">
-                <i data-lucide="refresh-cw" style="color: var(--color-success); width: 16px; height: 16px;"></i>
-                <span>Ronda de ajustes incluida</span>
-              </div>
-              <div style="display: flex; align-items: center; gap: 6px;">
-                <i data-lucide="check-circle" style="color: var(--color-primary); width: 16px; height: 16px;"></i>
-                <span>100% Confidencial</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Quick Specs Box -->
-          <div class="hero-quick-card">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-16);">
-              <span style="font-size: 0.85rem; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase;">
-                Ficha del Servicio
-              </span>
-              <span class="badge badge-primary">Oficial Prepa 4</span>
-            </div>
-            
-            <h3 style="margin-bottom: var(--space-16); font-size: 1.25rem; color: var(--color-navy);">Examen de Práctica y Simulador</h3>
-            
-            <div style="background: var(--color-bg-light); border-radius: var(--radius-md); padding: var(--space-16); margin-bottom: var(--space-20, 20px);">
-              <div style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 4px;">Formato de entrega:</div>
-              <div style="font-weight: 600; color: var(--color-navy); font-size: 0.92rem;">Google Forms interactivo + PDF de Examen y Solucionario + Google Docs editable (compatible con Word y Pages)</div>
-            </div>
-
-            <div style="display: flex; flex-direction: column; gap: var(--space-12, 12px); margin-bottom: var(--space-24);">
-              <div style="display: flex; justify-content: space-between; font-size: 0.92rem;">
-                <span class="text-muted">Tiempo estimado:</span>
-                <span style="font-weight: 600; color: var(--color-navy);">24 a 36 horas</span>
-              </div>
-              <div style="display: flex; justify-content: space-between; font-size: 0.92rem;">
-                <span class="text-muted">Supervisión:</span>
-                <span style="font-weight: 600; color: #167a50;">✓ Experto Humano</span>
-              </div>
-              <div style="display: flex; justify-content: space-between; font-size: 0.92rem;">
-                <span class="text-muted">Base de precios:</span>
-                <span style="font-weight: 600; color: var(--color-navy);">Estructura preparada por número de reactivos (20, 40, 60+ preguntas)</span>
-              </div>
-            </div>
-
-            <button class="btn btn-primary btn-block" data-open-order data-service-id="examen-de-practica">
-              <i data-lucide="sparkles"></i>
-              <span>Cotizar Inmediatamente</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         SECCIÓN 2: ¿PARA QUIÉN ES? (PERFIL DEL ESTUDIANTE)
-         ========================================================================== -->
-    <section class="section-padding bg-surface" id="para-quien">
-      <div class="container">
-        <div class="product-section-title">
-          <span class="section-num">2</span>
-          <h2>¿Para quién está diseñado este servicio?</h2>
-        </div>
-        <p class="text-muted mb-32" style="max-width: 700px;">
-          Claridad ante todo: identificamos exactamente en qué casos este servicio resolverá tu problema académico y en cuáles no aplica.
-        </p>
-
-        <div class="grid-2">
-          <div class="card-success">
-            <div class="mb-12">
-              <span class="badge badge-success">
-                <i data-lucide="check-circle" style="width: 14px; height: 14px;"></i> Ideal para ti si...
-              </span>
-            </div>
-            <p style="font-size: 0.98rem; line-height: 1.6;">Quieres ponerte a prueba 2 o 3 días antes del examen para medir tu nivel real y llegar seguro al aula.</p>
-          </div>
-          <div class="card">
-            <div class="mb-12">
-              <span class="badge badge-warning">
-                <i data-lucide="x-circle" style="width: 14px; height: 14px;"></i> NO es para ti si...
-              </span>
-            </div>
-            <p style="font-size: 0.98rem; line-height: 1.6;">Buscas que alguien conteste el examen en vivo por ti.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         SECCIÓN 3: ESPECIFICACIONES TÉCNICAS Y ENTREGABLES
-         ========================================================================== -->
-    <section class="section-padding" id="especificaciones">
-      <div class="container">
-        <div class="product-section-title">
-          <span class="section-num">3</span>
-          <h2>Ficha Técnica y Especificaciones del Entregable</h2>
-        </div>
-        <p class="text-muted mb-32">Parámetros operativos y características formales de producción.</p>
-
-        <div class="card" style="padding: 0; overflow: hidden;">
-          <table class="diff-table">
-            <tbody>
-              <tr>
-                <td style="font-weight: 700; width: 35%; color: var(--color-navy);">Tiempo de Entrega</td>
-                <td style="color: var(--color-text-dark);">24 a 36 horas</td>
-              </tr>
-              <tr>
-                <td style="font-weight: 700; width: 35%; color: var(--color-navy);">Formatos</td>
-                <td style="color: var(--color-text-dark);">Google Forms interactivo + Google Docs + PDF de Examen y Solucionario</td>
-              </tr>
-              <tr>
-                <td style="font-weight: 700; width: 35%; color: var(--color-navy);">Tipos de Reactivos</td>
-                <td style="color: var(--color-text-dark);">Opción múltiple, desarrollo, falso/verdadero, casos prácticos</td>
-              </tr>
-              <tr>
-                <td style="font-weight: 700; width: 35%; color: var(--color-navy);">Calibración</td>
-                <td style="color: var(--color-text-dark);">Supervisada por revisor humano</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         SECCIÓN 4: BENEFICIOS CLAVE Y RESULTADOS ACADÉMICOS
-         ========================================================================== -->
-    <section class="section-padding bg-surface" id="beneficios">
-      <div class="container">
-        <div class="product-section-title">
-          <span class="section-num">4</span>
-          <h2>Beneficios Clave: Qué ganas con Encardomy</h2>
-        </div>
-        <p class="text-muted mb-32">Resultados directos en tu rendimiento escolar, ahorro de tiempo y tranquilidad.</p>
-
-        <div class="grid-2">
-          <div class="card">
-            <div style="display: flex; gap: var(--space-12, 12px); align-items: flex-start;">
-              <div style="background: var(--color-blue-tint); color: var(--color-primary); width: 36px; height: 36px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
-                <i data-lucide="check" style="width: 20px; height: 20px;"></i>
-              </div>
-              <div>
-                <h3 style="font-size: 1.08rem; color: var(--color-navy); margin-bottom: 6px;">Elimina el factor sorpresa</h3>
-                <p class="text-muted" style="font-size: 0.94rem; line-height: 1.55;">Practica con la misma presión y formato que vivirás en el aula escolar.</p>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div style="display: flex; gap: var(--space-12, 12px); align-items: flex-start;">
-              <div style="background: var(--color-blue-tint); color: var(--color-primary); width: 36px; height: 36px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
-                <i data-lucide="check" style="width: 20px; height: 20px;"></i>
-              </div>
-              <div>
-                <h3 style="font-size: 1.08rem; color: var(--color-navy); margin-bottom: 6px;">Detecta tus puntos ciegos</h3>
-                <p class="text-muted" style="font-size: 0.94rem; line-height: 1.55;">Descubre exactamente en qué temas estás fallando antes de que califique tu maestro.</p>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div style="display: flex; gap: var(--space-12, 12px); align-items: flex-start;">
-              <div style="background: var(--color-blue-tint); color: var(--color-primary); width: 36px; height: 36px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
-                <i data-lucide="check" style="width: 20px; height: 20px;"></i>
-              </div>
-              <div>
-                <h3 style="font-size: 1.08rem; color: var(--color-navy); margin-bottom: 6px;">Aprende de los errores</h3>
-                <p class="text-muted" style="font-size: 0.94rem; line-height: 1.55;">El solucionario te enseña el porqué de cada fallo para no repetirlo.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         SECCIÓN 5: VISUAL MOCKUP / MUESTRAS Y VISTAS PREVIAS
-         ========================================================================== -->
-    <section class="section-padding" id="muestras">
-      <div class="container">
-        <div class="product-section-title">
-          <span class="section-num">5</span>
-          <h2>Muestras y Vistas Previas del Entregable</h2>
-        </div>
-        <p class="text-muted mb-32">Estructura editorial de alta calidad en Google Workspace, Microsoft y Apple.</p>
-
-        <div class="grid-3">
-          <div class="card">
-            <div class="placeholder-box mb-16">
-              <div class="placeholder-icon">
-                <i data-lucide="file-text" style="width: 28px; height: 28px;"></i>
-              </div>
-              <span class="badge badge-primary">Cuadernillo de Examen</span>
-              <span class="form-tip">Google Workspace &bull; Vista Previa</span>
-            </div>
-            <h3 style="font-size: 1.05rem; color: var(--color-navy); margin-bottom: 6px;">Cuadernillo de Examen</h3>
-            <p class="text-muted" style="font-size: 0.90rem; line-height: 1.5;">Formato formal idéntico a una prueba de preparatoria o facultad.</p>
-          </div>
-          <div class="card">
-            <div class="placeholder-box mb-16">
-              <div class="placeholder-icon">
-                <i data-lucide="file-text" style="width: 28px; height: 28px;"></i>
-              </div>
-              <span class="badge badge-primary">Hoja de Respuestas</span>
-              <span class="form-tip">Google Workspace &bull; Vista Previa</span>
-            </div>
-            <h3 style="font-size: 1.05rem; color: var(--color-navy); margin-bottom: 6px;">Hoja de Respuestas</h3>
-            <p class="text-muted" style="font-size: 0.90rem; line-height: 1.5;">Explicación argumentada de cada reactivo con fundamentos teóricos.</p>
-          </div>
-          <div class="card">
-            <div class="placeholder-box mb-16">
-              <div class="placeholder-icon">
-                <i data-lucide="file-text" style="width: 28px; height: 28px;"></i>
-              </div>
-              <span class="badge badge-primary">Matriz de Diagnóstico</span>
-              <span class="form-tip">Google Workspace &bull; Vista Previa</span>
-            </div>
-            <h3 style="font-size: 1.05rem; color: var(--color-navy); margin-bottom: 6px;">Matriz de Diagnóstico</h3>
-            <p class="text-muted" style="font-size: 0.90rem; line-height: 1.5;">Semáforo para identificar qué unidades debes repasar antes del examen.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         SECCIÓN 6: UNBOXING / QUÉ RECIBES EXACTAMENTE EN TU CARPETA
-         ========================================================================== -->
-    <section class="section-padding bg-surface" id="unboxing">
-      <div class="container">
-        <div class="product-section-title">
-          <span class="section-num">6</span>
-          <h2>Unboxing: Qué Recibes en tu Carpeta de Google Drive</h2>
-        </div>
-        <p class="text-muted mb-32">Todo ordenado y listo para entregar, estudiar o proyectar en un solo enlace.</p>
-
-        <div class="unboxing-grid">
-          <div class="unboxing-item">
-            <div style="font-weight: 700; color: var(--color-navy); font-size: 0.98rem; display: flex; align-items: center; gap: 6px;">
-              <i data-lucide="file-check" style="width: 16px; height: 16px; color: var(--color-primary);"></i>
-              Cuadernillo de Evaluación
-            </div>
-            <p class="text-muted" style="font-size: 0.88rem; line-height: 1.5; margin: 0;">Prueba lista para contestar con tiempo límite.</p>
-          </div>
-          <div class="unboxing-item">
-            <div style="font-weight: 700; color: var(--color-navy); font-size: 0.98rem; display: flex; align-items: center; gap: 6px;">
-              <i data-lucide="file-check" style="width: 16px; height: 16px; color: var(--color-primary);"></i>
-              Solucionario Razonado
-            </div>
-            <p class="text-muted" style="font-size: 0.88rem; line-height: 1.5; margin: 0;">Respuestas detalladas con explicaciones paso a paso.</p>
-          </div>
-          <div class="unboxing-item">
-            <div style="font-weight: 700; color: var(--color-navy); font-size: 0.98rem; display: flex; align-items: center; gap: 6px;">
-              <i data-lucide="file-check" style="width: 16px; height: 16px; color: var(--color-primary);"></i>
-              Tabla de Ponderación
-            </div>
-            <p class="text-muted" style="font-size: 0.88rem; line-height: 1.5; margin: 0;">Escala para calcular tu calificación estimada.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         SECCIÓN 7: METODOLOGÍA IA + REVISIÓN HUMANA
-         ========================================================================== -->
-    <section class="section-padding" id="metodologia">
-      <div class="container">
-        <div class="product-section-title">
-          <span class="section-num">7</span>
-          <h2>Metodología de Producción: Velocidad IA + Rigor Humano</h2>
-        </div>
-        <p class="text-muted mb-32">Nuestro proceso probado en 3 fases para asegurar entregas impecables en tiempo récord.</p>
-
-        <div class="process-grid">
-          <div class="process-step">
-            <div class="process-icon process-icon-deliver">1</div>
-            <h3 style="font-size: 1.12rem;">Delimitación & Análisis</h3>
-            <p class="text-muted" style="font-size: 0.92rem;">
-              Recepción de tus materiales, rúbricas de la Prepa 4 y requerimientos específicos de tu profesor.
-            </p>
-          </div>
-
-          <div class="process-step">
-            <div class="process-icon process-icon-ai">2</div>
-            <h3 style="font-size: 1.12rem;">Aceleración con IA</h3>
-            <p class="text-muted" style="font-size: 0.92rem;">
-              Estructuración inteligente, extracción masiva de datos y generación de borradores de alta densidad.
-            </p>
-          </div>
-
-          <div class="process-step">
-            <div class="process-icon process-icon-human">3</div>
-            <h3 style="font-size: 1.12rem;">Validación Humana</h3>
-            <p class="text-muted" style="font-size: 0.92rem;">
-              Un revisor académico verifica fuentes, corrige fórmulas, aplica formato y elimina cualquier alucinación.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         SECCIÓN 8: COMPARATIVA Y DIFERENCIADOR
-         ========================================================================== -->
-    <section class="section-padding bg-surface" id="diferenciador">
-      <div class="container">
-        <div class="product-section-title">
-          <span class="section-num">8</span>
-          <h2>Comparativa: Encardomy vs Otras Opciones</h2>
-        </div>
-        <p class="text-muted mb-32">Por qué combinar IA con verificación humana supera a cualquier alternativa.</p>
-
-        <div class="card mb-32" style="padding: 0; overflow-x: auto;">
-          <table class="diff-table">
-            <thead>
-              <tr>
-                <th>Criterio</th>
-                <th style="background-color: var(--color-blue-tint); color: var(--color-primary); font-weight: 800;">Encardomy (IA + Humano)</th>
-                <th>Hacerlo Solo a las 3 AM</th>
-                <th>IA Genérica sin Revisar</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Tiempo Requerido</strong></td>
-                <td class="highlight-row"><strong>0 horas de desvelo</strong> (entrega rápida)</td>
-                <td>6 a 12 horas de estrés</td>
-                <td>10 min (pero con errores graves)</td>
-              </tr>
-              <tr>
-                <td><strong>Calidad & Veracidad</strong></td>
-                <td class="highlight-row"><strong>100% verificada con fuentes reales</strong></td>
-                <td>Variable según tu cansancio</td>
-                <td>Riesgo alto de datos inventados</td>
-              </tr>
-              <tr>
-                <td><strong>Formato y Presentación</strong></td>
-                <td class="highlight-row"><strong>Google Workspace editorial impecable</strong></td>
-                <td>Básico y apresurado</td>
-                <td>Texto plano sin jerarquía visual</td>
-              </tr>
-              <tr>
-                <td><strong>Alineación a Rúbrica</strong></td>
-                <td class="highlight-row"><strong>Personalizado a tu profesor de Prepa 4</strong></td>
-                <td>Difícil de cumplir al 100%</td>
-                <td>Genérico y fuera de contexto</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="card" style="background: linear-gradient(135deg, #eef5ff 0%, #f0faf5 100%); border-left: 4px solid var(--color-primary);">
-          <h3 style="font-size: 1.15rem; color: var(--color-navy); margin-bottom: 8px;">El Factor Diferencial Encardomy</h3>
-          <p style="color: var(--color-text-dark); line-height: 1.65; margin: 0;">No son preguntas triviales de opción múltiple copiadas de Google. Diseñamos casos prácticos y distractores verosímiles que ponen a prueba tu comprensión real.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         SECCIÓN 9: RIGOR Y AUTORIDAD ACADÉMICA
-         ========================================================================== -->
-    <section class="section-padding" id="autoridad">
-      <div class="container">
-        <div class="product-section-title">
-          <span class="section-num">9</span>
-          <h2>Rigor Metodológico y Respaldo Académico</h2>
-        </div>
-        <div class="card" style="border-left: 4px solid var(--color-navy);">
-          <p style="font-size: 1.05rem; line-height: 1.7; color: var(--color-navy);">Metodología de diseño de reactivos basada en estándares de evaluación formativa y pruebas estandarizadas.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         SECCIÓN 10: SOBRE ENCARDOMY
-         ========================================================================== -->
-    <section class="section-padding bg-surface" id="sobre-nosotros">
-      <div class="container">
-        <div class="product-section-title">
-          <span class="section-num">10</span>
-          <h2>Sobre Encardomy: Nuestra Filosofía</h2>
-        </div>
-        <div class="card">
-          <p style="font-size: 1.02rem; line-height: 1.7; color: var(--color-text-dark);">Encardomy crea herramientas de simulación para que ningún estudiante vuelva a reprobar por culpa de los nervios o del desconocimiento del formato del examen.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         SECCIÓN 11: GARANTÍA Y COMPROMISO DE CALIDAD
-         ========================================================================== -->
-    <section class="section-padding" id="garantia">
-      <div class="container">
-        <div class="product-section-title">
-          <span class="section-num">11</span>
-          <h2>Garantía de Calidad y Ronda de Ajustes</h2>
-        </div>
-        <div class="card card-success">
-          <div style="display: flex; gap: var(--space-16); align-items: flex-start;">
-            <div style="background: var(--color-success-light); color: var(--color-success); width: 48px; height: 48px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-              <i data-lucide="shield-check" style="width: 28px; height: 28px;"></i>
-            </div>
-            <div>
-              <h3 style="font-size: 1.15rem; color: var(--color-navy); margin-bottom: 8px;">Compromiso de Satisfacción Escolar</h3>
-              <p style="color: var(--color-text-dark); line-height: 1.65; margin-bottom: 12px;">
-                Todos nuestros servicios incluyen <strong>1 ronda de ajustes y calibraciones sin costo adicional</strong>. Si tu profesor solicita alguna precisión o ajuste temático sobre la entrega, nuestro equipo lo atiende de inmediato.
-              </p>
-              <span class="badge badge-success">✓ Seguridad &bull; Confidencialidad &bull; Sin Sorpresas</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         SECCIÓN 12: QUÉ INCLUYE EL PAQUETE COMPLETO
-         ========================================================================== -->
-    <section class="section-padding bg-surface" id="oferta">
-      <div class="container">
-        <div class="product-section-title">
-          <span class="section-num">12</span>
-          <h2>Paquete Completo: Todo lo que Incluye tu Servicio</h2>
-        </div>
-        <p class="text-muted mb-32">Desglose transparente del valor total que recibes en tu entrega.</p>
-
-        <div class="card" style="border-top: 4px solid var(--color-primary);">
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-16);">
-            <li style="display: flex; gap: var(--space-12, 12px); align-items: flex-start; font-size: 0.98rem;">
-              <i data-lucide="check-circle-2" style="width: 20px; height: 20px; color: var(--color-success); flex-shrink: 0; margin-top: 2px;"></i>
-              <span style="color: var(--color-text-dark);">Reactivos de opción múltiple con distractores realistas y trampas conceptuales</span>
-            </li>
-            <li style="display: flex; gap: var(--space-12, 12px); align-items: flex-start; font-size: 0.98rem;">
-              <i data-lucide="check-circle-2" style="width: 20px; height: 20px; color: var(--color-success); flex-shrink: 0; margin-top: 2px;"></i>
-              <span style="color: var(--color-text-dark);">Preguntas abiertas y problemas con desglose de rúbrica</span>
-            </li>
-            <li style="display: flex; gap: var(--space-12, 12px); align-items: flex-start; font-size: 0.98rem;">
-              <i data-lucide="check-circle-2" style="width: 20px; height: 20px; color: var(--color-success); flex-shrink: 0; margin-top: 2px;"></i>
-              <span style="color: var(--color-text-dark);">Solucionario razonado que explica por qué la opción correcta es válida</span>
-            </li>
-            <li style="display: flex; gap: var(--space-12, 12px); align-items: flex-start; font-size: 0.98rem;">
-              <i data-lucide="check-circle-2" style="width: 20px; height: 20px; color: var(--color-success); flex-shrink: 0; margin-top: 2px;"></i>
-              <span style="color: var(--color-text-dark);">Temporizador sugerido y baremo de autoevaluación</span>
-            </li>
-            <li style="display: flex; gap: var(--space-12, 12px); align-items: flex-start; font-size: 0.98rem;">
-              <i data-lucide="check-circle-2" style="width: 20px; height: 20px; color: var(--color-success); flex-shrink: 0; margin-top: 2px;"></i>
-              <span style="color: var(--color-text-dark);">Control de calidad humano para calibrar la dificultad a tu grado exacto</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         SECCIÓN 13: DERRIBANDO OBJECIONES Y DUDAS
-         ========================================================================== -->
-    <section class="section-padding" id="objeciones">
-      <div class="container">
-        <div class="product-section-title">
-          <span class="section-num">13</span>
-          <h2>Respuestas Claras a Dudas Comunes</h2>
-        </div>
-        <div class="grid-2">
-          <div class="card">
-            <h3 style="font-size: 1.05rem; color: var(--color-navy); margin-bottom: 8px; display: flex; align-items: flex-start; gap: 8px;">
-              <i data-lucide="help-circle" style="width: 18px; height: 18px; color: var(--color-primary); flex-shrink: 0; margin-top: 3px;"></i>
-              <span>¿Las preguntas serán exactamente las de mi profesor?</span>
-            </h3>
-            <p class="text-muted" style="font-size: 0.94rem; line-height: 1.6; margin: 0;">Diseñamos un simulacro apegado a tu temario y estilo de evaluación; no vendemos exámenes robados ni realizamos fraudes.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         SECCIÓN 14: PREGUNTAS FRECUENTES (FAQ ESPECÍFICO)
-         ========================================================================== -->
-    <section class="section-padding bg-surface" id="faq">
-      <div class="container">
-        <div class="product-section-title">
-          <span class="section-num">14</span>
-          <h2>Preguntas Frecuentes sobre Examen de Práctica y Simulador</h2>
-        </div>
-        <p class="text-muted mb-32">Todo lo que necesitas saber antes de solicitar tu cotización.</p>
-
-        <div class="faq-list">
-          <div class="faq-item">
-            <button class="faq-question" type="button">
-              <span>¿Pueden incluir casos clínicos o problemas numéricos?</span>
-              <div class="faq-icon"><i data-lucide="chevron-down"></i></div>
-            </button>
-            <div class="faq-answer">
-              <p class="text-muted" style="line-height: 1.6; padding-top: 8px;">Sí, adaptamos los reactivos al área de conocimiento: Medicina, Derecho, Ingenierías o Humanidades.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         SECCIÓN 15: LLAMADO A LA ACCIÓN FINAL (CTA BANNER)
-         ========================================================================== -->
-    <section class="section-padding" id="contacto" style="background: linear-gradient(135deg, var(--color-navy) 0%, #1e4a7a 100%); color: var(--color-white); text-align: center;">
-      <div class="container" style="max-width: 760px;">
-        <div style="display: inline-flex; gap: 8px; align-items: center; margin-bottom: var(--space-16);">
-          <span class="badge badge-primary" style="background: rgba(255,255,255,0.15); color: #ffffff; border: none;">
-            Atención Rápida Prepa 4
-          </span>
-        </div>
-        <h2 style="color: var(--color-white); font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: var(--space-16);">
-          ¿Listo para resolver tu Examen de Práctica y Simulador?
-        </h2>
-        <p style="color: #d0e0f5; font-size: 1.1rem; line-height: 1.6; margin-bottom: var(--space-32);">
-          No pierdas horas intentando descifrar temarios densos a solas. Envíanos tu información y recibe una cotización adaptada a tu grado escolar en minutos.
-        </p>
-
-        <div style="display: flex; gap: var(--space-16); justify-content: center; flex-wrap: wrap;">
-          <button class="btn btn-primary btn-lg" data-open-order data-service-id="examen-de-practica">
-            <i data-lucide="message-circle"></i>
-            <span>Cotizar este Servicio por WhatsApp</span>
-          </button>
-          <a href="../categorias.html" class="btn btn-secondary btn-lg">
-            <i data-lucide="grid"></i>
-            <span>Ver Otros Servicios</span>
+  <!-- Contenido Principal -->
+  <main class="section-padding bg-surface">
+    <div class="container container-narrow">
+      
+      <!-- Migajas de Pan y Encabezado -->
+      <div class="mb-24">
+        <div style="display: flex; gap: var(--space-12, 12px); align-items: center; margin-bottom: var(--space-16); flex-wrap: wrap;">
+          <a href="legal.html" style="font-size: 0.88rem; display: inline-flex; align-items: center; gap: 6px; font-weight: 600;">
+            <i data-lucide="arrow-left" style="width: 16px; height: 16px;"></i> Centro Legal
           </a>
+          <span class="text-muted">&bull;</span>
+          <a href="index.html" style="font-size: 0.88rem; color: var(--color-text-muted);">Inicio</a>
         </div>
+        <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 12px;">
+          <span class="badge badge-primary">Condiciones Comerciales</span>
+          <span class="badge badge-success">Servicios Escolares</span>
+        </div>
+        <h1 style="color: var(--color-navy); font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 8px;">
+          TÉRMINOS DE CONTRATACIÓN DEL SERVICIO
+        </h1>
+        <p class="text-muted" style="font-weight: 600; font-size: 0.95rem;">
+          Última actualización: 31 de agosto de 2026
+        </p>
       </div>
-    </section>
+
+      <!-- Tarjeta Principal de Contenido -->
+      <div class="card legal-body" style="padding: var(--space-32);">
+        
+        <p>
+          Los presentes Términos de Contratación del Servicio establecen las condiciones específicas bajo las cuales una persona puede contratar los servicios ofrecidos por <strong>Encardomy</strong>, nombre comercial utilizado por <strong>Diego Periañex Hernández</strong>, con domicilio en Ciudad de México, C.P. <strong>06700</strong>.
+        </p>
+
+        <p>
+          Estos términos complementan los <strong>Términos y Condiciones de Servicio</strong>, el <strong>Aviso de Privacidad</strong> y la <strong>Política de Propiedad Intelectual de Encardomy</strong>.
+        </p>
+
+        <p>
+          Cuando exista una contradicción entre estos Términos de Contratación y una cotización específica aceptada por el Cliente, las condiciones particulares expresamente establecidas en dicha cotización prevalecerán únicamente respecto del Proyecto correspondiente.
+        </p>
+
+        <!-- Cuadro de Contacto Inmediato -->
+        <div class="legal-contact-box">
+          <h4 style="color: var(--color-navy); margin-bottom: 8px; font-size: 1.05rem;">
+            📬 Canales Oficiales de Contratación y Atención:
+          </h4>
+          <p style="margin-bottom: 6px; font-size: 0.95rem;">
+            <strong>Responsable:</strong> Diego Periañex Hernández (Encardomy) &bull; C.P. 06700, Ciudad de México.
+          </p>
+          <p style="margin-bottom: 6px; font-size: 0.95rem;">
+            <strong>Correo electrónico:</strong> <a href="mailto:encardomy@gmail.com" style="font-weight: 600;">encardomy@gmail.com</a>
+          </p>
+          <p style="margin-bottom: 0; font-size: 0.95rem;">
+            <strong>WhatsApp Oficial:</strong> <a href="https://wa.me/525571985641" target="_blank" style="font-weight: 600;">+52 55 7198 5641</a>
+          </p>
+        </div>
+
+        <!-- Índice de Contenido Rápido -->
+        <div class="toc-box">
+          <h4 style="font-size: 0.95rem; color: var(--color-navy); margin-bottom: 12px; font-weight: 700;">
+            📋 Contenido de los Términos de Contratación (36 Secciones):
+          </h4>
+          <div class="toc-grid">
+            <a href="#sec-1" class="toc-link">1. Identificación de las partes</a>
+            <a href="#sec-2" class="toc-link">2. Servicios disponibles</a>
+            <a href="#sec-3" class="toc-link">3. Solicitud del servicio</a>
+            <a href="#sec-4" class="toc-link">4. Cotización</a>
+            <a href="#sec-5" class="toc-link">5. Aceptación de la cotización</a>
+            <a href="#sec-6" class="toc-link">6. Formación de la contratación</a>
+            <a href="#sec-7" class="toc-link">7. Pago y plataformas</a>
+            <a href="#sec-8" class="toc-link">8. Inicio del Proyecto</a>
+            <a href="#sec-9" class="toc-link">9. Información del Cliente</a>
+            <a href="#sec-10" class="toc-link">10. Responsabilidad de archivos</a>
+            <a href="#sec-11" class="toc-link">11. Plazo de entrega</a>
+            <a href="#sec-12" class="toc-link">12. Servicios urgentes</a>
+            <a href="#sec-13" class="toc-link">13. Entrega de materiales</a>
+            <a href="#sec-14" class="toc-link">14. Revisión del material</a>
+            <a href="#sec-15" class="toc-link">15. Modificaciones del Cliente</a>
+            <a href="#sec-16" class="toc-link">16. Cambio de instrucciones</a>
+            <a href="#sec-17" class="toc-link">17. Cancelación antes de iniciar</a>
+            <a href="#sec-18" class="toc-link">18. Cancelación tras iniciar</a>
+            <a href="#sec-19" class="toc-link">19. Incumplimiento del Cliente</a>
+            <a href="#sec-20" class="toc-link">20. Incumplimiento de Encardomy</a>
+            <a href="#sec-21" class="toc-link">21. Propiedad intelectual</a>
+            <a href="#sec-22" class="toc-link">22. Periodo de exclusividad</a>
+            <a href="#sec-23" class="toc-link">23. Compra de derechos</a>
+            <a href="#sec-24" class="toc-link">24. Uso académico legítimo</a>
+            <a href="#sec-25" class="toc-link">25. Actividades no admitidas</a>
+            <a href="#sec-26" class="toc-link">26. Uso de Inteligencia Artificial</a>
+            <a href="#sec-27" class="toc-link">27. Confidencialidad</a>
+            <a href="#sec-28" class="toc-link">28. Menores de edad</a>
+            <a href="#sec-29" class="toc-link">29. Comunicación por WhatsApp</a>
+            <a href="#sec-30" class="toc-link">30. Aceptación de los términos</a>
+            <a href="#sec-31" class="toc-link">31. Documentos contractuales</a>
+            <a href="#sec-32" class="toc-link">32. Prevalencia de condiciones</a>
+            <a href="#sec-33" class="toc-link">33. Modificaciones al contrato</a>
+            <a href="#sec-34" class="toc-link">34. Legislación aplicable</a>
+            <a href="#sec-35" class="toc-link">35. Contacto</a>
+            <a href="#sec-36" class="toc-link">36. Aceptación final</a>
+          </div>
+        </div>
+
+        <!-- Secciones 1 a 36 -->
+        <section id="sec-1">
+          <h2>1. IDENTIFICACIÓN DE LAS PARTES</h2>
+          <p>Para efectos del presente documento:</p>
+          <ul>
+            <li><strong>Encardomy:</strong> Diego Periañex Hernández, quien opera comercialmente bajo el nombre Encardomy.</li>
+            <li><strong>Cliente:</strong> persona que solicita, acepta y/o paga un servicio de Encardomy.</li>
+            <li><strong>Proyecto:</strong> servicio específico contratado por el Cliente.</li>
+            <li><strong>Cotización:</strong> propuesta económica y descriptiva realizada por Encardomy para un Proyecto determinado.</li>
+            <li><strong>Materiales:</strong> documentos, archivos, información, instrucciones, imágenes, videos, referencias y demás elementos necesarios para realizar el Proyecto.</li>
+          </ul>
+        </section>
+
+        <section id="sec-2">
+          <h2>2. SERVICIOS DISPONIBLES</h2>
+          <p>Encardomy ofrece servicios digitales y académicos dirigidos principalmente a estudiantes de Preparatoria 4.</p>
+          <p>Los servicios pueden incluir, entre otros:</p>
+          <ul>
+            <li>Resúmenes.</li>
+            <li>Guías de estudio.</li>
+            <li>Flashcards.</li>
+            <li>Presentaciones.</li>
+            <li>Infografías.</li>
+            <li>Documentos.</li>
+            <li>Corrección y edición.</li>
+            <li>Materiales de apoyo académico.</li>
+            <li>Proyectos.</li>
+            <li>Diseños digitales.</li>
+            <li>Otros servicios disponibles en el catálogo vigente de Encardomy.</li>
+          </ul>
+          <p>Las características exactas de cada servicio serán determinadas mediante la cotización correspondiente.</p>
+        </section>
+
+        <section id="sec-3">
+          <h2>3. SOLICITUD DEL SERVICIO</h2>
+          <p>El proceso de contratación podrá iniciar mediante:</p>
+          <ul>
+            <li>Sitio web.</li>
+            <li>Formulario.</li>
+            <li>WhatsApp.</li>
+            <li>Comunicación directa con Encardomy.</li>
+            <li>Cualquier otro canal oficialmente habilitado.</li>
+          </ul>
+          <p>El Cliente deberá proporcionar información suficiente para que Encardomy pueda comprender las características del Proyecto.</p>
+          <p>La información podrá incluir:</p>
+          <ul>
+            <li>Nombre.</li>
+            <li>Grado.</li>
+            <li>Grupo.</li>
+            <li>Materia.</li>
+            <li>Fecha de entrega.</li>
+            <li>Información del proyecto.</li>
+            <li>Instrucciones.</li>
+            <li>Nombre del profesor, cuando sea necesario.</li>
+            <li>Calificación esperada, cuando sea relevante.</li>
+            <li>Archivos o materiales necesarios.</li>
+          </ul>
+          <p>Encardomy podrá solicitar información adicional cuando considere que la información recibida no es suficiente para determinar correctamente el alcance del Proyecto.</p>
+        </section>
+
+        <section id="sec-4">
+          <h2>4. COTIZACIÓN</h2>
+          <p>Después de recibir la información necesaria, Encardomy podrá emitir una cotización.</p>
+          <p>La cotización podrá especificar:</p>
+          <ul>
+            <li>Servicio contratado.</li>
+            <li>Descripción.</li>
+            <li>Alcance.</li>
+            <li>Precio.</li>
+            <li>Tiempo de entrega.</li>
+            <li>Formato de entrega.</li>
+            <li>Número de modificaciones incluidas.</li>
+            <li>Condiciones especiales.</li>
+            <li>Forma de pago.</li>
+            <li>Cualquier otra condición relevante.</li>
+          </ul>
+          <p>La cotización se realizará con base en la información proporcionada por el Cliente.</p>
+          <p>Si posteriormente se descubre que las características reales del Proyecto son sustancialmente diferentes de las comunicadas inicialmente, Encardomy podrá modificar la cotización antes de iniciar el trabajo.</p>
+        </section>
+
+        <section id="sec-5">
+          <h2>5. ACEPTACIÓN DE LA COTIZACIÓN</h2>
+          <p>El Cliente podrá aceptar la cotización mediante el mecanismo indicado por Encardomy.</p>
+          <p>La aceptación podrá realizarse mediante:</p>
+          <ul>
+            <li>Confirmación escrita por WhatsApp.</li>
+            <li>Confirmación mediante otro canal autorizado.</li>
+            <li>Pago del importe solicitado.</li>
+            <li>Cualquier otro mecanismo que permita acreditar la aceptación.</li>
+          </ul>
+          <p>El pago podrá constituir una manifestación de aceptación cuando la cotización indique expresamente que el pago implica aceptación de las condiciones del servicio.</p>
+        </section>
+
+        <section id="sec-6">
+          <h2>6. FORMACIÓN DE LA CONTRATACIÓN</h2>
+          <p>La contratación del servicio se considerará realizada cuando concurran las condiciones indicadas en la cotización correspondiente.</p>
+          <p>Dependiendo del Proyecto, podrá requerirse:</p>
+          <ol>
+            <li>Solicitud del servicio.</li>
+            <li>Recepción de información suficiente.</li>
+            <li>Emisión de cotización.</li>
+            <li>Aceptación del Cliente.</li>
+            <li>Pago total o anticipo correspondiente.</li>
+            <li>Confirmación del pago.</li>
+            <li>Inicio del Proyecto.</li>
+          </ol>
+          <p>No se considerará iniciado un Proyecto únicamente por haber solicitado una cotización.</p>
+        </section>
+
+        <section id="sec-7">
+          <h2>7. PAGO</h2>
+          <p>El Cliente deberá realizar el pago mediante los medios habilitados por Encardomy.</p>
+          <p>Cuando se utilice tarjeta bancaria, el Cliente podrá recibir un enlace seguro proporcionado mediante <strong>Clip</strong>.</p>
+          <p>Encardomy no solicitará números completos de tarjetas bancarias mediante WhatsApp.</p>
+          <p>El pago se considerará confirmado cuando la operación haya sido aprobada por el proveedor de pagos correspondiente o pueda ser verificada por Encardomy.</p>
+          <p>Encardomy podrá requerir:</p>
+          <ul>
+            <li>Pago total antes de iniciar.</li>
+            <li>Anticipo antes de iniciar.</li>
+            <li>Pago dividido en etapas.</li>
+          </ul>
+          <p>La modalidad aplicable será la indicada en la cotización.</p>
+        </section>
+
+        <section id="sec-8">
+          <h2>8. INICIO DEL PROYECTO</h2>
+          <p>El plazo de entrega comenzará a contar cuando se hayan cumplido todas las condiciones necesarias para iniciar el Proyecto.</p>
+          <p>Salvo que la cotización establezca algo diferente, esto significa que Encardomy haya recibido:</p>
+          <ul>
+            <li>aceptación de la cotización;</li>
+            <li>pago requerido;</li>
+            <li>instrucciones suficientes;</li>
+            <li>materiales necesarios;</li>
+            <li>archivos requeridos;</li>
+            <li>cualquier otra información indispensable.</li>
+          </ul>
+          <p>Si falta información necesaria, el plazo no comenzará a correr hasta que dicha información sea recibida.</p>
+        </section>
+
+        <section id="sec-9">
+          <h2>9. INFORMACIÓN PROPORCIONADA POR EL CLIENTE</h2>
+          <p>El Cliente deberá proporcionar información:</p>
+          <ul>
+            <li>completa;</li>
+            <li>clara;</li>
+            <li>legible;</li>
+            <li>actualizada;</li>
+            <li>correcta.</li>
+          </ul>
+          <p>Encardomy podrá solicitar aclaraciones cuando exista información contradictoria o insuficiente.</p>
+          <p>Si el Cliente proporciona información incorrecta y posteriormente solicita corregir el resultado debido a dicha información, la modificación podrá considerarse fuera del alcance original.</p>
+        </section>
+
+        <section id="sec-10">
+          <h2>10. RESPONSABILIDAD SOBRE ARCHIVOS Y MATERIALES</h2>
+          <p>El Cliente será responsable de contar con autorización para utilizar los materiales que proporcione cuando estos pertenezcan a terceros y su utilización requiera autorización.</p>
+          <p>Encardomy podrá rechazar materiales cuando exista una razón razonable para considerar que su utilización podría infringir derechos de terceros o implicar una actividad ilícita.</p>
+        </section>
+
+        <section id="sec-11">
+          <h2>11. PLAZO DE ENTREGA</h2>
+          <p>El plazo de entrega será el establecido en la cotización.</p>
+          <p>Cuando el servicio se anuncie con un tiempo determinado, dicho plazo estará condicionado a que el Cliente proporcione oportunamente toda la información necesaria.</p>
+          <p>Los retrasos derivados de:</p>
+          <ul>
+            <li>falta de información;</li>
+            <li>información incorrecta;</li>
+            <li>cambios solicitados;</li>
+            <li>archivos ilegibles;</li>
+            <li>falta de respuesta;</li>
+            <li>cambios de instrucciones;</li>
+            <li>problemas atribuibles al Cliente;</li>
+          </ul>
+          <p>podrán modificar el plazo de entrega.</p>
+        </section>
+
+        <section id="sec-12">
+          <h2>12. SERVICIOS URGENTES</h2>
+          <p>Encardomy podrá ofrecer servicios con tiempos de entrega reducidos.</p>
+          <p>Los servicios urgentes podrán tener condiciones y precios diferentes a los servicios ordinarios.</p>
+          <p>El tiempo urgente comenzará a contar una vez que se hayan cumplido las condiciones necesarias para iniciar el Proyecto.</p>
+          <p>La disponibilidad de un servicio urgente dependerá de la capacidad operativa de Encardomy.</p>
+        </section>
+
+        <section id="sec-13">
+          <h2>13. ENTREGA</h2>
+          <p>El material contratado podrá entregarse mediante:</p>
+          <ul>
+            <li>WhatsApp.</li>
+            <li>Google Drive.</li>
+            <li>Enlace digital.</li>
+            <li>Correo electrónico, cuando corresponda.</li>
+            <li>Otro medio acordado.</li>
+          </ul>
+          <p>El Cliente deberá proporcionar información de contacto correcta.</p>
+          <p>Cuando el material haya sido puesto a disposición mediante el medio acordado, Encardomy podrá considerar realizada la entrega.</p>
+          <p>Si el Cliente reporta que no puede acceder al archivo por una causa atribuible a Encardomy, se proporcionará nuevamente cuando corresponda.</p>
+        </section>
+
+        <section id="sec-14">
+          <h2>14. REVISIÓN DEL MATERIAL</h2>
+          <p>Cuando el servicio incluya revisión o correcciones, estas estarán limitadas al alcance establecido en la cotización.</p>
+          <p>La revisión podrá comprender:</p>
+          <ul>
+            <li>errores de redacción;</li>
+            <li>errores de formato;</li>
+            <li>errores atribuibles directamente a Encardomy;</li>
+            <li>ajustes previamente contemplados;</li>
+            <li>correcciones específicas relacionadas con las instrucciones originales.</li>
+          </ul>
+          <p>La revisión no implica que Encardomy deba rehacer un Proyecto completamente diferente.</p>
+        </section>
+
+        <section id="sec-15">
+          <h2>15. MODIFICACIONES SOLICITADAS POR EL CLIENTE</h2>
+          <p>El Cliente podrá solicitar modificaciones cuando estas estén contempladas dentro del servicio contratado.</p>
+          <p>Una modificación será considerada parte del servicio cuando no altere sustancialmente:</p>
+          <ul>
+            <li>el tema;</li>
+            <li>la extensión;</li>
+            <li>la estructura;</li>
+            <li>el formato;</li>
+            <li>el objetivo;</li>
+            <li>el alcance;</li>
+            <li>el volumen de trabajo.</li>
+          </ul>
+          <p>Cuando una solicitud represente un cambio sustancial, Encardomy podrá emitir una nueva cotización.</p>
+        </section>
+
+        <section id="sec-16">
+          <h2>16. CAMBIO DE INSTRUCCIONES</h2>
+          <p>Si el Cliente cambia las instrucciones después de que el Proyecto haya comenzado, Encardomy podrá:</p>
+          <ol>
+            <li>Aceptar el cambio sin costo cuando sea menor.</li>
+            <li>Ajustar el plazo.</li>
+            <li>Emitir un costo adicional.</li>
+            <li>Rechazar el cambio cuando resulte incompatible con el Proyecto contratado.</li>
+          </ol>
+          <p>La decisión dependerá de la magnitud del cambio y de los recursos necesarios para realizarlo.</p>
+        </section>
+
+        <section id="sec-17">
+          <h2>17. CANCELACIÓN ANTES DE INICIAR</h2>
+          <p>El Cliente podrá solicitar la cancelación antes de que Encardomy haya iniciado materialmente el Proyecto.</p>
+          <p>La procedencia de un reembolso dependerá de las circunstancias específicas y de la legislación aplicable.</p>
+          <p>Cuando Encardomy ya haya incurrido en trabajo o costos relacionados con el Proyecto, se analizará el caso de acuerdo con:</p>
+          <ul>
+            <li>el trabajo realizado;</li>
+            <li>los costos generados;</li>
+            <li>el momento de la cancelación;</li>
+            <li>la naturaleza del servicio;</li>
+            <li>las disposiciones legales aplicables.</li>
+          </ul>
+        </section>
+
+        <section id="sec-18">
+          <h2>18. CANCELACIÓN DESPUÉS DE INICIAR</h2>
+          <p>Una vez iniciado el Proyecto, el Cliente podrá solicitar su cancelación.</p>
+          <p>Encardomy evaluará la solicitud considerando el trabajo efectivamente realizado y las obligaciones legales aplicables.</p>
+          <p>El Cliente no perderá derechos que legalmente le correspondan.</p>
+          <p>Las condiciones específicas de reembolso estarán determinadas también por la <strong>Política de Cancelaciones y Reembolsos de Encardomy</strong>.</p>
+        </section>
+
+        <section id="sec-19">
+          <h2>19. INCUMPLIMIENTO DEL CLIENTE</h2>
+          <p>Encardomy podrá suspender o retrasar el Proyecto cuando el Cliente:</p>
+          <ul>
+            <li>no realice un pago requerido;</li>
+            <li>no entregue información indispensable;</li>
+            <li>no responda solicitudes necesarias;</li>
+            <li>cambie sustancialmente el alcance;</li>
+            <li>proporcione información insuficiente;</li>
+            <li>solicite una actividad prohibida;</li>
+            <li>proporcione materiales cuyo uso genere un riesgo jurídico relevante.</li>
+          </ul>
+          <p>La suspensión no implicará automáticamente la cancelación del contrato.</p>
+        </section>
+
+        <section id="sec-20">
+          <h2>20. INCUMPLIMIENTO DE ENCARDOMY</h2>
+          <p>Si Encardomy no cumple con las características esenciales expresamente acordadas en la contratación por una causa directamente atribuible a Encardomy, el Cliente podrá comunicarse para solicitar la solución correspondiente.</p>
+          <p>Dependiendo del caso, la solución podrá consistir en:</p>
+          <ul>
+            <li>corrección;</li>
+            <li>modificación;</li>
+            <li>nueva entrega;</li>
+            <li>reprogramación;</li>
+            <li>reembolso;</li>
+            <li>bonificación;</li>
+          </ul>
+          <p>cuando legalmente corresponda.</p>
+        </section>
+
+        <section id="sec-21">
+          <h2>21. PROPIEDAD INTELECTUAL DEL RESULTADO</h2>
+          <p>Salvo acuerdo escrito diferente, los materiales originales creados por Encardomy estarán sujetos a la <strong>Política de Propiedad Intelectual de Encardomy</strong>.</p>
+          <p>El Cliente no adquiere automáticamente la totalidad de los derechos patrimoniales por el simple hecho de pagar el servicio.</p>
+          <p>El alcance del derecho de uso otorgado será el establecido en:</p>
+          <ul>
+            <li>estos Términos;</li>
+            <li>la cotización;</li>
+            <li>la Política de Propiedad Intelectual;</li>
+            <li>cualquier acuerdo específico celebrado con el Cliente.</li>
+          </ul>
+        </section>
+
+        <section id="sec-22">
+          <h2>22. PERIODO DE EXCLUSIVIDAD</h2>
+          <p>Cuando corresponda, Encardomy podrá establecer un periodo de seis meses durante el cual no reutilizará comercialmente el mismo material creado específicamente para un Cliente.</p>
+          <p>El periodo comenzará desde la entrega del material, salvo que se establezca una fecha distinta.</p>
+          <p>Una vez transcurrido dicho periodo, Encardomy podrá reutilizar o adaptar sus propios materiales de acuerdo con la Política de Propiedad Intelectual.</p>
+        </section>
+
+        <section id="sec-23">
+          <h2>23. COMPRA DE DERECHOS</h2>
+          <p>El Cliente podrá solicitar adquirir derechos adicionales sobre un material creado por Encardomy.</p>
+          <p>La adquisición no será automática.</p>
+          <p>Cuando Encardomy acepte la operación, deberá establecerse por escrito:</p>
+          <ul>
+            <li>qué material se transmite o licencia;</li>
+            <li>qué derechos se conceden;</li>
+            <li>duración;</li>
+            <li>territorio;</li>
+            <li>modalidades de explotación;</li>
+            <li>precio;</li>
+            <li>demás condiciones aplicables.</li>
+          </ul>
+          <p>El pago de un servicio ordinario no equivale a la compra de todos los derechos patrimoniales.</p>
+        </section>
+
+        <section id="sec-24">
+          <h2>24. USO ACADÉMICO</h2>
+          <p>Los materiales proporcionados por Encardomy deberán utilizarse conforme a las reglas de la institución educativa correspondiente.</p>
+          <p>Encardomy proporciona servicios y materiales académicos, pero no controla las políticas particulares de cada profesor, materia o institución.</p>
+          <p>El Cliente será responsable de conocer y cumplir las reglas académicas aplicables a su situación.</p>
+        </section>
+
+        <section id="sec-25">
+          <h2>25. ACTIVIDADES NO ADMITIDAS</h2>
+          <p>Encardomy podrá rechazar solicitudes relacionadas con:</p>
+          <ul>
+            <li>exámenes en tiempo real;</li>
+            <li>suplantación;</li>
+            <li>falsificación;</li>
+            <li>fraude académico;</li>
+            <li>manipulación de calificaciones;</li>
+            <li>falsificación de documentos;</li>
+            <li>fabricación de evidencias;</li>
+            <li>fabricación de resultados presentados como reales;</li>
+            <li>acceso no autorizado a sistemas;</li>
+            <li>actividades ilícitas.</li>
+          </ul>
+          <p>El pago de una solicitud no obliga a Encardomy a realizar una actividad que posteriormente se determine incompatible con estas condiciones o con la legislación aplicable.</p>
+        </section>
+
+        <section id="sec-26">
+          <h2>26. USO DE INTELIGENCIA ARTIFICIAL</h2>
+          <p>Encardomy podrá utilizar herramientas de inteligencia artificial para apoyar determinados procesos.</p>
+          <p>El Cliente acepta que determinadas etapas del proceso pueden incluir herramientas automatizadas o asistidas por inteligencia artificial.</p>
+          <p>Encardomy podrá realizar revisión y edición humana cuando el servicio lo contemple.</p>
+          <p>La utilización de inteligencia artificial no constituye una garantía de:</p>
+          <ul>
+            <li>determinada calificación;</li>
+            <li>aprobación académica;</li>
+            <li>ausencia absoluta de errores;</li>
+            <li>resultado específico en detectores de IA;</li>
+            <li>aceptación del material por parte de un profesor.</li>
+          </ul>
+        </section>
+
+        <section id="sec-27">
+          <h2>27. CONFIDENCIALIDAD</h2>
+          <p>Encardomy tratará la información proporcionada por el Cliente conforme a su Aviso de Privacidad.</p>
+          <p>Los archivos e información recibidos para realizar un Proyecto no deberán divulgarse innecesariamente.</p>
+          <p>Las excepciones podrán incluir situaciones necesarias para:</p>
+          <ul>
+            <li>prestar el servicio;</li>
+            <li>utilizar proveedores tecnológicos;</li>
+            <li>procesar pagos;</li>
+            <li>cumplir obligaciones legales;</li>
+            <li>ejercer derechos;</li>
+            <li>atender requerimientos de autoridades.</li>
+          </ul>
+        </section>
+
+        <section id="sec-28">
+          <h2>28. MENORES DE EDAD</h2>
+          <p>Los servicios podrán ser contratados por estudiantes menores de edad.</p>
+          <p>Cuando se utilice una tarjeta bancaria perteneciente a un adulto, deberá existir autorización del titular de la tarjeta.</p>
+          <p>Los pagos mediante otros medios estarán sujetos a las reglas del proveedor correspondiente.</p>
+          <p>Encardomy podrá solicitar la intervención de un padre, tutor o adulto responsable cuando resulte necesario para proteger al menor, verificar una operación o cumplir obligaciones legales.</p>
+        </section>
+
+        <section id="sec-29">
+          <h2>29. COMUNICACIÓN POR WHATSAPP</h2>
+          <p>WhatsApp podrá utilizarse para:</p>
+          <ul>
+            <li>solicitar información;</li>
+            <li>enviar cotizaciones;</li>
+            <li>confirmar servicios;</li>
+            <li>confirmar pagos;</li>
+            <li>solicitar materiales;</li>
+            <li>enviar actualizaciones;</li>
+            <li>realizar entregas;</li>
+            <li>atender dudas;</li>
+            <li>coordinar modificaciones.</li>
+          </ul>
+          <p>El Cliente acepta que la comunicación relacionada con su Proyecto podrá realizarse mediante dicho canal cuando haya proporcionado o utilizado ese medio de contacto.</p>
+        </section>
+
+        <section id="sec-30">
+          <h2>30. ACEPTACIÓN DE LOS TÉRMINOS</h2>
+          <p>Antes de contratar un servicio, el Cliente deberá tener acceso a las condiciones aplicables.</p>
+          <p>La aceptación podrá realizarse mediante:</p>
+          <ul>
+            <li>confirmación escrita;</li>
+            <li>aceptación digital;</li>
+            <li>pago;</li>
+            <li>u otro mecanismo válido que permita acreditar la contratación.</li>
+          </ul>
+          <p>Cuando legalmente se requiera una aceptación específica, Encardomy implementará el mecanismo correspondiente.</p>
+        </section>
+
+        <section id="sec-31">
+          <h2>31. DOCUMENTOS QUE FORMAN PARTE DE LA CONTRATACIÓN</h2>
+          <p>Dependiendo del Proyecto, podrán formar parte de la relación contractual:</p>
+          <ol>
+            <li>Estos Términos de Contratación.</li>
+            <li>Los Términos y Condiciones de Servicio.</li>
+            <li>La cotización aceptada.</li>
+            <li>La Política de Propiedad Intelectual.</li>
+            <li>La Política de Cancelaciones y Reembolsos.</li>
+            <li>El Aviso de Privacidad.</li>
+            <li>Cualquier acuerdo específico celebrado por escrito.</li>
+          </ol>
+        </section>
+
+        <section id="sec-32">
+          <h2>32. PREVALENCIA DE CONDICIONES ESPECÍFICAS</h2>
+          <p>Cuando una cotización aceptada establezca condiciones específicas para un Proyecto, dichas condiciones prevalecerán sobre las condiciones generales únicamente respecto de los aspectos expresamente modificados.</p>
+          <p>Las demás disposiciones continuarán siendo aplicables.</p>
+        </section>
+
+        <section id="sec-33">
+          <h2>33. MODIFICACIONES AL CONTRATO</h2>
+          <p>Cualquier modificación sustancial al alcance del Proyecto podrá requerir una nueva cotización o confirmación escrita.</p>
+          <p>Las modificaciones deberán poder acreditarse mediante los medios de comunicación utilizados entre las partes.</p>
+        </section>
+
+        <section id="sec-34">
+          <h2>34. LEGISLACIÓN APLICABLE</h2>
+          <p>La contratación se regirá por las leyes aplicables de los Estados Unidos Mexicanos.</p>
+          <p>Ninguna disposición de estos Términos pretende limitar derechos que sean irrenunciables conforme a la legislación aplicable.</p>
+        </section>
+
+        <section id="sec-35">
+          <h2>35. CONTACTO</h2>
+          <p>Para asuntos relacionados con la contratación:</p>
+          <p style="margin-bottom: 4px;"><strong>Encardomy</strong></p>
+          <p style="margin-bottom: 4px;">Responsable: <strong>Diego Periañex Hernández</strong></p>
+          <p style="margin-bottom: 4px;">Ciudad de México, C.P. 06700</p>
+          <p style="margin-bottom: 4px;">Correo electrónico: <a href="mailto:encardomy@gmail.com" style="font-weight: 600;">encardomy@gmail.com</a></p>
+          <p style="margin-bottom: 0;">WhatsApp: <a href="https://wa.me/525571985641" target="_blank" style="font-weight: 600;">+52 55 7198 5641</a></p>
+        </section>
+
+        <section id="sec-36">
+          <h2>36. ACEPTACIÓN FINAL</h2>
+          <p>Al aceptar una cotización y contratar un servicio, el Cliente reconoce haber tenido acceso a las condiciones aplicables al Proyecto y acepta cumplirlas, sin perjuicio de los derechos que legalmente le correspondan.</p>
+          <p style="font-weight: 700; color: var(--color-navy);">
+            Encardomy se reserva el derecho de rechazar solicitudes que sean incompatibles con sus políticas, principios de integridad académica, capacidad operativa o legislación aplicable.
+          </p>
+        </section>
+
+        <!-- Firma de Responsabilidad -->
+        <div style="border-top: 2px solid var(--color-border); padding-top: var(--space-24); margin-top: var(--space-32);">
+          <h4 style="color: var(--color-navy); margin-bottom: 8px;">CONTRATACIÓN Y RESPONSABILIDAD</h4>
+          <p style="margin-bottom: 4px;"><strong>Diego Periañex Hernández</strong></p>
+          <p style="margin-bottom: 4px;">Nombre comercial: <strong>Encardomy</strong></p>
+          <p style="margin-bottom: 4px;">Ciudad de México, C.P. 06700</p>
+          <p style="margin-top: 12px; font-size: 0.85rem;" class="text-muted"><strong>Última actualización:</strong> 31 de agosto de 2026</p>
+        </div>
+
+      </div>
+
+      <!-- Botón de regreso / Cotización -->
+      <div style="text-align: center; margin-top: var(--space-32);">
+        <a href="legal.html" class="btn btn-secondary btn-lg mr-8">
+          <i data-lucide="folder"></i> Ver Todos los Documentos Legales
+        </a>
+        <button class="btn btn-primary btn-lg" data-open-order data-service-id="resumen">
+          <i data-lucide="sparkles"></i> Solicitar Cotización
+        </button>
+      </div>
+
+    </div>
   </main>
 
-  <!-- ==========================================================================
-       GLOBAL SITE FOOTER (CON CENTRO LEGAL, PRIVACIDAD Y PROPIEDAD INTELECTUAL)
-       ========================================================================== -->
+  <!-- Footer Global -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -672,20 +767,21 @@
         <div>
           <h4 class="footer-col-title">Categorías</h4>
           <ul class="footer-links">
-            <li><a href="../categorias.html?cat=estudiar">Estudiar</a></li>
-            <li><a href="../categorias.html?cat=mejorar">Mejorar</a></li>
-            <li><a href="../categorias.html?cat=crear">Crear</a></li>
-            <li><a href="../categorias.html?cat=disenar">Diseñar</a></li>
-            <li><a href="../categorias.html?cat=proyectos">Proyectos</a></li>
+            <li><a href="categorias.html?cat=estudiar">Estudiar</a></li>
+            <li><a href="categorias.html?cat=mejorar">Mejorar</a></li>
+            <li><a href="categorias.html?cat=crear">Crear</a></li>
+            <li><a href="categorias.html?cat=disenar">Diseñar</a></li>
+            <li><a href="categorias.html?cat=proyectos">Proyectos</a></li>
           </ul>
         </div>
 
         <div>
           <h4 class="footer-col-title">Legal & Transparencia</h4>
           <ul class="footer-links">
-            <li><a href="../legal.html" style="font-weight: 700; color: #FFFFFF;">⚖️ Centro de Documentos Legales</a></li>
-            <li><a href="../privacidad.html">🔒 Aviso de Privacidad</a></li>
-            <li><a href="../propiedad-intelectual.html">💡 Propiedad Intelectual</a></li>
+            <li><a href="legal.html" style="font-weight: 700; color: #FFFFFF;">⚖️ Centro de Documentos Legales</a></li>
+            <li><a href="privacidad.html">🔒 Aviso de Privacidad</a></li>
+            <li><a href="propiedad-intelectual.html">💡 Propiedad Intelectual</a></li>
+            <li><a href="terminos-contratacion.html" style="color: var(--color-white); font-weight: 700;">📋 Términos de Contratación</a></li>
             <li><a href="mailto:encardomy@gmail.com">Contacto Legal</a></li>
           </ul>
         </div>
@@ -706,11 +802,13 @@
           &copy; 2026 Encardomy &bull; Diego Periañex Hernández &bull; C.P. 06700, CDMX.
         </div>
         <div style="display: flex; gap: var(--space-16); align-items: center; flex-wrap: wrap;">
-          <a href="../legal.html" style="color: #b0c6e0; text-decoration: underline;">Centro Legal</a>
+          <a href="legal.html" style="color: #b0c6e0; text-decoration: underline;">Centro Legal</a>
           <span>&bull;</span>
-          <a href="../privacidad.html" style="color: #b0c6e0; text-decoration: underline;">Aviso de Privacidad</a>
+          <a href="privacidad.html" style="color: #b0c6e0; text-decoration: underline;">Aviso de Privacidad</a>
           <span>&bull;</span>
-          <a href="../propiedad-intelectual.html" style="color: #b0c6e0; text-decoration: underline;">Propiedad Intelectual</a>
+          <a href="propiedad-intelectual.html" style="color: #b0c6e0; text-decoration: underline;">Propiedad Intelectual</a>
+          <span>&bull;</span>
+          <a href="terminos-contratacion.html" style="color: #b0c6e0; text-decoration: underline;">Términos de Contratación</a>
           <span>&bull;</span>
           <span>Accesibilidad WCAG AA</span>
           <span>&bull;</span>
@@ -719,22 +817,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- Barra flotante inferior para móviles -->
-  <div class="mobile-bottom-bar">
-    <div>
-      <div style="font-family: var(--font-heading); font-weight: 700; font-size: 0.86rem; color: var(--color-navy); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;">
-        Examen de Práctica y Simulador
-      </div>
-      <div style="font-size: 0.74rem; color: var(--color-text-muted);">
-        Entrega: 24 a 36 horas
-      </div>
-    </div>
-    <button class="btn btn-primary btn-sm" data-open-order data-service-id="examen-de-practica">
-      <i data-lucide="message-circle"></i>
-      <span>Cotizar</span>
-    </button>
-  </div>
 
   <!-- Modal de Pedido -->
   <!-- ==========================================================================
@@ -1441,15 +1523,15 @@
         </button>
 
                 <div style="text-align: center; margin-top: 10px; font-size: 0.78rem; color: var(--color-text-muted);">
-          🔒 Tus datos están protegidos. Al solicitar tu cotización aceptas nuestro <a href="../privacidad.html" target="_blank" style="text-decoration: underline; color: var(--color-primary); font-weight: 600;">Aviso de Privacidad</a> y la <a href="../propiedad-intelectual.html" target="_blank" style="text-decoration: underline; color: var(--color-primary); font-weight: 600;">Propiedad Intelectual</a>, los <a href="../terminos-contratacion.html" target="_blank" style="text-decoration: underline; color: var(--color-primary); font-weight: 600;">Términos de Contratación</a> y la <a href="../revisiones-ajustes.html" target="_blank" style="text-decoration: underline; color: var(--color-primary); font-weight: 600;">Política de Revisiones</a>.
+          🔒 Tus datos están protegidos. Al solicitar tu cotización aceptas nuestro <a href="privacidad.html" target="_blank" style="text-decoration: underline; color: var(--color-primary); font-weight: 600;">Aviso de Privacidad</a>, la <a href="propiedad-intelectual.html" target="_blank" style="text-decoration: underline; color: var(--color-primary); font-weight: 600;">Propiedad Intelectual</a>, los <a href="terminos-contratacion.html" target="_blank" style="text-decoration: underline; color: var(--color-primary); font-weight: 600;">Términos de Contratación</a> y la <a href="revisiones-ajustes.html" target="_blank" style="text-decoration: underline; color: var(--color-primary); font-weight: 600;">Política de Revisiones</a>.
         </div>
       </form>
     </div>
   </div>
 
   <!-- Scripts -->
-  <script src="../js/data.js"></script>
-  <script src="../js/main.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
   <script>
     lucide.createIcons();
   </script>
