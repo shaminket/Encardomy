@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initFaqAccordions();
   initCatalogFilters();
   initOrderModal();
+  initCopiesConfigurator();
+  initCopiesFloatingWidget();
+  initCountdownTimer();
 });
 
 /* ==========================================================================
@@ -560,7 +563,7 @@ function initOrderModal() {
                       `• *Sección:* ${sectionVal}\n` +
                       `• *Materia:* ${subjectVal}\n` +
                       `• *Servicio:* ${serviceName}\n` +
-                      `• *Urgencia requerida:* ${urgency}\n\n` +
+                      `• *Urgencia requerida:* ${urgency}\n• *Entrega estimada:* Al día siguiente hábil de la confirmación\n\n` +
                       `📋 *ESPECIFICACIONES DEL SERVICIO:*\n` +
                       `${specificDetails}\n\n` +
                       `📝 *Notas / Enlaces adicionales:* ${generalNotes}\n\n` +
@@ -571,4 +574,435 @@ function initOrderModal() {
       closeOrderModal();
     });
   }
+}
+
+
+/* ==========================================================================
+   CONFIGURADOR INTERACTIVO DE COPIAS E IMPRESIONES (ESTILO APPLE)
+   ========================================================================== */
+function initCopiesConfigurator() {
+  const cfgBox = document.querySelector('.apple-config-box');
+  if (!cfgBox) return; // Solo se ejecuta si estamos en la página de impresiones
+
+  const gradeSelect = document.getElementById('cfgGradeSelect');
+  const groupSelect = document.getElementById('cfgGroupSelect');
+  const sectionSelect = document.getElementById('cfgSectionSelect');
+  const alert415 = document.getElementById('cfgAlert415');
+  const alertRegular = document.getElementById('cfgAlertRegular');
+  const singlePdfCheck = document.getElementById('cfgSinglePdfCheck');
+  const multiPdfNotice = document.getElementById('cfgMultiPdfNotice');
+  const subject415Input = document.getElementById('cfg415Subject');
+  const details415Input = document.getElementById('cfg415Details');
+
+  const inkCards = document.querySelectorAll('#inkModeSelector .apple-card');
+  const paperCards = document.querySelectorAll('#paperSelector .apple-card');
+  const sheetsInput = document.getElementById('cfgSheetsCount');
+  const btnMinus = document.getElementById('cfgBtnMinus');
+  const btnPlus = document.getElementById('cfgBtnPlus');
+  const scheduleSelect = document.getElementById('cfgScheduleSelect');
+
+  // Elementos de resumen de precio
+  const sumInkName = document.getElementById('sumInkName');
+  const sumInkCost = document.getElementById('sumInkCost');
+  const sumPaperName = document.getElementById('sumPaperName');
+  const sumPaperCost = document.getElementById('sumPaperCost');
+  const sumSheetsLabel = document.getElementById('sumSheetsLabel');
+  const sumSubtotalSheets = document.getElementById('sumSubtotalSheets');
+  const sumMultiPdfRow = document.getElementById('sumMultiPdfRow');
+  const sumDiscountRow = document.getElementById('sumDiscountRow');
+  const sumDiscountAmount = document.getElementById('sumDiscountAmount');
+  const discountBadge = document.getElementById('cfgDiscountBadge');
+  const sumFinalPrice = document.getElementById('sumFinalPrice');
+  const btnSendWhatsApp = document.getElementById('btnSendCopiesWhatsApp');
+
+  // Grupos con 50% de descuento en septiembre en compras > $50
+  const DISCOUNT_GROUPS = [415, 502, 514, 608, 654];
+
+  // 1. Población de grupos según grado
+  function populateGroups(grade) {
+    if (!groupSelect) return;
+    if (!grade || !ENP_GRUPOS[grade]) {
+      groupSelect.innerHTML = '<option value="" disabled selected>Elige primero tu año</option>';
+      return;
+    }
+    const groups = ENP_GRUPOS[grade];
+    let html = '';
+    groups.forEach(g => {
+      html += `<option value="${g}">Grupo ${g}</option>`;
+    });
+    groupSelect.innerHTML = html;
+
+    // Asignar explícitamente el valor por defecto para garantizar que el navegador lo seleccione
+    if (grade === '4' || grade === 4) {
+      groupSelect.value = '415';
+    } else if (grade === '5' || grade === 5) {
+      groupSelect.value = '502'; // Grupo con descuento de 5to
+    } else if (grade === '6' || grade === 6) {
+      groupSelect.value = '608'; // Grupo con descuento de 6to
+    } else if (groups.length > 0) {
+      groupSelect.value = String(groups[0]);
+    }
+
+    handleGroupChange();
+  }
+
+  // 2. Detección especial del Grupo 415 vs demás grupos
+  function handleGroupChange() {
+    const selectedGroup = parseInt(groupSelect?.value, 10);
+    const is415 = (selectedGroup === 415);
+
+    if (is415) {
+      if (alert415) {
+        alert415.style.display = 'block';
+        alert415.classList.add('active');
+      }
+      if (alertRegular) {
+        alertRegular.style.display = 'none';
+      }
+      if (sumMultiPdfRow) sumMultiPdfRow.style.display = 'none';
+    } else {
+      if (alert415) {
+        alert415.style.display = 'none';
+        alert415.classList.remove('active');
+      }
+      if (alertRegular) {
+        alertRegular.style.display = 'block';
+      }
+    }
+    calculatePrice();
+  }
+
+  if (gradeSelect) {
+    gradeSelect.addEventListener('change', () => {
+      populateGroups(gradeSelect.value);
+    });
+    // Inicializar grupos del año seleccionado por defecto
+    populateGroups(gradeSelect.value || '4');
+  }
+
+  if (groupSelect) {
+    groupSelect.addEventListener('change', handleGroupChange);
+  }
+
+  // Checkbox de archivo único
+  if (singlePdfCheck) {
+    singlePdfCheck.addEventListener('change', () => {
+      if (!singlePdfCheck.checked) {
+        if (multiPdfNotice) multiPdfNotice.style.display = 'block';
+      } else {
+        if (multiPdfNotice) multiPdfNotice.style.display = 'none';
+      }
+      calculatePrice();
+    });
+  }
+
+  // 3. Selección de Tarjetas de Tinta (Apple Style)
+  inkCards.forEach(card => {
+    card.addEventListener('click', () => {
+      inkCards.forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+      calculatePrice();
+    });
+  });
+
+  // 4. Selección de Tarjetas de Papel (Apple Style)
+  paperCards.forEach(card => {
+    card.addEventListener('click', () => {
+      paperCards.forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+      calculatePrice();
+    });
+  });
+
+  // 5. Control de contador de hojas
+  if (btnMinus && sheetsInput) {
+    btnMinus.addEventListener('click', () => {
+      let val = parseInt(sheetsInput.value, 10) || 1;
+      if (val > 1) {
+        sheetsInput.value = val - 1;
+        calculatePrice();
+      }
+    });
+  }
+
+  if (btnPlus && sheetsInput) {
+    btnPlus.addEventListener('click', () => {
+      let val = parseInt(sheetsInput.value, 10) || 1;
+      if (val < 500) {
+        sheetsInput.value = val + 1;
+        calculatePrice();
+      }
+    });
+  }
+
+  if (sheetsInput) {
+    sheetsInput.addEventListener('input', () => {
+      let val = parseInt(sheetsInput.value, 10);
+      if (isNaN(val) || val < 1) val = 1;
+      if (val > 500) val = 500;
+      sheetsInput.value = val;
+      calculatePrice();
+    });
+  }
+
+  // 6. Motor de cálculo de precio en tiempo real
+  function calculatePrice() {
+    const selectedInkCard = document.querySelector('#inkModeSelector .apple-card.selected');
+    const selectedPaperCard = document.querySelector('#paperSelector .apple-card.selected');
+
+    const inkPrice = parseFloat(selectedInkCard?.getAttribute('data-price') || '5');
+    const inkTitle = selectedInkCard?.querySelector('.apple-card-title')?.textContent.trim() || 'Blanco y Negro';
+
+    const paperPrice = parseFloat(selectedPaperCard?.getAttribute('data-paper-price') || '0');
+    const paperTitle = selectedPaperCard?.querySelector('.apple-card-title')?.textContent.trim() || 'Papel Carta Normal';
+
+    let sheets = parseInt(sheetsInput?.value, 10) || 1;
+    if (sheets < 1) sheets = 1;
+
+    const basePerSheet = inkPrice + paperPrice;
+    const subtotalSheets = basePerSheet * sheets;
+
+    // Recargo por archivo múltiple
+    const selectedGroup = parseInt(groupSelect?.value, 10);
+    const is415 = (selectedGroup === 415);
+    const isSinglePdf = singlePdfCheck ? singlePdfCheck.checked : true;
+    const multiPdfFee = (!is415 && !isSinglePdf) ? 20 : 0;
+
+    const totalBeforeDiscount = subtotalSheets + multiPdfFee;
+
+    // Descuento especial de septiembre (50% en compras desde $50 pesos para grupos 415, 502, 514, 608, 654)
+    const isDiscountGroup = DISCOUNT_GROUPS.includes(selectedGroup);
+    const qualifiesDiscount = isDiscountGroup && (totalBeforeDiscount >= 50);
+    let discountAmount = 0;
+
+    if (qualifiesDiscount) {
+      discountAmount = Math.round(totalBeforeDiscount * 0.5);
+    }
+
+    const finalTotal = totalBeforeDiscount - discountAmount;
+
+    // Actualizar indicador de estatus de promo en el selector de grupo
+    const groupPromoStatus = document.getElementById('cfgGroupPromoStatus');
+    if (groupPromoStatus) {
+      if (isDiscountGroup) {
+        if (totalBeforeDiscount >= 50) {
+          groupPromoStatus.innerHTML = `<span style="color: #15803d; font-weight: 800;">🎉 ¡Grupo ${selectedGroup} con 50% de DESCUENTO activo!</span>`;
+        } else {
+          const needed = 50 - totalBeforeDiscount;
+          groupPromoStatus.innerHTML = `<span style="color: var(--color-primary); font-weight: 700;">💡 Grupo ${selectedGroup} califica para 50% OFF. Agrega $${needed.toFixed(2)} más para activarlo.</span>`;
+        }
+      } else {
+        groupPromoStatus.innerHTML = `<span style="color: var(--color-text-muted);">Grupo ${selectedGroup} &bull; Papel carta normal 100% GRATIS</span>`;
+      }
+    }
+
+    // Actualizar método de pago: Grupo 415 efectivo o Clip; demás grupos pago por link Clip previo a entrega
+    const sumPaymentMethodLabel = document.getElementById('sumPaymentMethodLabel');
+    if (sumPaymentMethodLabel) {
+      if (is415) {
+        sumPaymentMethodLabel.innerHTML = `<span style="color: var(--color-primary); font-weight: 700;">Efectivo al recibir o Clip</span>`;
+      } else {
+        sumPaymentMethodLabel.innerHTML = `Link seguro Clip (previo a entrega)`;
+      }
+    }
+
+    // Actualizar UI del desglose
+    if (sumInkName) sumInkName.textContent = inkTitle;
+    if (sumInkCost) sumInkCost.textContent = `$${inkPrice.toFixed(2)} / hoja`;
+
+    if (sumPaperName) sumPaperName.textContent = paperTitle;
+    if (sumPaperCost) {
+      sumPaperCost.textContent = paperPrice === 0 ? '$0.00 (GRATIS)' : `+$${paperPrice.toFixed(2)} / hoja`;
+    }
+
+    if (sumSheetsLabel) sumSheetsLabel.textContent = `${sheets} ${sheets === 1 ? 'hoja' : 'hojas'}`;
+    if (sumSubtotalSheets) sumSubtotalSheets.textContent = `$${subtotalSheets.toFixed(2)}`;
+
+    if (sumMultiPdfRow) {
+      sumMultiPdfRow.style.display = multiPdfFee > 0 ? 'flex' : 'none';
+    }
+
+    const credentialBox = document.getElementById('transparencyCredentialBox');
+    if (sumDiscountRow && sumDiscountAmount && discountBadge) {
+      if (qualifiesDiscount) {
+        sumDiscountRow.style.display = 'flex';
+        sumDiscountAmount.textContent = `-$${discountAmount.toFixed(2)}`;
+        discountBadge.style.display = 'inline-flex';
+        if (credentialBox) credentialBox.style.display = 'block';
+      } else {
+        sumDiscountRow.style.display = 'none';
+        discountBadge.style.display = 'none';
+        if (credentialBox) credentialBox.style.display = 'none';
+      }
+    }
+
+    if (sumFinalPrice) {
+      sumFinalPrice.innerHTML = `$${finalTotal.toFixed(2)} <span style="font-size: 1rem; color: var(--color-text-muted); font-weight: 600;">MXN</span>`;
+    }
+
+    if (window.lucide) lucide.createIcons();
+  }
+
+  // 7. Enviar Pedido a WhatsApp (+52 55 7198 5641)
+  if (btnSendWhatsApp) {
+    btnSendWhatsApp.addEventListener('click', () => {
+      const selectedInkCard = document.querySelector('#inkModeSelector .apple-card.selected');
+      const selectedPaperCard = document.querySelector('#paperSelector .apple-card.selected');
+
+      const inkTitle = selectedInkCard?.querySelector('.apple-card-title')?.textContent.trim() || 'Blanco y Negro (1 Cara)';
+      const paperTitle = selectedPaperCard?.querySelector('.apple-card-title')?.textContent.trim() || 'Papel Carta Normal (Bond 75g)';
+      
+      const grade = gradeSelect?.value || '4';
+      const group = groupSelect?.value || '415';
+      const section = sectionSelect?.value || 'A';
+      const schedule = scheduleSelect?.value || 'Auditorio José Muñoz Cota (6:40-6:50 am)';
+      const sheets = parseInt(sheetsInput?.value, 10) || 1;
+
+      const is415 = (parseInt(group, 10) === 415);
+      const isSinglePdf = singlePdfCheck ? singlePdfCheck.checked : true;
+
+      // Precio final mostrado
+      const finalPriceStr = sumFinalPrice?.textContent.trim().split(' ')[0] || '$0.00';
+
+      let detailsSection = '';
+      let paymentSection = '';
+      if (is415) {
+        const mat = subject415Input?.value || 'No especificada';
+        const det = details415Input?.value.trim() || 'Apuntes y lecturas de clase';
+        detailsSection = `• *Materia:* ${mat}\n` +
+                         `• *Material a imprimir:* ${det}\n` +
+                         `• *Atención:* Especial Grupo 415 (entrega flexible)`;
+        paymentSection = `• *Forma de pago:* Efectivo en mano al recibir en Prepa 4 o Clip`;
+      } else {
+        const pdfStatus = isSinglePdf 
+          ? 'Adjunto 1 solo archivo PDF consolidado con el número exacto de hojas'
+          : 'Múltiples archivos sueltos (+ $20 MXN recargo)';
+        detailsSection = `• *Estado del PDF:* ${pdfStatus}\n` +
+                         `• *Requisito:* Adjunto el PDF directamente a este chat`;
+        paymentSection = `• *Forma de pago:* Link seguro de Clip (solicito link de pago previo para procesar)`;
+      }
+
+      const isDiscounted = (DISCOUNT_GROUPS.includes(parseInt(group, 10)) && sumDiscountRow && sumDiscountRow.style.display !== 'none');
+      const discountNote = isDiscounted ? `\n• *Descuento aplicado:* 50% de Descuento Especial Septiembre` : '';
+
+      const waNumber = "525571985641";
+      const message = `👋 ¡Hola Encardomy! Quisiera ordenar unas impresiones para la Prepa 4.\n\n` +
+                      `🖨️ *ORDEN DE IMPRESIONES — PREPA 4 UNAM:*\n` +
+                      `• *Plantel:* ENP 4 "Vidal Castañeda y Nájera"\n` +
+                      `• *Grado:* ${grade}° Año\n` +
+                      `• *Grupo:* ${group}\n` +
+                      `• *Sección:* Sección ${section}\n` +
+                      `• *Punto y Horario:* ${schedule}\n• *Fecha estimada:* Al día siguiente hábil de esta cotización\n\n` +
+                      `📑 *ESPECIFICACIONES DE IMPRESIÓN:*\n` +
+                      `• *Modo de Tinta:* ${inkTitle}\n` +
+                      `• *Papel / Sustrato:* ${paperTitle}\n` +
+                      `• *Cantidad de Hojas:* ${sheets} hojas\n` +
+                      `${detailsSection}\n` +
+                      `${paymentSection}\n` +
+                      `${discountNote}\n` +
+                      `• *Total Estimado:* ${finalPriceStr} MXN\n\n` +
+                      `¿Me confirman la recepción de mi archivo y la entrega? ¡Muchas gracias!`;
+
+      const encodedUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
+      window.open(encodedUrl, '_blank');
+    });
+  }
+
+  // Inicializar cálculo inicial
+  calculatePrice();
+}
+
+/* ==========================================================================
+   POPUP FLOTANTE DE IMPRESIONES EN ESQUINA INFERIOR IZQUIERDA (INDEX.HTML)
+   ========================================================================== */
+function initCopiesFloatingWidget() {
+  const popup = document.getElementById('copiesFloatingPopup');
+  const closeBtn = document.getElementById('copiesPopupClose');
+  const floatBtn = document.getElementById('copiesFloatingBtn');
+
+  if (!popup) return; // Solo se activa si el elemento existe en la página
+
+  let hasDismissed = false;
+  let hasTriggered = false;
+
+  // 1. Mostrar popup al deslizar (scroll)
+  function handleScroll() {
+    if (hasDismissed || hasTriggered) return;
+
+    if (window.scrollY > 220) {
+      hasTriggered = true;
+      popup.classList.add('open');
+      if (floatBtn) floatBtn.classList.remove('visible');
+    }
+  }
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+
+  // 2. Al cerrar el popup con la 'x', ocultarlo y mostrar el botón circular permanente
+  if (closeBtn) {
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      hasDismissed = true;
+      popup.classList.remove('open');
+      if (floatBtn) {
+        floatBtn.classList.add('visible');
+      }
+    });
+  }
+
+  // 3. Al presionar el botón circular flotante con ícono de impresora
+  if (floatBtn) {
+    floatBtn.addEventListener('click', () => {
+      const isOpen = popup.classList.contains('open');
+      if (isOpen) {
+        popup.classList.remove('open');
+      } else {
+        popup.classList.add('open');
+        floatBtn.classList.remove('visible');
+      }
+    });
+  }
+}
+
+
+
+/* ==========================================================================
+   CONTADOR REGRESIVO DE OFERTA DE SEPTIEMBRE (ESTILO JUAN LOMBANA / MERCATITLÁN)
+   ========================================================================== */
+function initCountdownTimer() {
+  const cdDays = document.getElementById('cdDays');
+  const cdHours = document.getElementById('cdHours');
+  const cdMinutes = document.getElementById('cdMinutes');
+  const cdSeconds = document.getElementById('cdSeconds');
+
+  if (!cdDays || !cdHours || !cdMinutes || !cdSeconds) return;
+
+  // Fecha límite de la promo: 30 de septiembre de 2026 a las 23:59:59 (Mes 8 en JS = Septiembre)
+  const targetDate = new Date(2026, 8, 30, 23, 59, 59).getTime();
+
+  function updateTimer() {
+    const now = new Date().getTime();
+    const difference = targetDate - now;
+
+    if (difference <= 0) {
+      cdDays.textContent = '00';
+      cdHours.textContent = '00';
+      cdMinutes.textContent = '00';
+      cdSeconds.textContent = '00';
+      return;
+    }
+
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+    cdDays.textContent = String(days).padStart(2, '0');
+    cdHours.textContent = String(hours).padStart(2, '0');
+    cdMinutes.textContent = String(minutes).padStart(2, '0');
+    cdSeconds.textContent = String(seconds).padStart(2, '0');
+  }
+
+  updateTimer();
+  setInterval(updateTimer, 1000);
 }

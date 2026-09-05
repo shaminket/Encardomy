@@ -1373,3 +1373,589 @@ p {
   color: var(--color-navy);
   font-weight: 600;
 }
+
+
+/* ==========================================================================
+   CONFIGURADOR INTERACTIVO DE IMPRESIONES ESTILO APPLE & WIDGET FLOTANTE
+   ========================================================================== */
+
+/* Secciones del configurador estilo Apple */
+.apple-config-box {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-32);
+  box-shadow: var(--shadow-lg);
+  margin-bottom: var(--space-48);
+}
+
+.apple-step-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: var(--space-16);
+}
+
+.apple-step-num {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  color: var(--color-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.apple-grid-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-16);
+  margin-bottom: var(--space-24);
+}
+
+@media (min-width: 640px) {
+  .apple-grid-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .apple-grid-cards-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tarjeta interactiva estilo Apple */
+.apple-card {
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-20, 20px);
+  background: var(--color-white);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  user-select: none;
+}
+
+.apple-card:hover {
+  border-color: var(--color-primary-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.apple-card.selected {
+  border-color: var(--color-primary);
+  background-color: #f4f8ff;
+  box-shadow: 0 0 0 1px var(--color-primary), var(--shadow-primary);
+}
+
+.apple-card-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--color-blue-tint);
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.72rem;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+}
+
+.apple-card.selected .apple-card-badge {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.apple-card-header {
+  margin-bottom: var(--space-12, 12px);
+  padding-right: 60px;
+}
+
+.apple-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 4px;
+}
+
+.apple-card-desc {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.45;
+}
+
+.apple-card-price {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-navy);
+  margin-top: var(--space-12, 12px);
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.apple-card-price span {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.apple-card-check {
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: transparent;
+  transition: all var(--transition-fast);
+}
+
+.apple-card.selected .apple-card-check {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* Selector de hojas numérico */
+.counter-box {
+  display: inline-flex;
+  align-items: center;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-white);
+}
+
+.counter-btn {
+  width: 44px;
+  height: 44px;
+  background: var(--color-bg-light);
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-fast);
+}
+
+.counter-btn:hover {
+  background: var(--color-blue-tint);
+  color: var(--color-primary);
+}
+
+.counter-input {
+  width: 70px;
+  height: 44px;
+  border: none;
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--color-navy);
+  outline: none;
+}
+
+/* Panel de desglose de precio Apple Style */
+.price-summary-card {
+  background: linear-gradient(135deg, #f7faff 0%, #eef5ff 100%);
+  border: 2px solid var(--color-border-focus);
+  border-radius: var(--radius-xl);
+  padding: var(--space-24);
+  box-shadow: var(--shadow-md);
+}
+
+.price-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 0.95rem;
+  color: var(--color-text-dark);
+  border-bottom: 1px dashed var(--color-border);
+}
+
+.price-summary-row.highlight {
+  color: var(--color-success);
+  font-weight: 700;
+}
+
+.price-summary-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: var(--space-16);
+  margin-top: var(--space-8);
+}
+
+.price-big-number {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--color-navy);
+}
+
+/* Tarjetas de Horarios y Puntos de Entrega */
+.schedule-pill {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-16);
+  display: flex;
+  gap: var(--space-12, 12px);
+  align-items: flex-start;
+  margin-bottom: var(--space-12, 12px);
+  border-left: 4px solid var(--color-primary);
+}
+
+.schedule-pill.auditorio {
+  border-left-color: var(--color-primary);
+  background: #f8fbff;
+}
+
+.schedule-pill.biblioteca {
+  border-left-color: #31C98D;
+  background: #f8fdfa;
+}
+
+.schedule-pill.salon {
+  border-left-color: #F59E0B;
+  background: #fffdf9;
+}
+
+/* Alerta especial Grupo 415 */
+.alert-415-box {
+  background: #eef6ff;
+  border: 1.5px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-16);
+  margin-top: var(--space-16);
+  display: none;
+}
+
+.alert-415-box.active {
+  display: block;
+}
+
+/* Alerta para los demás grupos (PDF único) */
+.alert-regular-box {
+  background: #fffdf5;
+  border: 1.5px solid #f59e0b;
+  border-radius: var(--radius-md);
+  padding: var(--space-16);
+  margin-top: var(--space-16);
+}
+
+/* ==========================================================================
+   POPUP FLOTANTE EN ESQUINA INFERIOR IZQUIERDA (INDEX.HTML)
+   ========================================================================== */
+.copies-floating-popup {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  width: calc(100% - 48px);
+  max-width: 360px;
+  background: var(--color-white);
+  border: 1.5px solid rgba(45, 127, 249, 0.3);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 16px 40px rgba(18, 59, 106, 0.22);
+  padding: var(--space-20, 20px);
+  z-index: 1060;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12, 12px);
+  transform: translateY(120px) scale(0.92);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.copies-floating-popup.open {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.copies-floating-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.copies-floating-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--color-navy);
+}
+
+.copies-close-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-light);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-dark);
+  transition: all var(--transition-fast);
+}
+
+.copies-close-btn:hover {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.copies-floating-body {
+  font-size: 0.88rem;
+  color: var(--color-text-dark);
+  line-height: 1.5;
+}
+
+.copies-floating-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+/* Botón flotante circular permanente con icono de impresora */
+.copies-floating-btn {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  width: 54px;
+  height: 54px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-navy) 100%);
+  color: var(--color-white);
+  border: 2px solid var(--color-white);
+  box-shadow: 0 8px 24px rgba(45, 127, 249, 0.4);
+  cursor: pointer;
+  z-index: 1050;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+}
+
+.copies-floating-btn.visible {
+  display: flex;
+  animation: pulse-subtle 2.5s infinite;
+}
+
+.copies-floating-btn:hover {
+  transform: scale(1.12);
+  box-shadow: 0 12px 30px rgba(45, 127, 249, 0.55);
+}
+
+@keyframes pulse-subtle {
+  0% { box-shadow: 0 0 0 0 rgba(45, 127, 249, 0.5); }
+  70% { box-shadow: 0 0 0 12px rgba(45, 127, 249, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(45, 127, 249, 0); }
+}
+
+
+
+/* ==========================================================================
+   BARRA STICKY DE CUENTA REGRESIVA & ESTILO VISUAL OFICIAL ENCARDOMY
+   Paleta Estricta: #2D7FF9, #123B6A, #FFFFFF, #31C98D, #EEF2F7, #DCEEFF
+   ========================================================================== */
+
+/* Barra Sticky del Reloj Contador (fija justo abajo del header) */
+.sticky-countdown-bar {
+  position: sticky;
+  top: 72px;
+  z-index: 995;
+  background-color: var(--color-navy);
+  border-bottom: 2px solid var(--color-primary);
+  box-shadow: 0 4px 18px rgba(18, 59, 106, 0.25);
+  padding: 8px 0;
+  color: var(--color-white);
+}
+
+.countdown-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-12, 12px);
+  flex-wrap: wrap;
+}
+
+.countdown-bar-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12, 12px);
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.countdown-bar-badge {
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.countdown-digits-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cd-box {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: var(--radius-sm);
+  padding: 4px 8px;
+  min-width: 44px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cd-val {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--color-white);
+}
+
+.cd-lbl {
+  font-size: 0.60rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-blue-tint);
+  margin-top: 2px;
+}
+
+.cd-sep {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Tarjeta transparente y grande para la credencial escolar (100% Encardomy Blue) */
+.transparency-credential-box {
+  background: #f0f6ff;
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-20, 20px);
+  margin-top: var(--space-16);
+  color: var(--color-navy);
+  box-shadow: 0 4px 16px rgba(45, 127, 249, 0.1);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.transparency-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--color-navy);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.transparency-body {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--color-text-dark);
+}
+
+.transparency-body strong {
+  color: var(--color-navy);
+  background: var(--color-blue-tint);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Tipografía de Alto Impacto Oficial Encardomy */
+.hero-encardomy-title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  line-height: 1.15;
+  color: var(--color-navy);
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-16);
+}
+
+.highlight-free {
+  background: var(--color-success-light);
+  color: #15803d;
+  padding: 2px 10px;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  border: 1.5px solid rgba(49, 201, 141, 0.4);
+  font-weight: 800;
+}
+
+.highlight-blue {
+  background: var(--color-blue-tint);
+  color: var(--color-primary);
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-weight: 800;
+}
+
+.simple-benefit-card {
+  background: var(--color-white);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-24);
+  transition: all var(--transition-fast);
+}
+
+.simple-benefit-card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.big-stat-number {
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--color-primary);
+  margin-bottom: 6px;
+}

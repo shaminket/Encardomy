@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Copias e Impresiones en Prepa 4 — Encardomy</title>
+  <meta name="description" content="Impresiones en la Prepa 4 UNAM sin filas de media hora. Hojas carta normales GRATIS, entrega al día siguiente hábil en el Auditorio José Muñoz Cota y 50% de descuento en septiembre.">
+  
+  <!-- Google Fonts: Sora & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Estilos Oficiales de Encardomy -->
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       SITE HEADER GLOBAL
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand-logo" aria-label="Ir al inicio de Encardomy">
+        <span class="logo-symbol">E</span>
+        <span>Encardomy</span>
+        <span class="logo-tagline">&bull; Prepa 4 UNAM</span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Navegación principal">
+        <a href="../index.html" class="nav-link">Inicio</a>
+        <a href="../categorias.html" class="nav-link">Catálogo</a>
+        <a href="../legal.html" class="nav-link">Documentos Legales</a>
+        <a href="#configurador" class="nav-link active">Configurar Copias</a>
+        <a href="#diferenciador" class="nav-link">Por qué nosotros</a>
+        <a href="#faq" class="nav-link">Horarios en la Prepa</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#configurador" class="btn btn-primary btn-sm">
+          <i data-lucide="printer" style="width: 16px; height: 16px;"></i>
+          <span>Pedir Mis Copias</span>
+        </a>
+        <button class="menu-toggle-btn" id="menuToggleBtn" aria-label="Abrir menú de navegación" aria-expanded="false">
+          <i data-lucide="menu" style="width: 24px; height: 24px;"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       BARRA STICKY DE CUENTA REGRESIVA (JUSTO ABAJO DEL HEADER, NO SE PIERDE AL BAJAR)
+       ========================================================================== -->
+  <div class="sticky-countdown-bar" id="stickyCountdownBar">
+    <div class="container countdown-bar-inner">
+      <div class="countdown-bar-left">
+        <span class="countdown-bar-badge">
+          <i data-lucide="flame" style="width: 14px; height: 14px;"></i>
+          <span>PROMO SEPTIEMBRE 50% OFF</span>
+        </span>
+        <span style="font-size: 0.88rem; font-weight: 600;">
+          Para grupos <strong>415, 502, 514, 608 y 654</strong> en pedidos &gt; $50. Termina en:
+        </span>
+      </div>
+
+      <div class="countdown-digits-wrap">
+        <div class="cd-box">
+          <span class="cd-val" id="cdDays">00</span>
+          <span class="cd-lbl">Días</span>
+        </div>
+        <span class="cd-sep">:</span>
+        <div class="cd-box">
+          <span class="cd-val" id="cdHours">00</span>
+          <span class="cd-lbl">Horas</span>
+        </div>
+        <span class="cd-sep">:</span>
+        <div class="cd-box">
+          <span class="cd-val" id="cdMinutes">00</span>
+          <span class="cd-lbl">Min</span>
+        </div>
+        <span class="cd-sep">:</span>
+        <div class="cd-box">
+          <span class="cd-val" id="cdSeconds">00</span>
+          <span class="cd-lbl">Seg</span>
+        </div>
+        <a href="#configurador" class="btn btn-primary btn-sm" style="margin-left: 8px; min-height: 36px; padding: 4px 14px; font-size: 0.82rem;">
+          ¡Aprovechar!
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Menú Drawer para Móviles -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-label="Menú móvil">
+    <div class="drawer-header">
+      <div class="brand-logo">
+        <span class="logo-symbol">E</span>
+        <span>Encardomy</span>
+      </div>
+      <button class="modal-close-btn" id="drawerCloseBtn" aria-label="Cerrar menú">
+        <i data-lucide="x" style="width: 20px; height: 20px;"></i>
+      </button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="../index.html" class="drawer-link"><span>🏠 Inicio</span> <i data-lucide="chevron-right"></i></a></li>
+      <li><a href="../categorias.html" class="drawer-link"><span>📚 Catálogo de Servicios</span> <i data-lucide="chevron-right"></i></a></li>
+      <li><a href="#configurador" class="drawer-link active"><span>🖨️ Configurar Impresiones</span> <i data-lucide="chevron-right"></i></a></li>
+      <li><a href="../legal.html" class="drawer-link"><span>⚖️ Documentos Legales</span> <i data-lucide="chevron-right"></i></a></li>
+      <li><a href="../privacidad.html" class="drawer-link"><span>🔒 Aviso de Privacidad</span> <i data-lucide="chevron-right"></i></a></li>
+      <li><a href="../propiedad-intelectual.html" class="drawer-link"><span>💡 Propiedad Intelectual</span> <i data-lucide="chevron-right"></i></a></li>
+      <li><a href="../terminos-contratacion.html" class="drawer-link"><span>📋 Términos de Contratación</span> <i data-lucide="chevron-right"></i></a></li>
+      <li><a href="../revisiones-ajustes.html" class="drawer-link"><span>🔄 Política de Revisiones</span> <i data-lucide="chevron-right"></i></a></li>
+    </ul>
+    <div class="mt-32">
+      <a href="#configurador" class="btn btn-primary btn-block btn-lg">
+        <i data-lucide="printer"></i>
+        <span>Calcular e Imprimir</span>
+      </a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- ==========================================================================
+         SECCIÓN 1: PORTADA & HERO OFICIAL ENCARDOMY (SIMPLE, ELEGANTE Y DIRECTO)
+         ========================================================================== -->
+    <section class="product-hero" id="portada">
+      <div class="container">
+        
+        <!-- Badges Oficiales Encardomy -->
+        <div style="display: flex; gap: 8px; align-items: center; margin-bottom: var(--space-16); flex-wrap: wrap;">
+          <span class="badge badge-primary">🖨️ Exclusivo Prepa 4 UNAM</span>
+          <span class="badge badge-success">Cero Filas de 30 Minutos</span>
+          <span class="badge badge-primary" style="font-weight: 800;">🎁 ¡HOJAS CARTA NORMALES GRATIS!</span>
+        </div>
+
+        <div class="product-hero-grid">
+          <div>
+            <h1 class="hero-encardomy-title">
+              Imprime en la Prepa 4 sin filas. <br>
+              <span class="highlight-free">¡La hoja carta es GRATIS!</span>
+            </h1>
+            
+            <!-- Aviso Relevante: Entrega al día siguiente hábil de tu cotización -->
+            <div style="background: var(--color-blue-tint); border: 1.5px solid var(--color-primary); border-radius: var(--radius-md); padding: 12px 16px; margin-bottom: var(--space-20, 20px); display: flex; align-items: center; gap: 10px;">
+              <i data-lucide="clock" style="color: var(--color-primary); width: 22px; height: 22px; flex-shrink: 0;"></i>
+              <span style="font-size: 0.96rem; color: var(--color-navy); font-weight: 700;">
+                ⏰ Tus tareas e impresiones se entregan al día siguiente hábil de confirmada tu cotización.
+              </span>
+            </div>
+
+            <p style="font-size: 1.15rem; font-weight: 600; color: var(--color-navy); line-height: 1.5; margin-bottom: var(--space-16);">
+              ¿Hacer <strong>30 minutos de fila</strong> en la papelería de afuera a las 6:30 am con frío para llegar tarde a clase? <strong>¡Para nada!</strong>
+            </p>
+
+            <p class="text-muted" style="font-size: 1.02rem; line-height: 1.6; margin-bottom: var(--space-24);">
+              Nosotros te regalamos el papel normal tamaño carta, te imprimimos sin límite de hojas y te las entregamos <strong>directo en tu mano</strong> al día siguiente de 6:40 a 6:50 am frente al <strong>Auditorio José Muñoz Cota</strong> o en <strong>Biblioteca</strong>. Llegas, te doy tus hojas y entras a clase a tiempo.
+            </p>
+
+            <div style="display: flex; gap: var(--space-16); flex-wrap: wrap;">
+              <a href="#configurador" class="btn btn-primary btn-lg">
+                <i data-lucide="sliders"></i>
+                <span>Configurar mi Pedido</span>
+              </a>
+              <a href="#diferenciador" class="btn btn-secondary btn-lg">
+                <span>Ver Comparativa</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Summary Card Estilo Encardomy -->
+          <div class="hero-quick-card" style="border: 2px solid var(--color-primary);">
+            <div style="text-align: center; margin-bottom: var(--space-16);">
+              <span class="badge badge-primary" style="font-size: 0.85rem;">PRECIOS TRANSPARENTES</span>
+              <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--color-navy); margin-top: 8px;">
+                Claritos y por escrito
+              </h3>
+            </div>
+            
+            <div style="font-size: 0.98rem; color: var(--color-text-dark); line-height: 1.8; margin-bottom: var(--space-20, 20px);">
+              <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px dashed var(--color-border);">
+                <span>Blanco y Negro (1 cara):</span> <strong style="font-size: 1.1rem; color: var(--color-navy);">$5.00 MXN</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px dashed var(--color-border);">
+                <span>B/N Doble Cara:</span> <strong style="font-size: 1.1rem; color: var(--color-navy);">$10.00 MXN</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px dashed var(--color-border);">
+                <span>Color Moderado (1 cara):</span> <strong style="font-size: 1.1rem; color: var(--color-primary);">$10.00 MXN</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px dashed var(--color-border);">
+                <span>Color Moderado 2 Caras:</span> <strong style="font-size: 1.1rem; color: var(--color-primary);">$20.00 MXN</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px dashed var(--color-border);">
+                <span>Color Extremo / Póster:</span> <strong style="font-size: 1.1rem; color: var(--color-navy);">$20.00 MXN</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px dashed var(--color-border);">
+                <span>Color Extremo 2 Caras:</span> <strong style="font-size: 1.1rem; color: var(--color-navy);">$40.00 MXN</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 8px 10px; color: #15803d; font-weight: 800; font-size: 1.05rem; background: var(--color-success-light); border-radius: var(--radius-sm); margin-top: 8px;">
+                <span>Papel Carta Normal:</span> <span>¡100% GRATIS!</span>
+              </div>
+            </div>
+
+            <a href="#configurador" class="btn btn-primary btn-block btn-lg" style="font-weight: 800;">
+              <i data-lucide="sliders"></i>
+              <span>¡Calcular Mi Pedido Ahora!</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONFIGURADOR INTERACTIVO ESTILO APPLE & TRANSPARENCIA
+         ========================================================================== -->
+    <section class="section-padding bg-subtle" id="configurador">
+      <div class="container">
+        <div style="text-align: center; max-width: 760px; margin: 0 auto var(--space-40);">
+          <span class="badge badge-primary mb-12">Personalizador Interactivo</span>
+          <h2 style="color: var(--color-navy); font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; margin-bottom: 12px;">
+            Arma tu pedido como en Apple
+          </h2>
+          <p class="text-muted" style="font-size: 1.1rem;">
+            Elige tu grupo, tus hojas y listo. Todo se calcula en vivo con entrega al día siguiente.
+          </p>
+        </div>
+
+        <div class="apple-config-box">
+          
+          <!-- PASO 1: TU GRUPO EN PREPA 4 -->
+          <div style="margin-bottom: var(--space-32);">
+            <div class="apple-step-title">
+              <span class="apple-step-num">1</span>
+              <span>Dinos de qué grupo eres:</span>
+            </div>
+
+            <div class="grid-3" style="gap: var(--space-16); margin-bottom: var(--space-16);">
+              <div class="form-group" style="margin-bottom: 0;">
+                <label class="form-label" for="cfgGradeSelect">Tu Año</label>
+                <select id="cfgGradeSelect" class="form-select" style="font-size: 1.02rem; font-weight: 600;">
+                  <option value="4" selected>4° Cuarto Año</option>
+                  <option value="5">5° Quinto Año</option>
+                  <option value="6">6° Sexto Año</option>
+                </select>
+              </div>
+
+              <div class="form-group" style="margin-bottom: 0;">
+                <label class="form-label" for="cfgGroupSelect">Tu Grupo</label>
+                <select id="cfgGroupSelect" class="form-select" style="font-size: 1.02rem; font-weight: 700; color: var(--color-primary);">
+                  <!-- Se poblará dinámicamente -->
+                </select>
+                <div id="cfgGroupPromoStatus" style="font-size: 0.84rem; margin-top: 6px;"></div>
+              </div>
+
+              <div class="form-group" style="margin-bottom: 0;">
+                <label class="form-label" for="cfgSectionSelect">Sección</label>
+                <select id="cfgSectionSelect" class="form-select" style="font-size: 1.02rem; font-weight: 600;">
+                  <option value="A" selected>Sección A</option>
+                  <option value="B">Sección B</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Panel para el GRUPO 415 -->
+            <div class="alert-415-box" id="cfgAlert415">
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                <span class="badge badge-primary">🎉 ATENCIÓN VIP GRUPO 415</span>
+              </div>
+              <p style="font-size: 0.98rem; color: var(--color-navy); font-weight: 600; margin-bottom: 12px;">
+                ¡Eres del 415! No te preocupes por armar un PDF perfecto ni por el horario de las 6:50 am. Dinos la materia y qué necesitas:
+              </p>
+              
+              <div class="grid-2" style="gap: var(--space-12, 12px);">
+                <div class="form-group" style="margin-bottom: 0;">
+                  <label class="form-label" for="cfg415Subject" style="font-size: 0.88rem;">Materia</label>
+                  <select id="cfg415Subject" class="form-select" style="min-height: 46px;">
+                    <option value="Matemáticas IV">Matemáticas IV</option>
+                    <option value="Física III">Física III</option>
+                    <option value="Lengua Española">Lengua Española</option>
+                    <option value="Historia Universal I">Historia Universal I</option>
+                    <option value="Lógica">Lógica</option>
+                    <option value="Geografía">Geografía</option>
+                    <option value="Dibujo II">Dibujo II</option>
+                    <option value="Informática">Informática</option>
+                    <option value="Inglés / Francés IV">Inglés / Francés IV</option>
+                    <option value="Otra materia">Otra materia...</option>
+                  </select>
+                </div>
+                <div class="form-group" style="margin-bottom: 0;">
+                  <label class="form-label" for="cfg415Details" style="font-size: 0.88rem;">¿Qué copias ocupas exactamente?</label>
+                  <input type="text" id="cfg415Details" class="form-input" style="min-height: 46px;" placeholder="Ej. Lectura de Lógica páginas 15 a 30, guía de mate...">
+                </div>
+              </div>
+              <div style="margin-top: 10px; font-size: 0.88rem; color: var(--color-navy); background: rgba(45, 127, 249, 0.1); padding: 8px 12px; border-radius: 6px;">
+                💳 <strong>Pago flexible para el 415:</strong> Puedes pagar en efectivo en mano al recibir tus copias en la Prepa 4 o pedir link Clip.
+              </div>
+            </div>
+
+            <!-- Alerta para los demás grupos (exige PDF) -->
+            <div class="alert-regular-box" id="cfgAlertRegular">
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                <i data-lucide="file-text" style="color: var(--color-primary); width: 20px; height: 20px;"></i>
+                <strong style="color: var(--color-navy); font-size: 1rem;">Al enviar a WhatsApp adjuntas tu PDF:</strong>
+              </div>
+              <p style="font-size: 0.92rem; color: var(--color-text-dark); margin-bottom: 10px;">
+                Para que salgan volando de la impresora, te pedimos tu archivo en <strong>UN SOLO PDF</strong> con el número exacto de hojas que pongas abajo.
+              </p>
+              
+              <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 0.95rem; color: var(--color-navy); font-weight: 700;">
+                <input type="checkbox" id="cfgSinglePdfCheck" checked style="width: 20px; height: 20px; accent-color: var(--color-primary);">
+                <span>Viene en 1 solo archivo PDF ($0 recargo)</span>
+              </label>
+              <div id="cfgMultiPdfNotice" style="display: none; font-size: 0.88rem; color: #b91c1c; margin-top: 8px; font-weight: 700; background: #fee2e2; padding: 8px 12px; border-radius: 6px;">
+                ⚠️ Si mandas varias fotos o PDFs sueltos son +$20 pesos por juntarlos y maquetarlos. Solo imprimimos; cualquier edición de texto se cotiza aparte.
+              </div>
+              <div style="margin-top: 10px; font-size: 0.88rem; color: var(--color-navy); background: rgba(45, 127, 249, 0.08); padding: 8px 12px; border-radius: 6px;">
+                💳 <strong>Pago previo con Clip:</strong> Para todos los grupos (excepto el 415), el pedido se abona mediante un link seguro de Clip enviado por WhatsApp antes de procesar la entrega.
+              </div>
+            </div>
+          </div>
+
+          <!-- PASO 2: MODO DE IMPRESIÓN (CARDS APPLE) -->
+          <div style="margin-bottom: var(--space-32);">
+            <div class="apple-step-title">
+              <span class="apple-step-num">2</span>
+              <span>¿A color o blanco y negro?</span>
+            </div>
+
+            <div class="apple-grid-cards apple-grid-cards-3" id="inkModeSelector">
+              <!-- B/N 1 cara -->
+              <div class="apple-card selected" data-ink="bn_single" data-price="5">
+                <div class="apple-card-badge">Más Pedido</div>
+                <div class="apple-card-header">
+                  <div class="apple-card-title">Blanco y Negro</div>
+                  <div class="apple-card-desc">1 Cara. Tareas, resúmenes, lecturas y guías.</div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                  <div class="apple-card-price">$5 <span>/ hoja</span></div>
+                  <div class="apple-card-check"><i data-lucide="check" style="width: 14px; height: 14px;"></i></div>
+                </div>
+              </div>
+
+              <!-- B/N Doble cara -->
+              <div class="apple-card" data-ink="bn_double" data-price="10">
+                <div class="apple-card-badge">Ahorra Espacio</div>
+                <div class="apple-card-header">
+                  <div class="apple-card-title">B/N Doble Cara</div>
+                  <div class="apple-card-desc">Frente y vuelta. Menos bulto en tu mochila.</div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                  <div class="apple-card-price">$10 <span>/ hoja</span></div>
+                  <div class="apple-card-check"><i data-lucide="check" style="width: 14px; height: 14px;"></i></div>
+                </div>
+              </div>
+
+              <!-- Color Moderado 1 cara -->
+              <div class="apple-card" data-ink="color_mod_single" data-price="10">
+                <div class="apple-card-badge">Recomendado</div>
+                <div class="apple-card-header">
+                  <div class="apple-card-title">Color Moderado</div>
+                  <div class="apple-card-desc">1 Cara. Títulos a color, diagramas y gráficas.</div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                  <div class="apple-card-price">$10 <span>/ hoja</span></div>
+                  <div class="apple-card-check"><i data-lucide="check" style="width: 14px; height: 14px;"></i></div>
+                </div>
+              </div>
+
+              <!-- Color Moderado Doble cara -->
+              <div class="apple-card" data-ink="color_mod_double" data-price="20">
+                <div class="apple-card-header">
+                  <div class="apple-card-title">Color Moderado 2 Caras</div>
+                  <div class="apple-card-desc">Doble cara con esquemas y títulos a color.</div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                  <div class="apple-card-price">$20 <span>/ hoja</span></div>
+                  <div class="apple-card-check"><i data-lucide="check" style="width: 14px; height: 14px;"></i></div>
+                </div>
+              </div>
+
+              <!-- Color Extremo 1 cara -->
+              <div class="apple-card" data-ink="color_ext_single" data-price="20">
+                <div class="apple-card-badge">Alta Gama</div>
+                <div class="apple-card-header">
+                  <div class="apple-card-title">Color Extremo</div>
+                  <div class="apple-card-desc">1 Cara. Fotos, pósters, láminas e infografías.</div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                  <div class="apple-card-price">$20 <span>/ hoja</span></div>
+                  <div class="apple-card-check"><i data-lucide="check" style="width: 14px; height: 14px;"></i></div>
+                </div>
+              </div>
+
+              <!-- Color Extremo Doble cara -->
+              <div class="apple-card" data-ink="color_ext_double" data-price="40">
+                <div class="apple-card-header">
+                  <div class="apple-card-title">Color Extremo 2 Caras</div>
+                  <div class="apple-card-desc">Doble cara a saturación completa y alta gama.</div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                  <div class="apple-card-price">$40 <span>/ hoja</span></div>
+                  <div class="apple-card-check"><i data-lucide="check" style="width: 14px; height: 14px;"></i></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PASO 3: PAPEL (CARDS APPLE) -->
+          <div style="margin-bottom: var(--space-32);">
+            <div class="apple-step-title">
+              <span class="apple-step-num">3</span>
+              <span>¿En qué papel lo quieres?</span>
+            </div>
+
+            <div class="apple-grid-cards" id="paperSelector">
+              <!-- Papel Carta Normal -->
+              <div class="apple-card selected" data-paper="carta_normal" data-paper-price="0">
+                <div class="apple-card-badge" style="background: var(--color-success); color: white; font-weight: 800;">¡100% GRATIS!</div>
+                <div class="apple-card-header">
+                  <div class="apple-card-title">Papel Carta Normal (Bond 75g)</div>
+                  <div class="apple-card-desc">El tamaño carta estándar de alta blancura. ¡Te regalamos la hoja!</div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                  <div class="apple-card-price" style="color: #15803d;">$0 <span>extra</span></div>
+                  <div class="apple-card-check"><i data-lucide="check" style="width: 14px; height: 14px;"></i></div>
+                </div>
+              </div>
+
+              <!-- Opalina -->
+              <div class="apple-card" data-paper="opalina" data-paper-price="5">
+                <div class="apple-card-badge">Pro</div>
+                <div class="apple-card-header">
+                  <div class="apple-card-title">Cartulina Opalina Lisa (120g)</div>
+                  <div class="apple-card-desc">Grosor superior y textura sedosa. Ideal para portadas y proyectos.</div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                  <div class="apple-card-price">+$5 <span>/ hoja</span></div>
+                  <div class="apple-card-check"><i data-lucide="check" style="width: 14px; height: 14px;"></i></div>
+                </div>
+              </div>
+
+              <!-- Oficio Normal -->
+              <div class="apple-card" data-paper="oficio" data-paper-price="5">
+                <div class="apple-card-header">
+                  <div class="apple-card-title">Papel Tamaño Oficio (Bond)</div>
+                  <div class="apple-card-desc">Para rúbricas grandes, trámites escolares o tablas anchas.</div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                  <div class="apple-card-price">+$5 <span>/ hoja</span></div>
+                  <div class="apple-card-check"><i data-lucide="check" style="width: 14px; height: 14px;"></i></div>
+                </div>
+              </div>
+
+              <!-- Hoja de Color -->
+              <div class="apple-card" data-paper="color" data-paper-price="5">
+                <div class="apple-card-header">
+                  <div class="apple-card-title">Hojas de Color (Bond)</div>
+                  <div class="apple-card-desc">Papel de color llamativo para separadores, fichas o avisos.</div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                  <div class="apple-card-price">+$5 <span>/ hoja</span></div>
+                  <div class="apple-card-check"><i data-lucide="check" style="width: 14px; height: 14px;"></i></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PASO 4 Y 5: NÚMERO DE HOJAS Y PUNTO DE RECOLECCIÓN (AL DÍA SIGUIENTE) -->
+          <div class="grid-2" style="gap: var(--space-32); margin-bottom: var(--space-32);">
+            <div>
+              <div class="apple-step-title">
+                <span class="apple-step-num">4</span>
+                <span>¿Cuántas hojas necesitas?</span>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: var(--space-16); margin-bottom: var(--space-12, 12px);">
+                <div class="counter-box">
+                  <button type="button" class="counter-btn" id="cfgBtnMinus">&minus;</button>
+                  <input type="number" id="cfgSheetsCount" class="counter-input" value="10" min="1" max="500">
+                  <button type="button" class="counter-btn" id="cfgBtnPlus">&plus;</button>
+                </div>
+                <span style="font-size: 1.15rem; color: var(--color-navy); font-weight: 800;">hojas</span>
+              </div>
+              <p class="text-muted" style="font-size: 0.95rem;">
+                🚀 <strong>Cero límite de hojas.</strong> Puedes pedir 10, 50 o 150 hojas completas sin que nadie te ponga trabas.
+              </p>
+            </div>
+
+            <div>
+              <div class="apple-step-title">
+                <span class="apple-step-num">5</span>
+                <span>Horario de Entrega (Al día siguiente hábil)</span>
+              </div>
+
+              <div class="form-group" style="margin-bottom: 0;">
+                <label class="form-label" for="cfgScheduleSelect">Selecciona punto en Prepa 4 (Entrega al día siguiente)</label>
+                <select id="cfgScheduleSelect" class="form-select" style="font-size: 0.95rem; font-weight: 600;">
+                  <option value="Auditorio (6:40-6:50 am)" selected>🌅 Auditorio José Muñoz Cota (6:40 a 6:50 am) — Matutino Principal</option>
+                  <option value="Biblioteca (Lun-Mié 13:00-13:30 hrs)">📚 Biblioteca (Lunes a Miércoles de 13:00 a 13:30 hrs)</option>
+                  <option value="Biblioteca (Jueves 12:15-12:30 hrs)">📚 Biblioteca (Jueves de 12:15 a 12:30 hrs)</option>
+                  <option value="Salón B-117 (Viernes 7:00-7:50 am)">🏫 Salón B-117 junto a escaleras (Viernes 7:00 a 7:50 am*)</option>
+                  <option value="Biblioteca (Viernes 13:50-14:20 hrs)">📚 Biblioteca (Viernes de 13:50 a 14:20 hrs)</option>
+                </select>
+                <span class="form-tip">
+                  ⚡ <strong>Entrega al día siguiente hábil</strong> de tu cotización. En el Auditorio después de las 6:50 am no se entregan más hojas excepto al 415. El viernes en B-117 está sujeto a la llegada de la profa. de Historia.
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- RESUMEN FINAL DE PRECIO Y DESCUENTO -->
+          <div class="price-summary-card">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-16); border-bottom: 2px solid var(--color-border); padding-bottom: 12px;">
+              <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--color-navy); margin: 0; display: flex; align-items: center; gap: 8px;">
+                <i data-lucide="receipt" style="color: var(--color-primary);"></i>
+                <span>Tu Cuenta Total</span>
+              </h3>
+              <span class="badge badge-success" id="cfgDiscountBadge" style="display: none; font-size: 0.85rem; padding: 6px 14px;">
+                🔥 ¡50% DE DESCUENTO APLICADO!
+              </span>
+            </div>
+
+            <div class="price-summary-row">
+              <span>Impresión (<span id="sumInkName">Blanco y Negro</span>):</span>
+              <strong id="sumInkCost">$5.00 / hoja</strong>
+            </div>
+
+            <div class="price-summary-row">
+              <span>Papel (<span id="sumPaperName">Carta Normal Bond</span>):</span>
+              <strong id="sumPaperCost" style="color: #15803d;">$0.00 (¡GRATIS!)</strong>
+            </div>
+
+            <div class="price-summary-row">
+              <span>Subtotal hojas (<span id="sumSheetsLabel">10 hojas</span>):</span>
+              <strong id="sumSubtotalSheets">$50.00</strong>
+            </div>
+
+            <div class="price-summary-row" id="sumMultiPdfRow" style="display: none;">
+              <span>Recargo por archivos sueltos:</span>
+              <strong style="color: #b91c1c;">+$20.00</strong>
+            </div>
+
+            <div class="price-summary-row highlight" id="sumDiscountRow" style="display: none; font-size: 1.1rem;">
+              <span>Descuento de Septiembre (50% OFF):</span>
+              <strong id="sumDiscountAmount" style="color: #15803d;">-$0.00</strong>
+            </div>
+
+            <div class="price-summary-row" id="sumPaymentMethodRow">
+              <span>Forma de Pago:</span>
+              <strong id="sumPaymentMethodLabel">Link seguro Clip (previo a entrega)</strong>
+            </div>
+
+            <!-- AVISO DE TRANSPARENCIA EN LETRAS GRANDES (CREDENCIAL ESCOLAR, PALETA OFICIAL ENCARDOMY) -->
+            <div class="transparency-credential-box" id="transparencyCredentialBox" style="display: none;">
+              <div class="transparency-title">
+                <i data-lucide="shield-check" style="width: 24px; height: 24px; color: var(--color-primary);"></i>
+                <span>TRANSPARENCIA TOTAL: ¿CÓMO SE VALIDA TU 50% DE DESCUENTO?</span>
+              </div>
+              <p class="transparency-body">
+                Para hacer válido tu descuento al momento de entregarte tus hojas en mano en la escuela, solo te pediremos que nos <strong>muestres tu credencial oficial física de la Prepa 4</strong> para corroborar que eres del grupo con descuento. <br><br>
+                <strong>¡Y muy importante! NO le tomamos foto, NO la escaneamos, NO retenemos nada ni subimos ningún dato a internet</strong>. Solo la vemos 2 segundos en persona y listo. Sin letras chiquitas ni trampas.
+              </p>
+            </div>
+
+            <div class="price-summary-total">
+              <div>
+                <div style="font-size: 0.95rem; color: var(--color-text-muted); font-weight: 800; text-transform: uppercase;">Total a Pagar</div>
+                <div style="font-size: 0.85rem; color: var(--color-navy); font-weight: 600;">Hojas carta gratis + Entrega en mano al día siguiente</div>
+              </div>
+              <div class="price-big-number" id="sumFinalPrice" style="font-size: 2.6rem; color: var(--color-navy);">$50.00 <span style="font-size: 1.05rem; color: var(--color-text-muted); font-weight: 700;">MXN</span></div>
+            </div>
+
+            <div class="mt-24">
+              <button type="button" class="btn btn-primary btn-block btn-lg" id="btnSendCopiesWhatsApp" style="font-size: 1.2rem; font-weight: 800; padding: 16px 24px;">
+                <i data-lucide="message-circle" style="width: 24px; height: 24px;"></i>
+                <span>¡Pedir mis Copias por WhatsApp!</span>
+              </button>
+            </div>
+
+            <div style="font-size: 0.82rem; color: var(--color-text-muted); text-align: center; margin-top: 14px; line-height: 1.5;">
+              🔒 Al pedir tus copias aceptas nuestro <a href="../privacidad.html">Aviso de Privacidad</a>, <a href="../propiedad-intelectual.html">Propiedad Intelectual</a> y <a href="../terminos-contratacion.html">Términos de Contratación</a>. Pagas en mano al recibir o vía enlace Clip.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECCIÓN 2: ¿PARA QUIÉN ES ESTO? (ENCARDOMY MINIMALISTA)
+         ========================================================================== -->
+    <section class="section-padding" id="para-quien">
+      <div class="container">
+        <div class="product-section-title">
+          <span class="section-num">2</span>
+          <h2 style="font-size: clamp(1.5rem, 3.5vw, 2.2rem); color: var(--color-navy); margin: 0;">¿Para quién es este servicio?</h2>
+        </div>
+        <p class="text-muted mb-32" style="font-size: 1.05rem;">Para cualquier estudiante de la Prepa 4 que valore su tiempo y su dinero.</p>
+
+        <div class="grid-2">
+          <div class="simple-benefit-card" style="border-top: 4px solid var(--color-success);">
+            <h3 style="font-size: 1.25rem; color: #15803d; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+              <i data-lucide="check-circle-2"></i> ¡ES PARA TI SI!
+            </h3>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 0.98rem;">
+              <li style="display: flex; gap: 10px;"><i data-lucide="check" style="color: var(--color-success); width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px;"></i> <span><strong>Entras a las 7 am</strong> y ni de chiste te vas a formar 30 minutos afuera.</span></li>
+              <li style="display: flex; gap: 10px;"><i data-lucide="check" style="color: var(--color-success); width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px;"></i> <span><strong>Ocupas hojas gratis</strong> y no quieres gastar en paquetes de hojas.</span></li>
+              <li style="display: flex; gap: 10px;"><i data-lucide="check" style="color: var(--color-success); width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px;"></i> <span><strong>Ocupas más de 10 copias</strong> o con color bonito sin que te pongan caras.</span></li>
+              <li style="display: flex; gap: 10px;"><i data-lucide="check" style="color: var(--color-success); width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px;"></i> <span><strong>Eres del 415</strong> y quieres que te consigan las lecturas por materia sin rollos.</span></li>
+            </ul>
+          </div>
+
+          <div class="simple-benefit-card" style="border-top: 4px solid var(--color-navy);">
+            <h3 style="font-size: 1.25rem; color: var(--color-navy); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+              <i data-lucide="x-circle"></i> NO ES PARA TI SI...
+            </h3>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 0.98rem;">
+              <li style="display: flex; gap: 10px;"><i data-lucide="x" style="color: #b91c1c; width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px;"></i> <span>Quieres que te llevemos las copias a tu casa fuera de la Prepa 4.</span></li>
+              <li style="display: flex; gap: 10px;"><i data-lucide="x" style="color: #b91c1c; width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px;"></i> <span>Quieres que reescribamos o diseñemos tu tarea (para eso tenemos servicios de redacción).</span></li>
+              <li style="display: flex; gap: 10px;"><i data-lucide="x" style="color: #b91c1c; width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px;"></i> <span>Llegas tarde al auditorio (después de 6:50 am solo le entregamos al 415; los demás recogen en biblioteca).</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECCIÓN 3: ESPECIFICACIONES (TABLA SENCILLA)
+         ========================================================================== -->
+    <section class="section-padding bg-surface" id="especificaciones">
+      <div class="container">
+        <div class="product-section-title">
+          <span class="section-num">3</span>
+          <h2 style="font-size: clamp(1.5rem, 3.5vw, 2.2rem); color: var(--color-navy); margin: 0;">Ficha Técnica sin Letras Chiquitas</h2>
+        </div>
+        <p class="text-muted mb-32" style="font-size: 1.05rem;">Todo claro y transparente desde el primer segundo.</p>
+
+        <div class="card" style="padding: 0; overflow-x: auto;">
+          <table class="diff-table">
+            <thead>
+              <tr>
+                <th>Detalle</th>
+                <th style="background: var(--color-blue-tint); color: var(--color-primary); font-weight: 800;">Encardomy Prepa 4</th>
+                <th>Papelería de Afuera</th>
+                <th>Escuela</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Papel Carta Normal</strong></td>
+                <td class="highlight-row"><strong>¡100% GRATIS!</strong></td>
+                <td>Te lo cobran</td>
+                <td>Traes tus hojas o pagas</td>
+              </tr>
+              <tr>
+                <td><strong>Tiempo de Fila</strong></td>
+                <td class="highlight-row"><strong>0 Minutos (en mano)</strong></td>
+                <td>30 Minutos promedio</td>
+                <td>15 Minutos en receso</td>
+              </tr>
+              <tr>
+                <td><strong>Plazo de Entrega</strong></td>
+                <td class="highlight-row"><strong>Al día siguiente hábil</strong></td>
+                <td>En el momento (haciendo fila)</td>
+                <td>En receso escolar</td>
+              </tr>
+              <tr>
+                <td><strong>Límite de Hojas</strong></td>
+                <td class="highlight-row"><strong>¡SIN LÍMITE!</strong></td>
+                <td>Sin límite</td>
+                <td>Máximo 10 hojas</td>
+              </tr>
+              <tr>
+                <td><strong>Calidad Tinta</strong></td>
+                <td class="highlight-row"><strong>Láser / HD sin manchas</strong></td>
+                <td>Tóner gastado común</td>
+                <td>Baja resolución</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECCIÓN 4: BENEFICIOS (PALETA OFICIAL ENCARDOMY)
+         ========================================================================== -->
+    <section class="section-padding" id="beneficios">
+      <div class="container">
+        <div class="product-section-title">
+          <span class="section-num">4</span>
+          <h2 style="font-size: clamp(1.5rem, 3.5vw, 2.2rem); color: var(--color-navy); margin: 0;">¿Por qué con nosotros?</h2>
+        </div>
+        <p class="text-muted mb-32" style="font-size: 1.05rem;">Porque resolvemos lo que te quita el sueño en las mañanas.</p>
+
+        <div class="grid-4">
+          <div class="simple-benefit-card text-center">
+            <div class="big-stat-number">0</div>
+            <div style="font-size: 0.88rem; font-weight: 800; color: var(--color-navy); text-transform: uppercase;">Minutos de Fila</div>
+            <p class="text-muted" style="font-size: 0.9rem; margin-top: 8px;">Llegas a la puerta del auditorio, te doy tus hojas y listo.</p>
+          </div>
+
+          <div class="simple-benefit-card text-center">
+            <div class="big-stat-number" style="color: #15803d;">$0</div>
+            <div style="font-size: 0.88rem; font-weight: 800; color: #15803d; text-transform: uppercase;">Por la Hoja Carta</div>
+            <p class="text-muted" style="font-size: 0.9rem; margin-top: 8px;">El papel bond carta va por nuestra cuenta en todos los pedidos.</p>
+          </div>
+
+          <div class="simple-benefit-card text-center">
+            <div class="big-stat-number" style="color: var(--color-primary);">∞</div>
+            <div style="font-size: 0.88rem; font-weight: 800; color: var(--color-navy); text-transform: uppercase;">Sin Límite de Hojas</div>
+            <p class="text-muted" style="font-size: 0.9rem; margin-top: 8px;">Pide 10, 50 o 100 copias sin que te pongan malas caras.</p>
+          </div>
+
+          <div class="simple-benefit-card text-center">
+            <div class="big-stat-number" style="color: var(--color-navy);">50%</div>
+            <div style="font-size: 0.88rem; font-weight: 800; color: var(--color-primary); text-transform: uppercase;">OFF en Septiembre</div>
+            <p class="text-muted" style="font-size: 0.9rem; margin-top: 8px;">Para el 415, 502, 514, 608 y 654 en pedidos mayores a $50.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECCIÓN 5: MUESTRAS VISUALES
+         ========================================================================== -->
+    <section class="section-padding bg-surface" id="muestras">
+      <div class="container">
+        <div class="product-section-title">
+          <span class="section-num">5</span>
+          <h2 style="font-size: clamp(1.5rem, 3.5vw, 2.2rem); color: var(--color-navy); margin: 0;">Muestrario de Acabados</h2>
+        </div>
+        <div class="grid-3">
+          <div class="card text-center">
+            <div style="font-size: 2rem; margin-bottom: 8px;">📄</div>
+            <h3 style="font-size: 1.15rem; color: var(--color-navy); margin-bottom: 4px;">Blanco y Negro ($5)</h3>
+            <p class="text-muted" style="font-size: 0.9rem;">Textos filosos, negro profundo sin manchas grises.</p>
+          </div>
+          <div class="card text-center">
+            <div style="font-size: 2rem; margin-bottom: 8px;">📊</div>
+            <h3 style="font-size: 1.15rem; color: var(--color-navy); margin-bottom: 4px;">Color Moderado ($10)</h3>
+            <p class="text-muted" style="font-size: 0.9rem;">Diagramas, gráficas y títulos llamativos.</p>
+          </div>
+          <div class="card text-center">
+            <div style="font-size: 2rem; margin-bottom: 8px;">🖼️</div>
+            <h3 style="font-size: 1.15rem; color: var(--color-navy); margin-bottom: 4px;">Color Extremo ($20)</h3>
+            <p class="text-muted" style="font-size: 0.9rem;">Pósters, fotos e infografías saturadas al 100%.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECCIÓN 6: UNBOXING
+         ========================================================================== -->
+    <section class="section-padding" id="unboxing">
+      <div class="container">
+        <div class="product-section-title">
+          <span class="section-num">6</span>
+          <h2 style="font-size: clamp(1.5rem, 3.5vw, 2.2rem); color: var(--color-navy); margin: 0;">Unboxing: ¿Qué te entrego?</h2>
+        </div>
+        <div class="unboxing-grid">
+          <div class="unboxing-item">
+            <div style="font-size: 1.6rem; margin-bottom: 6px;">📑</div>
+            <h4 style="color: var(--color-navy);">Hojas en Orden</h4>
+            <p class="text-muted" style="font-size: 0.85rem;">Numeradas y listas para entregar al maestro.</p>
+          </div>
+          <div class="unboxing-item">
+            <div style="font-size: 1.6rem; margin-bottom: 6px;">📎</div>
+            <h4 style="color: var(--color-navy);">Grapa Gratis</h4>
+            <p class="text-muted" style="font-size: 0.85rem;">Engrapado limpio sin costo si lo pides.</p>
+          </div>
+          <div class="unboxing-item">
+            <div style="font-size: 1.6rem; margin-bottom: 6px;">🏷️</div>
+            <h4 style="color: var(--color-navy);">Etiqueta Rápida</h4>
+            <p class="text-muted" style="font-size: 0.85rem;">Con tu nombre y grupo para entrega en 2 segundos.</p>
+          </div>
+          <div class="unboxing-item">
+            <div style="font-size: 1.6rem; margin-bottom: 6px;">🛡️</div>
+            <h4 style="color: var(--color-navy);">Protegido</h4>
+            <p class="text-muted" style="font-size: 0.85rem;">En bolsita o funda para que no se arrugue.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECCIÓN 7: METODOLOGÍA (3 PASOS)
+         ========================================================================== -->
+    <section class="section-padding bg-surface" id="metodologia">
+      <div class="container">
+        <div class="product-section-title">
+          <span class="section-num">7</span>
+          <h2 style="font-size: clamp(1.5rem, 3.5vw, 2.2rem); color: var(--color-navy); margin: 0;">El Proceso: Así de Fácil</h2>
+        </div>
+        <div class="process-grid">
+          <div class="process-step">
+            <div class="process-icon process-icon-deliver">1</div>
+            <h3 style="font-size: 1.15rem; color: var(--color-navy); margin-bottom: 6px;">1. Configuras & Mandas</h3>
+            <p class="text-muted" style="font-size: 0.95rem;">Eliges tus opciones aquí arriba y nos mandas tu PDF por WhatsApp.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-icon process-icon-ai">2</div>
+            <h3 style="font-size: 1.15rem; color: var(--color-navy); margin-bottom: 6px;">2. Imprimimos de Noche</h3>
+            <p class="text-muted" style="font-size: 0.95rem;">Imprimimos con láser nítido, revisamos que esté perfecto y empacamos.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-icon process-icon-human">3</div>
+            <h3 style="font-size: 1.15rem; color: var(--color-navy); margin-bottom: 6px;">3. En Mano al Día Siguiente</h3>
+            <p class="text-muted" style="font-size: 0.95rem;">Llegas a las 6:40 am al Auditorio o a Biblioteca, te lo doy y a tu clase.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECCIÓN 8: COMPARATIVA DIRECTA
+         ========================================================================== -->
+    <section class="section-padding" id="diferenciador">
+      <div class="container">
+        <div class="product-section-title">
+          <span class="section-num">8</span>
+          <h2 style="font-size: clamp(1.5rem, 3.5vw, 2.2rem); color: var(--color-navy); margin: 0;">La Comparativa Definitiva</h2>
+        </div>
+        <div class="card" style="padding: 0; overflow-x: auto;">
+          <table class="diff-table">
+            <thead>
+              <tr>
+                <th>¿Qué prefieres?</th>
+                <th style="background: var(--color-blue-tint); color: var(--color-primary); font-weight: 900;">Encardomy</th>
+                <th>Papelería de Afuera</th>
+                <th>Fotocopiadora Escolar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>¿Haces fila?</strong></td>
+                <td class="highlight-row"><strong>¡NO! (0 minutos)</strong></td>
+                <td>Sí, 30 minutos</td>
+                <td>Sí, 15 minutos</td>
+              </tr>
+              <tr>
+                <td><strong>¿Pagas las hojas?</strong></td>
+                <td class="highlight-row"><strong>¡NO! Son GRATIS</strong></td>
+                <td>Sí te las cobran</td>
+                <td>Tienes que llevarlas tú</td>
+              </tr>
+              <tr>
+                <td><strong>¿Límite de hojas?</strong></td>
+                <td class="highlight-row"><strong>¡NINGUNO!</strong></td>
+                <td>Sin límite</td>
+                <td>Máximo 10 hojas</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECCIÓN 9: AUTORIDAD
+         ========================================================================== -->
+    <section class="section-padding bg-surface" id="autoridad">
+      <div class="container">
+        <div class="product-section-title">
+          <span class="section-num">9</span>
+          <h2 style="font-size: clamp(1.5rem, 3.5vw, 2.2rem); color: var(--color-navy); margin: 0;">Cero Fallas de Tinta</h2>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <h4 style="color: var(--color-navy);">Tóner Original</h4>
+            <p class="text-muted" style="font-size: 0.9rem;">No usamos tintas baratas que manchan tus dedos o tus apuntes.</p>
+          </div>
+          <div class="card">
+            <h4 style="color: var(--color-navy);">Papel Bond 75g</h4>
+            <p class="text-muted" style="font-size: 0.9rem;">Blancura del 98%, no se transparenta al imprimir por ambos lados.</p>
+          </div>
+          <div class="card">
+            <h4 style="color: var(--color-navy);">Puntualidad Absoluta</h4>
+            <p class="text-muted" style="font-size: 0.9rem;">Estamos antes de las 6:40 am para que no tengas estrés.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECCIÓN 10: SOBRE NOSOTROS
+         ========================================================================== -->
+    <section class="section-padding" id="sobre-nosotros">
+      <div class="container">
+        <div class="product-section-title">
+          <span class="section-num">10</span>
+          <h2 style="font-size: clamp(1.5rem, 3.5vw, 2.2rem); color: var(--color-navy); margin: 0;">¿Quiénes Somos?</h2>
+        </div>
+        <div class="card" style="max-width: 800px; margin: 0 auto; background: var(--color-white); border-left: 4px solid var(--color-primary);">
+          <h3 style="color: var(--color-navy); margin-bottom: 8px;">Estudiantes de la Prepa 4 para la Prepa 4</h3>
+          <p class="text-muted" style="font-size: 1.02rem; line-height: 1.6;">
+            Encardomy fue creada por <strong>Diego Periañex Hernández</strong>. Vivimos lo mismo que tú: los profesores que piden tareas impresas a las 7:00 am en punto y la pesadilla de formarte en la papelería mientras ves el reloj avanzar. Queremos ahorrarte ese estrés para que entres a clase tranquilo.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECCIÓN 11: INSPECCIÓN EN MANO Y GARANTÍA REAL
+         ========================================================================== -->
+    <section class="section-padding bg-surface" id="garantia">
+      <div class="container">
+        <div class="product-section-title">
+          <span class="section-num">11</span>
+          <h2 style="font-size: clamp(1.5rem, 3.5vw, 2.2rem); color: var(--color-navy); margin: 0;">Inspección en Mano y Garantía</h2>
+        </div>
+        <p class="text-muted mb-24" style="font-size: 1.05rem;">
+          Nosotros verificamos previamente que cada hoja salga impecable de la impresora. Al momento de la entrega en mano en la escuela, <strong>te pedimos revisar tus hojas en ese instante</strong>, ya que una vez que te retiras del punto de entrega <strong>no se aceptan reclamaciones</strong>.
+        </p>
+
+        <!-- Cuadro de aviso importante -->
+        <div style="background: var(--color-blue-tint); border-left: 4px solid var(--color-primary); border-radius: var(--radius-md); padding: 14px 18px; margin-bottom: var(--space-24);">
+          <strong style="color: var(--color-navy); font-size: 1rem; display: flex; align-items: center; gap: 8px;">
+            <i data-lucide="alert-circle" style="color: var(--color-primary); width: 20px; height: 20px;"></i>
+            ¿Qué pasa si al revisarla en mano una hoja sale defectuosa por nuestra culpa?
+          </strong>
+          <p style="font-size: 0.94rem; color: var(--color-text-dark); margin: 6px 0 0 0;">
+            Como no tenemos una impresora en la puerta de la escuela para reimprimir en un segundo, te damos <strong>2 soluciones reales e inmediatas</strong> según tu urgencia:
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <!-- OPCIÓN 1: SI NO TE URGE -->
+          <div class="card" style="border-top: 4px solid var(--color-primary);">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+              <span class="badge badge-primary">OPCIÓN 1 &bull; SI NO TE URGE</span>
+              <span style="font-size: 1.5rem;">📅</span>
+            </div>
+            <h3 style="font-size: 1.25rem; color: var(--color-navy); margin-bottom: 8px;">Reimpresión al día siguiente + 20% OFF</h3>
+            <p class="text-muted" style="font-size: 0.94rem; line-height: 1.6; margin-bottom: 12px;">
+              Si puedes entregar la tarea después o la lectura es para repasar:
+            </p>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.92rem; color: var(--color-text-dark);">
+              <li style="display: flex; gap: 8px;"><i data-lucide="check" style="color: var(--color-primary); width: 16px; height: 16px; flex-shrink: 0; margin-top: 3px;"></i> Te reimprimimos la hoja sin costo alguno al día siguiente hábil.</li>
+              <li style="display: flex; gap: 8px;"><i data-lucide="check" style="color: var(--color-primary); width: 16px; height: 16px; flex-shrink: 0; margin-top: 3px;"></i> Te enviamos un PDF con un <strong>cupón del 20% de descuento adicional</strong> para tu siguiente pedido.</li>
+              <li style="display: flex; gap: 8px;"><i data-lucide="info" style="color: var(--color-text-muted); width: 16px; height: 16px; flex-shrink: 0; margin-top: 3px;"></i> <em>Condiciones:</em> No es acumulable con otras promociones (como el 50% de septiembre) y tiene vigencia de 1 mes.</li>
+            </ul>
+          </div>
+
+          <!-- OPCIÓN 2: SI SÍ TE URGE -->
+          <div class="card" style="border-top: 4px solid var(--color-success);">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+              <span class="badge badge-success">OPCIÓN 2 &bull; SI SÍ TE URGE HOY</span>
+              <span style="font-size: 1.5rem;">⚡</span>
+            </div>
+            <h3 style="font-size: 1.25rem; color: var(--color-navy); margin-bottom: 8px;">No la pagas + Hojas limpias gratis + 25% OFF</h3>
+            <p class="text-muted" style="font-size: 0.94rem; line-height: 1.6; margin-bottom: 12px;">
+              Si la necesitas ya mismo para tu clase de las 7:00 am:
+            </p>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.92rem; color: var(--color-text-dark);">
+              <li style="display: flex; gap: 8px;"><i data-lucide="check" style="color: var(--color-success); width: 16px; height: 16px; flex-shrink: 0; margin-top: 3px;"></i> <strong>Esa copia defectuosa no la pagas</strong> (o te devolvemos tu dinero de inmediato).</li>
+              <li style="display: flex; gap: 8px;"><i data-lucide="check" style="color: var(--color-success); width: 16px; height: 16px; flex-shrink: 0; margin-top: 3px;"></i> Te entregamos <strong>hojas blancas limpias gratis</strong> para que vayas a la fotocopiadora de la escuela sin gastar en papel.</li>
+              <li style="display: flex; gap: 8px;"><i data-lucide="check" style="color: var(--color-success); width: 16px; height: 16px; flex-shrink: 0; margin-top: 3px;"></i> Te damos un PDF con <strong>cupón del 25% de descuento</strong>.</li>
+              <li style="display: flex; gap: 8px;"><i data-lucide="info" style="color: var(--color-text-muted); width: 16px; height: 16px; flex-shrink: 0; margin-top: 3px;"></i> <em>Condiciones:</em> No acumulable; aplica para una siguiente compra con las <strong>mismas características</strong> del pedido original (ej. si pediste 10 opalinas a color, aplica en 10 opalinas a color), con vigencia de 1 mes.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECCIÓN 12: LA OFERTA
+         ========================================================================== -->
+    <section class="section-padding" id="oferta">
+      <div class="container">
+        <div class="product-section-title">
+          <span class="section-num">12</span>
+          <h2 style="font-size: clamp(1.5rem, 3.5vw, 2.2rem); color: var(--color-navy); margin: 0;">La Oferta de Septiembre</h2>
+        </div>
+        <div class="grid-3">
+          <div class="simple-benefit-card text-center" style="border: 2px solid var(--color-success);">
+            <div style="font-size: 2.5rem; margin-bottom: 6px;">🎁</div>
+            <h3 style="color: #15803d;">Hojas Carta Gratis</h3>
+            <p class="text-muted">Papel bond normal de 75g sin costo en todos los pedidos.</p>
+          </div>
+          <div class="simple-benefit-card text-center" style="border: 2px solid var(--color-primary);">
+            <div style="font-size: 2.5rem; margin-bottom: 6px;">🔥</div>
+            <h3 style="color: var(--color-primary);">50% de Descuento</h3>
+            <p class="text-muted">En compras mayores a $50 para grupos 415, 502, 514, 608 y 654.</p>
+          </div>
+          <div class="simple-benefit-card text-center" style="border: 2px solid var(--color-navy);">
+            <div style="font-size: 2.5rem; margin-bottom: 6px;">⚡</div>
+            <h3 style="color: var(--color-navy);">Entrega al Día Siguiente</h3>
+            <p class="text-muted">Frente al Auditorio José Muñoz Cota a las 6:40 am.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECCIÓN 13: PREGUNTAS TÍPICAS
+         ========================================================================== -->
+    <section class="section-padding bg-surface" id="objeciones">
+      <div class="container">
+        <div class="product-section-title">
+          <span class="section-num">13</span>
+          <h2 style="font-size: clamp(1.5rem, 3.5vw, 2.2rem); color: var(--color-navy); margin: 0;">Dudas Rápidas</h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>¿Qué pasa si una hoja sale manchada, chueca o con error?</span>
+              <span class="faq-icon"><i data-lucide="chevron-down"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p style="padding-top: 10px; font-size: 0.95rem;">
+                Te pedimos revisar tus hojas <strong>al momento de la entrega en mano</strong> (después de retirarte no hay reclamaciones). Si detectamos una falla atribuible a nosotros tienes 2 opciones: <strong>1) Si no te urge:</strong> te la reimprimimos al día siguiente sin costo más un 20% de descuento en tu siguiente compra (vigencia 1 mes, no acumulable). <strong>2) Si te urge:</strong> no pagas esa copia (o te devolvemos tu dinero), te damos hojas blancas limpias gratis para que imprimas en la escuela y un cupón de 25% de descuento para un pedido equivalente válido por 1 mes.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>¿Y si no tengo un solo PDF?</span>
+              <span class="faq-icon"><i data-lucide="chevron-down"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p style="padding-top: 10px; font-size: 0.95rem;">
+                Si mandas varias fotos o archivos sueltos, cobramos <strong>+$20 pesos</strong> porque tenemos que armarlo y acomodarlo a mano. Para que te salga más barato, junta todo en un solo PDF antes de enviarlo.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>¿Cómo se realiza el pago (Clip / Efectivo)?</span>
+              <span class="faq-icon"><i data-lucide="chevron-down"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p style="padding-top: 10px; font-size: 0.95rem;">
+                Para garantizar la entrega puntual a las 6:40 am sin demoras, <strong>los pagos de todos los grupos (excepto el Grupo 415) se realizan mediante enlace seguro de pago de Clip</strong> (tarjeta de débito, crédito u opciones bancarias) enviado a tu WhatsApp antes de imprimir. Los alumnos del <strong>Grupo 415</strong> cuentan con la opción de pagar en efectivo en mano al recibir o por Clip.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>¿Cuándo se entregan las tareas e impresiones?</span>
+              <span class="faq-icon"><i data-lucide="chevron-down"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p style="padding-top: 10px; font-size: 0.95rem;">
+                Las tareas e impresiones se entregan <strong>al día siguiente hábil de tu cotización / confirmación</strong> en el punto y horario que hayas seleccionado (Auditorio de 6:40 a 6:50 am o Biblioteca).
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>¿Qué pasa si llego a las 6:51 am al Auditorio?</span>
+              <span class="faq-icon"><i data-lucide="chevron-down"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p style="padding-top: 10px; font-size: 0.95rem;">
+                A las 6:50 am cerramos entrega en el Auditorio para entrar a clase a las 7:00 am, <strong>a menos que seas del Grupo 415</strong>. Si llegaste tarde, tus hojas quedan guardadas y las recoges en Biblioteca a la 1:00 pm.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECCIÓN 14: HORARIOS Y PUNTOS EXACTOS EN PREPA 4
+         ========================================================================== -->
+    <section class="section-padding" id="faq">
+      <div class="container">
+        <div class="product-section-title">
+          <span class="section-num">14</span>
+          <h2 style="font-size: clamp(1.5rem, 3.5vw, 2.2rem); color: var(--color-navy); margin: 0;">Horarios y Puntos en la Prepa 4 (Entrega al Día Siguiente)</h2>
+        </div>
+
+        <div class="grid-2 mb-32">
+          <div class="schedule-pill auditorio">
+            <div style="font-size: 2rem;">🌅</div>
+            <div>
+              <div style="font-size: 0.76rem; font-weight: 800; color: var(--color-primary);">PUNTO PRINCIPAL MATUTINO</div>
+              <h3 style="font-size: 1.15rem; color: var(--color-navy); margin: 2px 0;">Auditorio "José Muñoz Cota"</h3>
+              <p style="font-size: 0.95rem; font-weight: 700; color: var(--color-navy);">Lunes a Viernes: 6:40 am a 6:50 am</p>
+              <p class="text-muted" style="font-size: 0.85rem;">En la entrada/salida principal del Auditorio. Puntual para clase de 7 am. Entrega al día siguiente hábil de tu cotización.</p>
+            </div>
+          </div>
+
+          <div class="schedule-pill biblioteca">
+            <div style="font-size: 2rem;">📚</div>
+            <div>
+              <div style="font-size: 0.76rem; font-weight: 800; color: #15803d;">ENTREGA MEDIODÍA / VESPERTINA</div>
+              <h3 style="font-size: 1.15rem; color: var(--color-navy); margin: 2px 0;">Biblioteca de la Prepa 4</h3>
+              <p style="font-size: 0.95rem; font-weight: 700; color: var(--color-navy);">
+                Lun a Mié: 13:00 - 13:30 hrs<br>
+                Jueves: 12:15 - 12:30 hrs<br>
+                Viernes: 13:50 - 14:20 hrs
+              </p>
+            </div>
+          </div>
+
+          <div class="schedule-pill salon" style="grid-column: 1 / -1;">
+            <div style="font-size: 2rem;">🏫</div>
+            <div>
+              <div style="font-size: 0.76rem; font-weight: 800; color: var(--color-primary);">VIERNES SEGUNDO PERIODO</div>
+              <h3 style="font-size: 1.15rem; color: var(--color-navy); margin: 2px 0;">Salón B-117 (al lado de escaleras centrales)</h3>
+              <p style="font-size: 0.95rem; font-weight: 700; color: var(--color-navy);">Viernes: 7:00 am a 7:50 am*</p>
+              <p class="text-muted" style="font-size: 0.85rem;">*Sujeto a la hora en que llegue la profesora de Historia. Entrega al día siguiente hábil de tu pedido.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECCIÓN 15: LLAMADO A LA ACCIÓN FINAL
+         ========================================================================== -->
+    <section class="section-padding bg-navy text-center" id="contacto">
+      <div class="container" style="max-width: 720px;">
+        <span class="badge badge-primary mb-16" style="background: rgba(45,127,249,0.25); color: #90c2ff;">¿Te vas a volver a formar 30 minutos?</span>
+        <h2 style="font-size: clamp(2rem, 4.5vw, 2.8rem); font-weight: 800; color: var(--color-white); margin-bottom: 16px;">
+          ¡Pide tus copias ya y duerme media hora más!
+        </h2>
+        <p style="color: #b0c6e0; font-size: 1.12rem; line-height: 1.6; margin-bottom: var(--space-32);">
+          Configura tus páginas arriba, mándanos tu PDF por WhatsApp y recógelas en 2 segundos al día siguiente en el Auditorio José Muñoz Cota.
+        </p>
+        <a href="#configurador" class="btn btn-primary btn-lg" style="font-size: 1.15rem; font-weight: 800; padding: 16px 32px;">
+          <i data-lucide="printer"></i>
+          <span>Subir y Configurar Mis Copias</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       MODAL GENERAL DE COTIZACIÓN
+       ========================================================================== -->
+  <div class="modal-backdrop" id="orderModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Cerrar modal">
+        <i data-lucide="x" style="width: 20px; height: 20px;"></i>
+      </button>
+
+      <div style="margin-bottom: var(--space-24);">
+        <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 8px;">
+          <span class="badge badge-primary">Cotización Inmediata</span>
+          <span class="badge badge-success">Prepa 4 UNAM</span>
+        </div>
+        <h3 id="modalTitle" style="font-size: 1.35rem; color: var(--color-navy);">Configura tu pedido</h3>
+        <p class="text-muted" style="font-size: 0.9rem;">
+          Te enviaremos la cotización directa por WhatsApp. Las entregas se realizan al día siguiente hábil de la confirmación.
+        </p>
+      </div>
+
+      <form id="orderForm">
+        <!-- Grado Escolar -->
+        <div class="form-group">
+          <label class="form-label" for="orderGradeSelect">1. Tu Grado Escolar (Prepa 4)</label>
+          <select id="orderGradeSelect" class="form-select" required>
+            <option value="" disabled selected>Selecciona tu año escolar</option>
+            <option value="4">4° Cuarto Año de Preparatoria</option>
+            <option value="5">5° Quinto Año de Preparatoria</option>
+            <option value="6">6° Sexto Año de Preparatoria</option>
+          </select>
+        </div>
+
+        <!-- Grupo y Sección -->
+        <div class="grid-2-form form-group">
+          <div>
+            <label class="form-label" for="orderGroupSelect">2. Grupo</label>
+            <select id="orderGroupSelect" class="form-select" disabled required>
+              <option value="" disabled selected>Primero elige tu grado</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label" for="orderSectionSelect">3. Sección</label>
+            <select id="orderSectionSelect" class="form-select" required>
+              <option value="Sección A" selected>Sección A</option>
+              <option value="Sección B">Sección B</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Materia Oficial -->
+        <div class="form-group">
+          <label class="form-label" for="orderSubjectSelect">4. Materia</label>
+          <select id="orderSubjectSelect" class="form-select" disabled required>
+            <option value="" disabled selected>Primero elige tu grado</option>
+          </select>
+        </div>
+
+        <!-- Campo si es Otra Materia -->
+        <div class="form-group" id="customSubjectWrapper" style="display: none;">
+          <label class="form-label" for="orderCustomSubjectInput">Especifique el nombre exacto de la materia:</label>
+          <input type="text" id="orderCustomSubjectInput" class="form-input" placeholder="Ej. Taller de Creación Literaria...">
+        </div>
+
+        <!-- Servicio -->
+        <div class="form-group">
+          <label class="form-label" for="orderServiceSelect">5. Servicio que necesitas</label>
+          <select id="orderServiceSelect" class="form-select" required>
+            <option value="impresiones" selected>🖨️ Impresiones & Copias Prepa 4</option>
+            <option value="resumen">Resumen Académico Estructurado</option>
+            <option value="guia-de-estudio">Guía de Estudio Integral</option>
+            <option value="flashcards">Flashcards de Repetición Espaciada</option>
+            <option value="examen-de-practica">Examen de Práctica y Simulador</option>
+            <option value="correccion-academica">Corrección Académica y Estilo</option>
+            <option value="edicion-natural">Edición Natural y Humanización</option>
+            <option value="mejora-de-trabajo">Diagnóstico y Mejora de Trabajo</option>
+            <option value="documento-academico">Redacción Base de Documento</option>
+            <option value="investigacion">Búsqueda Bibliográfica</option>
+            <option value="presentacion">Diseño de Presentación Visual</option>
+            <option value="infografia">Infografía y Esquemas Visuales</option>
+            <option value="proyecto-encardomy">Proyecto Encardomy Semestral</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="orderNameInput">Tu Nombre (o cómo te decimos)</label>
+          <input type="text" id="orderNameInput" class="form-input" placeholder="Ej. Carlos Mendoza" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="orderDetailsInput">Notas o instrucciones adicionales</label>
+          <textarea id="orderDetailsInput" class="form-textarea" placeholder="¿Algo especial que debamos saber?"></textarea>
+        </div>
+
+        <div class="mt-24">
+          <button type="submit" class="btn btn-primary btn-block btn-lg" id="submitOrderBtn">
+            <i data-lucide="message-circle"></i>
+            <span>Enviar Cotización a WhatsApp (+52 55 7198 5641)</span>
+          </button>
+        </div>
+
+        <div style="font-size: 0.78rem; color: var(--color-text-muted); text-align: center; margin-top: 12px; line-height: 1.4;">
+          🔒 Tus datos están protegidos. Al solicitar tu cotización aceptas nuestro <a href="../privacidad.html" style="text-decoration: underline;">Aviso de Privacidad</a>, la <a href="../propiedad-intelectual.html" style="text-decoration: underline;">Propiedad Intelectual</a>, los <a href="../terminos-contratacion.html" style="text-decoration: underline;">Términos de Contratación</a> y la <a href="../revisiones-ajustes.html" style="text-decoration: underline;">Política de Revisiones</a>.
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       FOOTER GLOBAL SINCRONIZADO
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand-logo mb-16">
+            <span class="logo-symbol">E</span>
+            <span style="color: var(--color-white);">Encardomy</span>
+          </div>
+          <p style="color: #b0c6e0; font-size: 0.92rem; line-height: 1.6; margin-bottom: var(--space-16); max-width: 360px;">
+            Plataforma académica y de impresiones para estudiantes de la Escuela Nacional Preparatoria 4 "Vidal Castañeda y Nájera" (UNAM). Hojas carta normales gratis y entregas en mano sin filas al día siguiente hábil de tu cotización.
+          </p>
+          <div class="badge badge-success">Piloto Exclusivo Prepa 4</div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Servicios</div>
+          <ul class="footer-links">
+            <li><a href="impresiones.html">🖨️ Impresiones & Copias</a></li>
+            <li><a href="resumen.html">Resumen Académico</a></li>
+            <li><a href="guia-de-estudio.html">Guía de Estudio</a></li>
+            <li><a href="flashcards.html">Flashcards Anki</a></li>
+            <li><a href="examen-de-practica.html">Simulador de Examen</a></li>
+            <li><a href="correccion-academica.html">Corrección APA</a></li>
+            <li><a href="../categorias.html">Ver los 13 Servicios &rarr;</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Categorías</div>
+          <ul class="footer-links">
+            <li><a href="../categorias.html#cat-estudiar">Estudiar</a></li>
+            <li><a href="../categorias.html#cat-mejorar">Mejorar</a></li>
+            <li><a href="../categorias.html#cat-crear">Crear</a></li>
+            <li><a href="../categorias.html#cat-disenar">Diseñar</a></li>
+            <li><a href="../categorias.html#cat-proyectos">Proyectos</a></li>
+            <li><a href="impresiones.html">Copias Prepa 4</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Legal & Transparencia</div>
+          <ul class="footer-links">
+            <li><a href="../legal.html">⚖️ Centro de Documentos Legales</a></li>
+            <li><a href="../privacidad.html">🔒 Aviso de Privacidad Integral</a></li>
+            <li><a href="../propiedad-intelectual.html">💡 Política de Propiedad Intelectual</a></li>
+            <li><a href="../terminos-contratacion.html">📋 Términos de Contratación</a></li>
+            <li><a href="../revisiones-ajustes.html">🔄 Política de Revisiones y Ajustes</a></li>
+            <li><a href="mailto:encardomy@gmail.com">✉️ encardomy@gmail.com</a></li>
+            <li><a href="https://wa.me/525571985641" target="_blank" rel="noopener">📱 WhatsApp: +52 55 7198 5641</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Encardomy &bull; Diego Periañex Hernández &bull; Ciudad de México, C.P. 06700. Todos los derechos reservados.
+        </div>
+        <div style="display: flex; gap: var(--space-16); flex-wrap: wrap;">
+          <a href="../legal.html">Centro Legal</a> &bull;
+          <a href="../privacidad.html">Privacidad</a> &bull;
+          <a href="../propiedad-intelectual.html">Propiedad Intelectual</a> &bull;
+          <a href="../terminos-contratacion.html">Contratación</a> &bull;
+          <a href="../revisiones-ajustes.html">Revisiones</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/data.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    if (window.lucide) {
+      lucide.createIcons();
+    }
+  </script>
+</body>
+</html>

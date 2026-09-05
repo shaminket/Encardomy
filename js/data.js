@@ -460,6 +460,47 @@ const ENCARDOMY_SERVICES = {
       { q: "¿Puedo definir las medidas de la infografía?", a: "Sí, podemos trabajar en tamaño carta, tabloide, póster para congreso o formato vertical para celular." }
     ]
   },
+  "impresiones": {
+    id: "impresiones",
+    name: "Impresiones y Copias Prepa 4",
+    slug: "impresiones",
+    category: "estudiar",
+    categoryName: "Impresiones & Copias",
+    badgeClass: "badge-primary",
+    shortDesc: "Impresiones de alta definición con papel carta normal GRATIS, sin filas de 30 minutos y entrega en mano en el Auditorio o Biblioteca.",
+    heroTitle: "Tus impresiones en la Prepa 4 listas en mano sin filas ni demoras",
+    heroSubtitle: "Papel bond carta normal 100% GRATIS. Entregas directas en el Auditorio José Muñoz Cota y Biblioteca. 50% de descuento para grupos seleccionados.",
+    turnaround: "Entrega matutina (6:40-6:50 am) o vespertina en Biblioteca",
+    format: "Impresión física nítida (B/N, Color Moderado, Color Extremo en Bond, Opalina o Color)",
+    pricePlaceholder: "Desde $5 MXN / hoja (Papel carta normal GRATIS)",
+    icon: "printer",
+    offerList: [
+      "Hoja en tamaño carta papel normal (bond 75g) 100% GRATIS",
+      "Entrega sin filas en la salida/entrada del Auditorio José Muñoz Cota y Biblioteca",
+      "Opciones de Blanco/Negro, Color Moderado y Color Extremo (1 cara y doble cara)",
+      "Sustratos especiales: Papel normal, Opalina, Tamaño Oficio y Hojas de Color",
+      "50% de descuento en septiembre para el Grupo 415, 502, 514, 608 y 654 en compras > $50"
+    ],
+    differentiator: "Mientras que en las papelerías de afuera de la Prepa 4 pierdes media hora haciendo fila bajo el sol y en la escuela te cobran las hojas y te limitan a 10 impresiones, con Encardomy las hojas carta normales son GRATIS, no hay límite y te entregamos en mano al instante.",
+    benefits: [
+      { title: "Cero filas de 30 minutos", desc: "Llegas a tu punto de entrega en Prepa 4 y recibes en mano en segundos; no llegues tarde a tu primera clase." },
+      { title: "Hojas carta normales GRATIS", desc: "No compres paquetes de hojas ni pagues sobrecostos; el papel bond normal de 75g te lo regalamos." },
+      { title: "Sin límite de hojas", desc: "Imprime reportes de 20, 50 o 100 páginas sin restricciones de copiado ni saturación de color." },
+      { title: "Precios 100% transparentes", desc: "Desde $5 pesos blanco y negro; sabes exactamente cuánto pagarás desde nuestra web." }
+    ],
+    unboxing: [
+      { item: "Hojas Impresas en Alta Definición", desc: "Textos nítidos y gráficos bien calibrados sin manchas de tóner." },
+      { item: "Papel Carta Bond 75g Gratuito", desc: "Papel de alta blancura incluido sin costo extra." },
+      { item: "Grapa o Protector Incluido", desc: "Trabajos organizados y listos para entregar al profesor." },
+      { item: "Identificador de Pedido", desc: "Etiqueta con tu nombre, grupo y número de hojas exacto." }
+    ],
+    targetAudience: "Alumnos de 4°, 5° y 6° de la Preparatoria 4 que necesitan entregar tareas, guías, reportes de laboratorio o lecturas a tiempo.",
+    faq: [
+      { q: "¿Dónde y a qué hora se entregan las impresiones?", a: "Punto principal matutino: 6:40 a 6:50 am frente a la salida/entrada del Auditorio José Muñoz Cota de la Prepa 4. En Biblioteca de lunes a miércoles de 13:00 a 13:30 hrs, jueves de 12:15 a 12:30 hrs y viernes de 13:50 a 14:20 hrs (más segundo periodo matutino los viernes de 7:00 a 7:50 am en salón B-117)." },
+      { q: "¿Qué pasa si no mando un solo archivo PDF?", a: "Para mantener la velocidad de impresión solicitamos un solo PDF con el número exacto de hojas. Si envías múltiples archivos sueltos se aplica un recargo de $20 MXN por consolidación." },
+      { q: "¿Cómo aplica el descuento del 50% de septiembre?", a: "Aplica para alumnos del Grupo 415 y de los grupos 502, 514, 608 y 654 en pedidos mayores a $50 MXN durante todo septiembre." }
+    ]
+  },
   "proyecto-encardomy": {
     id: "proyecto-encardomy",
     name: "Proyecto Encardomy Integral",
