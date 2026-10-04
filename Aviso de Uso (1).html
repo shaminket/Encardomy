@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviso de Uso y Términos del Canal de WhatsApp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: '#0a192f',
+                        electric: '#00f0ff',
+                        purpleAccent: '#9d4edd',
+                        darkBg: '#050505',
+                        panelBg: '#0f111a',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for better dark mode aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9d4edd;
+        }
+        
+        .glow-text {
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+        }
+        
+        .glow-border {
+            box-shadow: 0 0 20px rgba(157, 78, 221, 0.15), inset 0 0 10px rgba(0, 240, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-gray-300 font-sans min-h-screen flex items-center justify-center p-4 sm:p-8 antialiased selection:bg-purpleAccent selection:text-white">
+
+    <!-- Subtle background gradients -->
+    <div class="fixed top-[-10%] left-[-10%] w-96 h-96 bg-navy rounded-full blur-[120px] opacity-60 pointer-events-none"></div>
+    <div class="fixed bottom-[-10%] right-[-10%] w-96 h-96 bg-purpleAccent rounded-full blur-[150px] opacity-20 pointer-events-none"></div>
+
+    <main class="relative z-10 w-full max-w-3xl bg-panelBg rounded-2xl border border-gray-800 p-6 sm:p-10 glow-border">
+        
+        <!-- Header -->
+        <header class="mb-10 text-center border-b border-gray-800 pb-6">
+            <h1 class="text-3xl sm:text-4xl font-bold text-white mb-3 tracking-tight">
+                Aviso de Uso y Términos
+            </h1>
+            <p class="text-electric text-sm sm:text-base font-semibold uppercase tracking-widest glow-text">
+                Canal de WhatsApp Oficial
+            </p>
+        </header>
+
+        <div class="space-y-8">
+            <!-- Section 1 -->
+            <section class="group">
+                <h2 class="text-xl font-semibold text-purpleAccent mb-3 flex items-center gap-2">
+                    <span class="w-8 h-[2px] bg-purpleAccent inline-block"></span>
+                    I. Normativa Exclusiva para Usuarios Externos
+                </h2>
+                <div class="pl-10 text-gray-400 leading-relaxed space-y-2">
+                    <p>
+                        Se establece de manera estricta e ineludible que <strong class="text-gray-200">todo usuario que NO pertenezca de manera activa a la Escuela Nacional Preparatoria</strong> contrae una obligación inmediata al ingresar a este espacio.
+                    </p>
+                    <p>
+                        Dichos usuarios externos están completamente obligados a preparar, estructurar y exponer una clase formal cada día domingo, sin excepción alguna. El incumplimiento de esta directiva resultará en medidas disciplinarias inmediatas.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section 2 -->
+            <section class="group">
+                <h2 class="text-xl font-semibold text-electric mb-3 flex items-center gap-2">
+                    <span class="w-8 h-[2px] bg-electric inline-block"></span>
+                    II. Especificaciones de la Clase
+                </h2>
+                <div class="pl-10 text-gray-400 leading-relaxed bg-black/40 rounded-lg p-4 border border-gray-800/50 shadow-inner">
+                    <ul class="list-disc list-inside space-y-3 marker:text-electric">
+                        <li><strong class="text-gray-200">Duración:</strong> La exposición deberá tener una duración mínima de <span class="text-white">30 minutos</span> y no exceder el máximo de <span class="text-white">120 minutos</span>.</li>
+                        <li><strong class="text-gray-200">Temática:</strong> El tema de cada sesión será dictaminado de manera exclusiva por <strong>ShaMinKet</strong>.</li>
+                        <li><strong class="text-gray-200">Áreas de Estudio:</strong> Por regla general, los temas estarán enfocados en <span class="italic">Historia, Español o Física</span>, aunque ShaMinKet se reserva el derecho absoluto de asignar materias ajenas a estas categorías.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 3 -->
+            <section class="group">
+                <h2 class="text-xl font-semibold text-white mb-3 flex items-center gap-2">
+                    <span class="w-8 h-[2px] bg-white inline-block"></span>
+                    III. Términos Generales
+                </h2>
+                <div class="pl-10 text-gray-400 leading-relaxed">
+                    <p class="mb-4">Para garantizar la integridad y el buen funcionamiento de esta comunidad, todos los miembros se sujetan a las siguientes normas universales:</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-navy/30 border border-blue-900/40 p-4 rounded-xl">
+                            <h3 class="text-white font-semibold mb-1">1. Tolerancia Cero al Spam</h3>
+                            <p class="text-sm">Queda estrictamente prohibida la difusión de contenido irrelevante, cadenas o publicidad.</p>
+                        </div>
+                        <div class="bg-navy/30 border border-blue-900/40 p-4 rounded-xl">
+                            <h3 class="text-white font-semibold mb-1">2. Respeto Mutuo</h3>
+                            <p class="text-sm">Se exige un trato cordial e institucional entre todos los participantes del canal.</p>
+                        </div>
+                        <div class="bg-navy/30 border border-blue-900/40 p-4 rounded-xl">
+                            <h3 class="text-white font-semibold mb-1">3. Rigurosidad Horaria</h3>
+                            <p class="text-sm">El respeto por los horarios de las clases dominicales y los periodos de silencio es absoluto.</p>
+                        </div>
+                        <div class="bg-navy/30 border border-blue-900/40 p-4 rounded-xl">
+                            <h3 class="text-white font-semibold mb-1">4. Confidencialidad</h3>
+                            <p class="text-sm">Los materiales, debates y contenidos vertidos en este espacio no deben ser extraídos ni divulgados.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Automated Acceptance Notice -->
+        <div class="mt-12 pt-8 border-t border-gray-800 text-center">
+            <p class="text-gray-500 text-sm italic">
+                Estos términos han sido aceptados previamente desde la página anterior. Su acceso y permanencia dentro del canal de WhatsApp constituye la confirmación y aceptación automática, continua e irrevocable de todas las normativas aquí descritas.
+            </p>
+        </div>
+    </main>
+</body>
+</html>
