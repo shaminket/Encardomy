@@ -1,0 +1,130 @@
+/* ==========================================================================
+   ENCARDOMY — EXPERIENCIA UNAM (/unam/ — css/unam.css)
+   Servicios académicos personalizados, presentaciones 20×20 ($100 MXN),
+   impresión de documentos, guías, resúmenes, infografías y asesorías.
+   ========================================================================== */
+
+.unam-hero {
+  background-color: var(--color-light-gray);
+  border-bottom: 3px solid var(--color-unam-navy);
+  padding: 56px 0;
+}
+
+.unam-hero-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.unam-emblem-card {
+  background-color: var(--color-pure-white);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+}
+
+.unam-emblem-card img {
+  height: 130px;
+  width: auto;
+  object-fit: contain;
+}
+
+.unam-workspace-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.unam-sidebar {
+  background-color: var(--color-light-gray);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 22px;
+  position: sticky;
+  top: 96px;
+}
+
+.unam-category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.unam-category-btn {
+  width: 100%;
+  text-align: left;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-graphite-gray);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.unam-category-btn:hover {
+  background-color: var(--color-pure-white);
+  color: var(--color-unam-navy);
+}
+
+.unam-category-btn.active {
+  background-color: var(--color-unam-navy);
+  color: var(--color-pure-white);
+}
+
+.unam-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.unam-service-card {
+  background-color: var(--color-pure-white);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.unam-service-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.unam-price-tag {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-unam-navy);
+}
+
+.unam-spec-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 14px 0;
+  font-size: 0.9rem;
+}
+
+.unam-spec-list li::before {
+  content: "• ";
+  color: var(--color-electric-blue);
+  font-weight: 700;
+}

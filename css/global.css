@@ -1,0 +1,145 @@
+/* ==========================================================================
+   ENCARDOMY — SISTEMA DE DISEÑO GLOBAL (css/global.css)
+   Identidad Visual Oficial: Concepto 3 "Cursor Inteligente" (Identidad.png)
+   Desarrollado por ShaMinKet — Arquitectura Desktop-First
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap');
+
+:root {
+  /* Paleta Oficial Encardomy (Identidad.png) */
+  --color-electric-blue: #207FF9;
+  --color-navy-blue: #12396A;
+  --color-pure-white: #FFFFFF;
+  --color-mint-green: #31C9BD;
+  --color-graphite-gray: #40464F;
+  --color-light-gray: #EEF2F7;
+
+  /* Referencias cromáticas institucionales para las experiencias interiores */
+  --color-unam-navy: #002B7A;
+  --color-unam-gold: #D59F0F;
+  --color-ipn-guinda: #6B1D36;
+  --color-ipn-guinda-dark: #4A1224;
+
+  /* Estados operativos de inventario y sistema */
+  --status-available-bg: #E6F9F6;
+  --status-available-text: #0F6B63;
+  --status-low-bg: #FEF6E4;
+  --status-low-text: #946200;
+  --status-soldout-bg: #FCECEC;
+  --status-soldout-text: #9E2626;
+
+  --border-subtle: #DCE4EE;
+  --font-heading: 'Sora', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+
+  --container-max: 1280px;
+  --container-narrow: 920px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+
+  --transition-fast: 160ms cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-base: 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-graphite-gray);
+  background-color: var(--color-pure-white);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--color-electric-blue);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-navy-blue);
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-navy-blue);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(2.1rem, 3.4vw, 3.1rem);
+  font-weight: 800;
+}
+
+h2 {
+  font-size: clamp(1.55rem, 2.5vw, 2.2rem);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+  font-weight: 700;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.section {
+  padding: 72px 0;
+}
+
+.section-muted {
+  background-color: var(--color-light-gray);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-electric-blue);
+  outline-offset: 3px;
+}

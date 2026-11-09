@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Administración e Inventario — Encardomy</title>
+  <meta name="description" content="Panel administrativo compartido de Encardomy: control de unidades de inventario IPN, gestión de estados de pedidos y registro de eventos de medición.">
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/isotipo.svg">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/unam.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+  <header class="interior-header">
+    <div class="container interior-header-inner">
+      <div class="interior-brand-group">
+        <a href="../index.html" aria-label="Volver a la portada de Encardomy">
+          <img src="../assets/images/encardomy.png" alt="Encardomy" class="interior-brand-logo">
+        </a>
+        <span class="interior-institution-badge badge-navy">Administración & Analítica</span>
+      </div>
+
+      <nav class="interior-nav" aria-label="Navegación Administración">
+        <a href="../index.html" class="interior-nav-link">Portada</a>
+        <a href="../unam/index.html" class="interior-nav-link">Experiencia UNAM</a>
+        <a href="../ipn/index.html" class="interior-nav-link">Experiencia IPN</a>
+        <a href="index.html" class="interior-nav-link">Mis Pedidos</a>
+        <a href="admin.html" class="interior-nav-link active">Administración</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h1 style="margin-bottom: 8px;">Infraestructura compartida: Inventario, Pedidos y Medición</h1>
+        <p style="margin-bottom: 32px;">
+          Controla las existencias reales de la experiencia IPN y consulta el registro de eventos preparado para futuras campañas segmentadas por URL de destino.
+        </p>
+
+        <div class="unam-catalog-grid">
+          <div class="unam-service-card">
+            <div>
+              <span class="badge badge-ipn" style="margin-bottom: 10px;">Control de Unidades IPN</span>
+              <h2>Actualizar existencias reales</h2>
+              <p style="font-size: 0.9rem; margin-top: 6px; margin-bottom: 16px;">
+                Ajusta el número de lugares disponibles para la venta de boletos de obras teatrales en `/ipn/`. Si se establece en `0`, el sistema bloquea automáticamente nuevas reservaciones.
+              </p>
+              <form id="admin-stock-form">
+                <div class="form-group">
+                  <label class="form-label" for="admin-units">Unidades disponibles en inventario IPN</label>
+                  <input class="form-control" type="number" id="admin-units" min="0" max="500" value="12" required>
+                </div>
+                <button type="submit" class="btn btn-ipn btn-sm">Guardar existencias IPN</button>
+              </form>
+              <p id="admin-stock-msg" style="margin-top: 10px; font-size: 0.88rem; font-weight: 600;"></p>
+            </div>
+          </div>
+
+          <div class="unam-service-card">
+            <div>
+              <span class="badge badge-blue" style="margin-bottom: 10px;">Arquitectura de Medición Futura</span>
+              <h2>Registro local de eventos (Analytics Ready)</h2>
+              <p style="font-size: 0.9rem; margin-top: 6px; margin-bottom: 12px;">
+                Eventos capturados por ruta (`/unam/`, `/ipn/`, `/encardomy/`, interés en servicios/boletos y checkout) listos para conectarse a píxeles publicitarios cuando se activen campañas:
+              </p>
+              <pre id="admin-analytics-log" style="background:var(--color-light-gray);padding:14px;border-radius:var(--radius-sm);font-size:0.78rem;max-height:220px;overflow:auto;"></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module">
+    import { IpnInventoryManager } from '../js/ipn/ipn-inventory.js';
+    import { EncardomyAnalytics } from '../js/config/analytics.js';
+
+    const stockInput = document.getElementById('admin-units');
+    const stockForm = document.getElementById('admin-stock-form');
+    const stockMsg = document.getElementById('admin-stock-msg');
+    const logPre = document.getElementById('admin-analytics-log');
+
+    const currentItem = IpnInventoryManager.getItem('ipn-boletos-obras-teatrales');
+    if (currentItem && stockInput) {
+      stockInput.value = currentItem.availableUnits;
+    }
+
+    if (stockForm) {
+      stockForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const updated = IpnInventoryManager.updateStockFromAdmin(
+          'ipn-boletos-obras-teatrales',
+          stockInput.value
+        );
+        if (updated && stockMsg) {
+          stockMsg.textContent = `Inventario IPN actualizado a ${updated.availableUnits} unidad(es).`;
+        }
+      });
+    }
+
+    if (logPre) {
+      const events = EncardomyAnalytics.getRecentEvents();
+      logPre.textContent = events.length
+        ? JSON.stringify(events.slice(-10), null, 2)
+        : 'Sin eventos registrados aún en esta sesión.';
+    }
+  </script>
+</body>
+</html>

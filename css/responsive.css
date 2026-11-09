@@ -1,0 +1,65 @@
+/* ==========================================================================
+   ENCARDOMY — ADAPTACIÓN BÁSICA Y SEGURA (css/responsive.css)
+   Prioridad Desktop-First + adaptación móvil para evitar rupturas visuales.
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .brand-editorial-hero-grid,
+  .editorial-grid,
+  .unam-hero-grid,
+  .unam-workspace-layout,
+  .ipn-hero-grid,
+  .ipn-inventory-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .editorial-index,
+  .unam-sidebar,
+  .ipn-reservation-panel {
+    position: static;
+  }
+
+  .swatches-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  /* Portada en pantallas verticales: conserva los 3 elementos sin texto */
+  .portal-viewport {
+    width: 92vw;
+    height: 92vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 30% 35% 35%;
+    grid-template-areas:
+      "encardomy"
+      "unam"
+      "ipn";
+    gap: 2vh;
+  }
+
+  .portal-emblem-encardomy {
+    width: clamp(220px, 76vw, 420px);
+    max-height: 22vh;
+  }
+
+  .portal-emblem-unam,
+  .portal-emblem-ipn {
+    height: clamp(130px, 26vh, 220px);
+    max-width: 76vw;
+  }
+
+  .interior-header-inner {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 14px 0;
+  }
+
+  .unam-catalog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .interior-footer-top {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metodología 1 + 3 = 1 y Herramientas — Experiencia UNAM | Encardomy</title>
+  <meta name="description" content="Manual Visual de Exposición 1 + 3 = 1 y estructurador interactivo de presentaciones para la experiencia UNAM de Encardomy.">
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/isotipo.svg">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/unam.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+  <header class="interior-header">
+    <div class="container interior-header-inner">
+      <div class="interior-brand-group">
+        <a href="../index.html" aria-label="Volver a la portada de Encardomy">
+          <img src="../assets/images/encardomy.png" alt="Encardomy" class="interior-brand-logo">
+        </a>
+        <span class="interior-institution-badge badge-unam">
+          <img src="../assets/images/unam.png" alt="Escudo UNAM">
+          Experiencia UNAM
+        </span>
+      </div>
+
+      <nav class="interior-nav" aria-label="Navegación Experiencia UNAM">
+        <a href="index.html" class="interior-nav-link">Catálogo UNAM</a>
+        <a href="materiales.html" class="interior-nav-link active">Metodología 1 + 3 = 1</a>
+        <a href="solicitud.html" class="interior-nav-link">Configurar Solicitud</a>
+        <a href="../cuenta/index.html" class="interior-nav-link">Mis Pedidos</a>
+      </nav>
+
+      <div class="interior-actions">
+        <a href="../checkout/index.html?inst=unam" class="btn btn-unam btn-sm">
+          Solicitud UNAM (<span data-cart-count="unam">0</span>)
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="unam-hero">
+      <div class="container">
+        <span class="badge badge-unam" style="margin-bottom: 12px;">Herramientas Educativas UNAM</span>
+        <h1>Manual Visual de Exposición: Metodología 1 + 3 = 1</h1>
+        <p style="margin-top: 12px; max-width: 760px;">
+          Utiliza nuestra herramienta de estructuración para preparar tus exposiciones o encargar directamente tu presentación en formato 20 × 20 ($100 MXN).
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="unam-catalog-grid">
+          <div class="unam-service-card">
+            <div>
+              <span class="badge badge-mint" style="margin-bottom: 12px;">Fórmula Pedagógica</span>
+              <h2>¿Cómo funciona 1 + 3 = 1?</h2>
+              <ul class="unam-spec-list" style="margin-top: 16px;">
+                <li><strong>1 Idea Central:</strong> Define en una sola oración la tesis que tu grupo o profesor debe recordar al terminar tu exposición.</li>
+                <li><strong>+ 3 Bloques de Desarrollo:</strong> Organiza tus diapositivas en tres pilares (contexto, análisis/evidencia y aplicación) para evitar saturar la pantalla.</li>
+                <li><strong>= 1 Conclusión Unificada:</strong> Cierra conectando los tres bloques con la tesis inicial.</li>
+              </ul>
+            </div>
+            <a href="solicitud.html?item=unam-presentaciones-20x20" class="btn btn-unam">
+              Solicitar diseño de presentación 20 × 20 ($100 MXN)
+            </a>
+          </div>
+
+          <div class="unam-service-card">
+            <div>
+              <span class="badge badge-blue" style="margin-bottom: 12px;">Generador Interactivo</span>
+              <h2>Arma el guion de tu exposición</h2>
+              <form id="unam-method-form" style="margin-top: 16px;">
+                <div class="form-group">
+                  <label class="form-label" for="m-tema">1. Idea Central de tu exposición</label>
+                  <input class="form-control" type="text" id="m-tema" required placeholder="Ej. Causas y consecuencias de la reforma energética">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="m-b1">2. Tres bloques de sustento (separados por coma)</label>
+                  <input class="form-control" type="text" id="m-b1" required placeholder="Ej. Antecedentes históricos, Marco jurídico, Impacto económico">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="m-cierre">3. Mensaje de cierre (= 1)</label>
+                  <input class="form-control" type="text" id="m-cierre" required placeholder="Ej. Síntesis crítica final">
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Generar estructura para mi presentación</button>
+              </form>
+              <div id="unam-method-output" hidden style="margin-top: 16px; padding: 16px; background: var(--color-light-gray); border-radius: var(--radius-sm); font-size: 0.9rem;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="interior-footer">
+    <div class="container">
+      <div class="interior-footer-top">
+        <div>
+          <strong>Encardomy · Experiencia UNAM</strong>
+          <p style="color: var(--color-light-gray); font-size: 0.9rem; margin-top: 4px;">
+            Desarrollado por ShaMinKet · Atención directa: +52 55 7198 5641
+          </p>
+        </div>
+        <div class="interior-footer-links">
+          <a href="../index.html">Portada</a>
+          <a href="index.html">Catálogo UNAM</a>
+          <a href="../legal/index.html">Términos y Aviso Legal</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="../js/config/analytics.js"></script>
+  <script type="module" src="../js/unam/unam-app.js"></script>
+  <script type="module">
+    const form = document.getElementById('unam-method-form');
+    const out = document.getElementById('unam-method-output');
+    if (form && out) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const tema = document.getElementById('m-tema').value.trim();
+        const bloques = document.getElementById('m-b1').value.trim();
+        const cierre = document.getElementById('m-cierre').value.trim();
+        out.hidden = false;
+        out.innerHTML = `<strong>Guion 1 + 3 = 1 listo:</strong><br>• <strong>Tesis (1):</strong> ${tema}<br>• <strong>Desarrollo (+3):</strong> ${bloques}<br>• <strong>Síntesis (=1):</strong> ${cierre}`;
+      });
+    }
+  </script>
+</body>
+</html>

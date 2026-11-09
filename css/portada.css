@@ -1,0 +1,179 @@
+/* ==========================================================================
+   ENCARDOMY — PORTADA EXCLUSIVA DE TRES ELEMENTOS (css/portada.css)
+   Reglas estrictas:
+   - Únicamente 3 elementos visuales: Encardomy, UNAM e IPN.
+   - 0% texto, sin bordes ni tarjetas, flotando estáticos sobre fondo blanco.
+   - 90% del espacio visual dedicado a la composición y 10% de margen de respiración.
+   - Animación de entrada en círculo de adentro hacia afuera al cargar la página.
+   ========================================================================== */
+
+.portal-body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+/* Lienzo principal: ocupa exactamente el 90% del ancho y alto de la pantalla,
+   dejando el 10% restante (5vh arriba/abajo, 5vw izquierda/derecha) como respiración */
+.portal-viewport {
+  position: relative;
+  width: 90vw;
+  height: 90vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 42% 58%;
+  grid-template-areas:
+    "encardomy encardomy"
+    "unam ipn";
+  place-items: center;
+  gap: 2vh 4vw;
+
+  /* Apertura circular de adentro hacia afuera */
+  clip-path: circle(0% at 50% 50%);
+  animation: portalCircleExpand 1.15s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Nodos interactivos: flotan sobre el blanco sin bordes ni cajas */
+.portal-node {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.portal-node-encardomy {
+  grid-area: encardomy;
+  /* Nace desde el centro de la pantalla (hacia arriba) */
+  transform: translateY(24vh) scale(0.08);
+  opacity: 0;
+  animation: burstOutEncardomy 1.05s cubic-bezier(0.16, 1, 0.3, 1) 0.06s forwards;
+}
+
+.portal-node-unam {
+  grid-area: unam;
+  /* Nace desde el centro de la pantalla (hacia abajo-izquierda) */
+  transform: translate(22vw, -20vh) scale(0.08);
+  opacity: 0;
+  animation: burstOutUnam 1.12s cubic-bezier(0.16, 1, 0.3, 1) 0.12s forwards;
+}
+
+.portal-node-ipn {
+  grid-area: ipn;
+  /* Nace desde el centro de la pantalla (hacia abajo-derecha) */
+  transform: translate(-22vw, -20vh) scale(0.08);
+  opacity: 0;
+  animation: burstOutIpn 1.12s cubic-bezier(0.16, 1, 0.3, 1) 0.16s forwards;
+}
+
+/* Dimensiones dominantes Desktop-First respetando proporciones originales */
+.portal-emblem {
+  display: block;
+  object-fit: contain;
+  transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1), opacity 240ms ease;
+  will-change: transform;
+}
+
+.portal-emblem-encardomy {
+  width: clamp(320px, 52vw, 760px);
+  max-height: 32vh;
+}
+
+.portal-emblem-unam,
+.portal-emblem-ipn {
+  width: auto;
+  height: clamp(220px, 46vh, 480px);
+  max-width: 40vw;
+}
+
+/* Interacción limpia sin movimiento continuo: estático en reposo,
+   respuesta táctil nítida únicamente al interactuar con el cursor */
+.portal-node:hover .portal-emblem,
+.portal-node:focus-visible .portal-emblem {
+  transform: scale(1.045);
+}
+
+.portal-viewport:has(.portal-node:hover) .portal-node:not(:hover) .portal-emblem {
+  opacity: 0.72;
+}
+
+.portal-node:active .portal-emblem {
+  transform: scale(0.97);
+}
+
+/* Keyframes de la animación en círculo de adentro hacia afuera */
+@keyframes portalCircleExpand {
+  0% {
+    clip-path: circle(0% at 50% 50%);
+  }
+  100% {
+    clip-path: circle(150% at 50% 50%);
+  }
+}
+
+@keyframes burstOutEncardomy {
+  0% {
+    transform: translateY(24vh) scale(0.08);
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes burstOutUnam {
+  0% {
+    transform: translate(22vw, -20vh) scale(0.08);
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes burstOutIpn {
+  0% {
+    transform: translate(-22vw, -20vh) scale(0.08);
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Respeto a accesibilidad si el sistema operativo pide reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .portal-viewport,
+  .portal-node-encardomy,
+  .portal-node-unam,
+  .portal-node-ipn {
+    animation-duration: 0.01ms !important;
+    clip-path: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}

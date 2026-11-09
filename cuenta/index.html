@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Historial de Pedidos y Reservaciones — Encardomy</title>
+  <meta name="description" content="Consulta el estado de tus solicitudes académicas UNAM y reservaciones de boletos IPN en Encardomy.">
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/isotipo.svg">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/unam.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+  <header class="interior-header">
+    <div class="container interior-header-inner">
+      <div class="interior-brand-group">
+        <a href="../index.html" aria-label="Volver a la portada de Encardomy">
+          <img src="../assets/images/encardomy.png" alt="Encardomy" class="interior-brand-logo">
+        </a>
+        <span class="interior-institution-badge badge-navy">Cuentas e Historial de Pedidos</span>
+      </div>
+
+      <nav class="interior-nav" aria-label="Navegación Cuentas">
+        <a href="../index.html" class="interior-nav-link">Portada</a>
+        <a href="../unam/index.html" class="interior-nav-link">Experiencia UNAM</a>
+        <a href="../ipn/index.html" class="interior-nav-link">Experiencia IPN</a>
+        <a href="index.html" class="interior-nav-link active">Mis Pedidos</a>
+        <a href="admin.html" class="interior-nav-link">Administración</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;margin-bottom:28px;">
+          <div>
+            <h1>Historial de pedidos y estado de reservaciones</h1>
+            <p style="margin-top:6px;">Consulta los folios generados en cada experiencia institucional.</p>
+          </div>
+          <div style="display:flex;gap:8px;">
+            <button type="button" class="btn btn-secondary btn-sm" data-filter-orders="all">Todos</button>
+            <button type="button" class="btn btn-unam btn-sm" data-filter-orders="unam">Solo UNAM</button>
+            <button type="button" class="btn btn-ipn btn-sm" data-filter-orders="ipn">Solo IPN</button>
+          </div>
+        </div>
+
+        <div id="orders-history-list" style="display:flex;flex-direction:column;gap:18px;"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="interior-footer">
+    <div class="container">
+      <div class="interior-footer-top">
+        <div>
+          <strong>Encardomy · Seguimiento de Pedidos</strong>
+          <p style="color: var(--color-light-gray); font-size: 0.9rem; margin-top: 4px;">
+            Desarrollado por ShaMinKet · Atención oficial: +52 55 7198 5641
+          </p>
+        </div>
+        <div class="interior-footer-links">
+          <a href="../index.html">Portada</a>
+          <a href="../legal/index.html">Términos y Aviso Legal</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { OrderManager } from '../js/core/orders.js';
+
+    const listEl = document.getElementById('orders-history-list');
+    const filterBtns = document.querySelectorAll('[data-filter-orders]');
+    const params = new URLSearchParams(window.location.search);
+    const initialFilter = params.get('inst') || 'all';
+
+    function renderOrders(filter = 'all') {
+      const orders = OrderManager.getOrdersByInstitution(filter);
+      if (!orders.length) {
+        listEl.innerHTML = `
+          <div class="unam-service-card">
+            <p>Aún no hay pedidos registrados para el filtro seleccionado (<strong>${filter.toUpperCase()}</strong>).</p>
+            <div style="display:flex;gap:10px;margin-top:12px;">
+              <a href="../unam/index.html" class="btn btn-unam btn-sm">Ir a Experiencia UNAM</a>
+              <a href="../ipn/index.html" class="btn btn-ipn btn-sm">Ir a Experiencia IPN</a>
+            </div>
+          </div>
+        `;
+        return;
+      }
+
+      listEl.innerHTML = orders
+        .map(
+          (o) => `
+        <article class="unam-service-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+            <span class="badge ${o.institution === 'ipn' ? 'badge-ipn' : 'badge-unam'}">
+              Experiencia ${o.institution.toUpperCase()} · Folio ${o.folio}
+            </span>
+            <span class="badge badge-available">${o.status}</span>
+          </div>
+          <div>
+            <strong>Solicitante:</strong> ${o.customer.name} (${o.customer.contact})
+            <ul class="unam-spec-list">
+              ${o.items.map((i) => `<li>${i.quantity}× ${i.title} (${i.priceLabel}) ${i.notes ? `— ${i.notes}` : ''}</li>`).join('')}
+            </ul>
+          </div>
+        </article>
+      `
+        )
+        .join('');
+    }
+
+    filterBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        renderOrders(btn.getAttribute('data-filter-orders'));
+      });
+    });
+
+    renderOrders(initialFilter);
+  </script>
+</body>
+</html>

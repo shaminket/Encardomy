@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experiencia IPN — Boletos, Eventos e Inventario Limitado | Encardomy</title>
+  <meta name="description" content="Experiencia IPN de Encardomy: venta de boletos para obras teatrales, acceso a eventos, control de unidades en tiempo real y prevención de sobreventas.">
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/isotipo.svg">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/ipn.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+  <header class="interior-header">
+    <div class="container interior-header-inner">
+      <div class="interior-brand-group">
+        <a href="../index.html" aria-label="Volver a la portada de Encardomy">
+          <img src="../assets/images/encardomy.png" alt="Encardomy" class="interior-brand-logo">
+        </a>
+        <span class="interior-institution-badge badge-ipn">
+          <img src="../assets/images/ipn.png" alt="Emblema IPN">
+          Experiencia IPN
+        </span>
+      </div>
+
+      <nav class="interior-nav" aria-label="Navegación Experiencia IPN">
+        <a href="index.html" class="interior-nav-link active">Disponibilidad y Boletos</a>
+        <a href="../checkout/index.html?inst=ipn" class="interior-nav-link">Confirmar Reservación</a>
+        <a href="../cuenta/index.html?inst=ipn" class="interior-nav-link">Historial de Pedidos IPN</a>
+      </nav>
+
+      <div class="interior-actions">
+        <a href="../checkout/index.html?inst=ipn" class="btn btn-ipn btn-sm">
+          Reservación IPN (<span data-cart-count="ipn">0</span>)
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="ipn-hero">
+      <div class="container ipn-hero-grid">
+        <div>
+          <span class="badge badge-ipn" style="margin-bottom: 14px;">Rama Comercial y Cultural IPN</span>
+          <h1>Venta de boletos, acceso a actividades y paquetes con inventario controlado.</h1>
+          <p style="margin-top: 14px; font-size: 1.05rem;">
+            Adquiere boletos para obras teatrales con entrega de fotografías, videos y resumen de la obra. El sistema verifica existencias reales por unidad para prevenir sobreventas.
+          </p>
+        </div>
+
+        <aside class="ipn-emblem-card">
+          <img src="../assets/images/ipn.png" alt="Emblema IPN">
+          <strong style="color: var(--color-ipn-guinda); font-family: var(--font-heading);">Control de Existencias IPN</strong>
+          <p style="font-size: 0.88rem;">
+            Disponibilidad actualizada por unidades y condiciones de compra visibles antes de reservar.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container ipn-inventory-layout">
+        <div>
+          <h2 style="margin-bottom: 18px;">Actividades y paquetes disponibles</h2>
+          <div data-ipn-inventory-list></div>
+        </div>
+
+        <aside class="ipn-reservation-panel">
+          <span class="badge badge-ipn" style="margin-bottom: 12px;">Flujo de Reservación IPN</span>
+          <h3 style="margin-bottom: 12px;">Cómo funciona el control de unidades</h3>
+          <ul class="unam-spec-list" style="margin-bottom: 20px;">
+            <li><strong>1. Verificación de stock:</strong> Cada paquete muestra en tiempo real las unidades disponibles.</li>
+            <li><strong>2. Bloqueo contra sobreventa:</strong> Al apartar tus unidades, el inventario descuenta tu cupo para evitar duplicidades.</li>
+            <li><strong>3. Confirmación de compra:</strong> Finaliza el registro en el checkout IPN para obtener tu folio de reservación y confirmar el pago.</li>
+          </ul>
+          <a href="../checkout/index.html?inst=ipn" class="btn btn-ipn btn-full">
+            Continuar al Checkout IPN
+          </a>
+          <a href="../cuenta/index.html?inst=ipn" class="btn btn-secondary btn-full" style="margin-top: 10px;">
+            Consultar estado de mis reservaciones
+          </a>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="interior-footer">
+    <div class="container">
+      <div class="interior-footer-top">
+        <div>
+          <strong>Encardomy · Experiencia IPN</strong>
+          <p style="color: var(--color-light-gray); font-size: 0.9rem; margin-top: 4px;">
+            Desarrollado por ShaMinKet · Atención directa: +52 55 7198 5641
+          </p>
+        </div>
+        <div class="interior-footer-links">
+          <a href="../index.html">Portada</a>
+          <a href="../encardomy/index.html">Sobre Encardomy</a>
+          <a href="../cuenta/index.html">Historial de Pedidos</a>
+          <a href="../legal/index.html">Términos y Condiciones</a>
+        </div>
+      </div>
+      <p class="interior-disclaimer">
+        Encardomy es una plataforma independiente operada por ShaMinKet. El emblema del IPN se utiliza únicamente como identificador visual de la experiencia dirigida a su comunidad, sin implicar afiliación oficial ni prometer beneficios o acreditaciones académicas.
+      </p>
+    </div>
+  </footer>
+
+  <script type="module" src="../js/config/analytics.js"></script>
+  <script type="module" src="../js/ipn/ipn-inventory.js"></script>
+</body>
+</html>

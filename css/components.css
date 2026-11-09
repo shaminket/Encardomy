@@ -1,0 +1,284 @@
+/* ==========================================================================
+   ENCARDOMY — COMPONENTES COMPARTIDOS PARA PÁGINAS INTERIORES (css/components.css)
+   Cabecera contextual interior, botones, insignias de estado, tablas y formularios
+   ========================================================================== */
+
+/* Cabecera de páginas interiores (Nunca se usa en la portada /) */
+.interior-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-pure-white);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.interior-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+  gap: 24px;
+}
+
+.interior-brand-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.interior-brand-logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+}
+
+.interior-institution-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.interior-institution-badge img {
+  height: 22px;
+  width: auto;
+}
+
+.interior-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.interior-nav-link {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-graphite-gray);
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.interior-nav-link:hover,
+.interior-nav-link.active {
+  background-color: var(--color-light-gray);
+  color: var(--color-navy-blue);
+}
+
+.interior-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Botones */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 0.94rem;
+  font-weight: 600;
+  padding: 12px 22px;
+  border-radius: var(--radius-pill);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+  white-space: nowrap;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-primary {
+  background-color: var(--color-electric-blue);
+  color: var(--color-pure-white);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--color-navy-blue);
+  color: var(--color-pure-white);
+}
+
+.btn-secondary {
+  background-color: var(--color-pure-white);
+  color: var(--color-navy-blue);
+  border-color: var(--border-subtle);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  border-color: var(--color-navy-blue);
+  background-color: var(--color-light-gray);
+}
+
+.btn-unam {
+  background-color: var(--color-unam-navy);
+  color: var(--color-pure-white);
+}
+
+.btn-unam:hover:not(:disabled) {
+  background-color: var(--color-navy-blue);
+  color: var(--color-pure-white);
+}
+
+.btn-ipn {
+  background-color: var(--color-ipn-guinda);
+  color: var(--color-pure-white);
+}
+
+.btn-ipn:hover:not(:disabled) {
+  background-color: var(--color-ipn-guinda-dark);
+  color: var(--color-pure-white);
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 0.85rem;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+/* Insignias y Estados */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-heading);
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.badge-blue {
+  background-color: var(--color-light-gray);
+  color: var(--color-electric-blue);
+}
+
+.badge-navy {
+  background-color: var(--color-navy-blue);
+  color: var(--color-pure-white);
+}
+
+.badge-mint {
+  background-color: var(--color-mint-green);
+  color: var(--color-navy-blue);
+}
+
+.badge-unam {
+  background-color: var(--color-unam-navy);
+  color: var(--color-pure-white);
+}
+
+.badge-ipn {
+  background-color: var(--color-ipn-guinda);
+  color: var(--color-pure-white);
+}
+
+.badge-available {
+  background-color: var(--status-available-bg);
+  color: var(--status-available-text);
+}
+
+.badge-low {
+  background-color: var(--status-low-bg);
+  color: var(--status-low-text);
+}
+
+.badge-soldout {
+  background-color: var(--status-soldout-bg);
+  color: var(--status-soldout-text);
+}
+
+/* Pie de página interior con deslinde institucional obligatorio */
+.interior-footer {
+  background-color: var(--color-navy-blue);
+  color: var(--color-pure-white);
+  padding: 48px 0 32px;
+  margin-top: auto;
+}
+
+.interior-footer-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.interior-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.interior-footer-links a {
+  color: var(--color-light-gray);
+  font-size: 0.9rem;
+}
+
+.interior-footer-links a:hover {
+  color: var(--color-mint-green);
+}
+
+.interior-disclaimer {
+  padding-top: 20px;
+  font-size: 0.82rem;
+  color: rgba(238, 242, 247, 0.82);
+  line-height: 1.5;
+}
+
+/* Formularios y controles */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-label {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-navy-blue);
+  margin-bottom: 6px;
+}
+
+.form-control {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--color-graphite-gray);
+  background-color: var(--color-pure-white);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 11px 14px;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--color-electric-blue);
+}
+
+textarea.form-control {
+  min-height: 110px;
+  resize: vertical;
+}

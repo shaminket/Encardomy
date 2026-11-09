@@ -1,0 +1,135 @@
+/* ==========================================================================
+   ENCARDOMY — SECCIÓN INSTITUCIONAL DE LA MARCA (/encardomy/ — css/encardomy.css)
+   Diseño editorial limpio para Historia, Filosofía, Propósito, Principios,
+   Forma de trabajar, Conocimiento y Evolución del proyecto.
+   ========================================================================== */
+
+.brand-editorial-hero {
+  padding: 72px 0 56px;
+  background-color: var(--color-light-gray);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.brand-editorial-hero-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.brand-identity-showcase {
+  background-color: var(--color-pure-white);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.brand-identity-showcase img.logo-main {
+  max-height: 76px;
+  width: auto;
+}
+
+.editorial-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.editorial-index {
+  position: sticky;
+  top: 100px;
+  background-color: var(--color-light-gray);
+  border-radius: var(--radius-md);
+  padding: 24px;
+}
+
+.editorial-index-title {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-navy-blue);
+  margin-bottom: 14px;
+}
+
+.editorial-index-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.editorial-index-list a {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-graphite-gray);
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+}
+
+.editorial-index-list a:hover {
+  background-color: var(--color-pure-white);
+  color: var(--color-electric-blue);
+}
+
+.editorial-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.editorial-block {
+  background-color: var(--color-pure-white);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 36px 40px;
+}
+
+.editorial-block-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--color-light-gray);
+}
+
+.editorial-placeholder-notice {
+  margin-top: 16px;
+  padding: 16px 20px;
+  background-color: var(--color-light-gray);
+  border-left: 4px solid var(--color-electric-blue);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  color: var(--color-navy-blue);
+}
+
+.swatches-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.swatch-box {
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  font-size: 0.78rem;
+}
+
+.swatch-fill {
+  height: 48px;
+}
+
+.swatch-info {
+  padding: 8px 10px;
+  background-color: var(--color-pure-white);
+}

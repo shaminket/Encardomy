@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout y Confirmación — Encardomy</title>
+  <meta name="description" content="Proceso de compra y reservación de Encardomy con separación de carritos entre las experiencias UNAM e IPN.">
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/isotipo.svg">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/unam.css">
+  <link rel="stylesheet" href="../css/ipn.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+  <header class="interior-header">
+    <div class="container interior-header-inner">
+      <div class="interior-brand-group">
+        <a href="../index.html" aria-label="Volver a la portada de Encardomy">
+          <img src="../assets/images/encardomy.png" alt="Encardomy" class="interior-brand-logo">
+        </a>
+        <span class="interior-institution-badge badge-navy" id="checkout-inst-badge">Checkout por Experiencia</span>
+      </div>
+
+      <nav class="interior-nav" aria-label="Navegación Checkout">
+        <a href="../index.html" class="interior-nav-link">Portada</a>
+        <a href="../unam/index.html" class="interior-nav-link">Experiencia UNAM</a>
+        <a href="../ipn/index.html" class="interior-nav-link">Experiencia IPN</a>
+        <a href="../cuenta/index.html" class="interior-nav-link">Historial de Pedidos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:28px;">
+          <div>
+            <h1 id="checkout-title">Confirmación de Solicitud / Reservación</h1>
+            <p style="margin-top:6px;">Los catálogos y carritos de UNAM e IPN se procesan por separado para respetar sus condiciones comerciales.</p>
+          </div>
+          <div style="display:flex;gap:10px;">
+            <a href="?inst=unam" class="btn btn-secondary btn-sm" id="switch-unam">Ver Carrito UNAM</a>
+            <a href="?inst=ipn" class="btn btn-secondary btn-sm" id="switch-ipn">Ver Carrito IPN</a>
+          </div>
+        </div>
+
+        <div class="ipn-inventory-layout">
+          <div class="unam-service-card">
+            <div>
+              <h2 style="margin-bottom: 16px;">Artículos en esta experiencia</h2>
+              <div id="checkout-items-container"></div>
+            </div>
+          </div>
+
+          <aside class="ipn-reservation-panel">
+            <h3 style="margin-bottom: 14px;">Datos para registrar tu folio</h3>
+            <form id="checkout-confirm-form">
+              <div class="form-group">
+                <label class="form-label" for="cust-name">Nombre completo</label>
+                <input class="form-control" type="text" id="cust-name" name="name" required placeholder="Tu nombre">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="cust-contact">WhatsApp o correo de contacto</label>
+                <input class="form-control" type="text" id="cust-contact" name="contact" required placeholder="Ej. 55 0000 0000">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="cust-school">Plantel, facultad o unidad académica (opcional)</label>
+                <input class="form-control" type="text" id="cust-school" name="schoolOrArea" placeholder="Ej. Ciudad Universitaria / Zacatenco">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="cust-notes">Indicaciones adicionales de entrega</label>
+                <textarea class="form-control" id="cust-notes" name="notes" placeholder="Comentarios opcionales sobre tu solicitud o reservación"></textarea>
+              </div>
+
+              <div id="checkout-totals-box" style="padding:14px;background:var(--color-light-gray);border-radius:var(--radius-sm);margin-bottom:16px;font-size:0.92rem;"></div>
+
+              <button type="submit" class="btn btn-primary btn-full" id="checkout-submit-btn">
+                Confirmar y generar folio oficial
+              </button>
+            </form>
+
+            <div id="checkout-folio-result" hidden style="margin-top:20px;padding:18px;background:var(--status-available-bg);color:var(--status-available-text);border-radius:var(--radius-sm);"></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="interior-footer">
+    <div class="container">
+      <div class="interior-footer-top">
+        <div>
+          <strong>Encardomy · Infraestructura de Pedidos</strong>
+          <p style="color: var(--color-light-gray); font-size: 0.9rem; margin-top: 4px;">
+            Desarrollado por ShaMinKet · Atención directa: +52 55 7198 5641
+          </p>
+        </div>
+        <div class="interior-footer-links">
+          <a href="../index.html">Portada</a>
+          <a href="../cuenta/index.html">Historial de Pedidos</a>
+          <a href="../legal/index.html">Términos y Aviso Legal</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { CartManager } from '../js/core/cart.js';
+    import { OrderManager } from '../js/core/orders.js';
+    import { EncardomyAnalytics } from '../js/config/analytics.js';
+
+    const params = new URLSearchParams(window.location.search);
+    const inst = params.get('inst') === 'ipn' ? 'ipn' : 'unam';
+
+    EncardomyAnalytics.track('begin_checkout', { institution: inst });
+
+    const badge = document.getElementById('checkout-inst-badge');
+    const title = document.getElementById('checkout-title');
+    const itemsBox = document.getElementById('checkout-items-container');
+    const totalsBox = document.getElementById('checkout-totals-box');
+    const submitBtn = document.getElementById('checkout-submit-btn');
+    const form = document.getElementById('checkout-confirm-form');
+    const resultBox = document.getElementById('checkout-folio-result');
+
+    if (inst === 'ipn') {
+      badge.className = 'interior-institution-badge badge-ipn';
+      badge.textContent = 'Checkout Experiencia IPN';
+      title.textContent = 'Confirmación de Reservación IPN';
+      submitBtn.className = 'btn btn-ipn btn-full';
+    } else {
+      badge.className = 'interior-institution-badge badge-unam';
+      badge.textContent = 'Checkout Experiencia UNAM';
+      title.textContent = 'Confirmación de Solicitud Académica UNAM';
+      submitBtn.className = 'btn btn-unam btn-full';
+    }
+
+    function renderCart() {
+      const summary = CartManager.getSummary(inst);
+      if (!summary.items.length) {
+        itemsBox.innerHTML = `<p>No tienes artículos activos en el carrito de la experiencia <strong>${inst.toUpperCase()}</strong>.</p>
+          <div style="margin-top:14px;">
+            <a href="../${inst}/index.html" class="btn btn-secondary btn-sm">Explorar catálogo ${inst.toUpperCase()}</a>
+          </div>`;
+        totalsBox.innerHTML = '<strong>Total de unidades:</strong> 0';
+        submitBtn.disabled = true;
+        return;
+      }
+
+      submitBtn.disabled = false;
+      itemsBox.innerHTML = summary.items
+        .map(
+          (item) => `
+        <div style="padding:14px 0;border-bottom:1px solid var(--border-subtle);display:flex;justify-content:space-between;gap:14px;align-items:flex-start;">
+          <div>
+            <strong>${item.title}</strong>
+            <div style="font-size:0.86rem;color:var(--color-graphite-gray);">Cantidad: ${item.quantity} · ${item.priceLabel}</div>
+            ${item.notes ? `<div style="font-size:0.84rem;margin-top:4px;">Especificaciones: ${item.notes}</div>` : ''}
+          </div>
+          <button type="button" class="btn btn-secondary btn-sm" data-remove-id="${item.id}">Quitar</button>
+        </div>
+      `
+        )
+        .join('');
+
+      itemsBox.querySelectorAll('[data-remove-id]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          CartManager.removeItem(inst, btn.getAttribute('data-remove-id'));
+          renderCart();
+        });
+      });
+
+      totalsBox.innerHTML = `
+        <div><strong>Experiencia:</strong> ${inst.toUpperCase()}</div>
+        <div><strong>Unidades totales:</strong> ${summary.totalUnits}</div>
+        <div><strong>Subtotal tarifas fijas:</strong> $${summary.fixedSubtotal} MXN</div>
+        ${summary.hasVariableOrQuote ? '<div style="margin-top:4px;font-size:0.84rem;">* Incluye partidas de precio variable o bajo cotización.</div>' : ''}
+      `;
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const summary = CartManager.getSummary(inst);
+      if (!summary.items.length) return;
+
+      const data = new FormData(form);
+      const order = OrderManager.createOrder({
+        institution: inst,
+        customer: {
+          name: data.get('name'),
+          contact: data.get('contact'),
+          schoolOrArea: data.get('schoolOrArea')
+        },
+        items: summary.items,
+        fixedSubtotal: summary.fixedSubtotal,
+        hasVariableOrQuote: summary.hasVariableOrQuote,
+        notes: data.get('notes')
+      });
+
+      CartManager.clear(inst);
+      renderCart();
+
+      resultBox.hidden = false;
+      resultBox.innerHTML = `
+        <strong>Folio registrado: ${order.folio}</strong>
+        <p style="margin-top:6px;font-size:0.9rem;">Estado: ${order.status}</p>
+        <div style="margin-top:12px;">
+          <a href="../cuenta/index.html?inst=${inst}" class="btn btn-primary btn-sm">Ver en mi historial de pedidos</a>
+        </div>
+      `;
+    });
+
+    renderCart();
+  </script>
+</body>
+</html>

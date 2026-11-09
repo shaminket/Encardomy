@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <title>Encardomy — Isotipo Cursor Inteligente</title>
+  <!-- Marco de documento estilizado con esquina doblada -->
+  <path d="M24 22C24 16.4772 28.4772 12 34 12H72L96 36V94C96 99.5228 91.5228 104 86 104H34C28.4772 104 24 99.5228 24 94V22Z" stroke="#207FF9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M70 12V32C70 35.3137 72.6863 38 76 38H96" stroke="#207FF9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Líneas de contenido que forman la E -->
+  <line x1="40" y1="42" x2="62" y2="42" stroke="#12396A" stroke-width="7" stroke-linecap="round"/>
+  <line x1="40" y1="58" x2="68" y2="58" stroke="#207FF9" stroke-width="7" stroke-linecap="round"/>
+  <line x1="40" y1="74" x2="56" y2="74" stroke="#12396A" stroke-width="7" stroke-linecap="round"/>
+  <!-- Cursor Inteligente integrado -->
+  <path d="M68 62L98 75L83 82L90 98L81 102L74 86L65 96L68 62Z" fill="#31C9BD" stroke="#12396A" stroke-width="4" stroke-linejoin="round"/>
+</svg>
